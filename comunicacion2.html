@@ -1,0 +1,233 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LUMENIX | Comunicación 2° Primaria</title>
+  <link rel="stylesheet" href="comunicacion2.css">
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <div class="logo">📚 LUMENIX</div>
+    <nav>
+      <a href="index.html">🏠 Inicio</a>
+      <a href="comunicacion.html">📖 Grados</a>
+      <a href="#">🏆 Logros</a>
+      <a href="#">🛒 Tienda</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="personaje">🦊</div>
+    <div class="dialogo">
+      <h2>¡Bienvenido a Comunicación 2°!</h2>
+      <p>Hoy aprenderemos a leer mejor, formar oraciones, descubrir nuevas palabras y comprender cuentos divertidos.</p>
+    </div>
+
+    <div class="barra">
+      <div class="progreso" id="barra"></div>
+    </div>
+
+    <div class="estado">
+      <div>❤️❤️❤️</div>
+      <div>🪙 <span id="monedas">0</span></div>
+      <div>⭐ Nivel 2</div>
+    </div>
+  </section>
+
+  <section class="tarjetas">
+    <div class="tarjeta">
+      <h2>📖 Lectura</h2>
+      <p>Lee pequeños cuentos y responde preguntas.</p>
+      <button onclick="accionBoton('📖 ¡Vamos a leer un cuento emocionante!')">Comenzar</button>
+    </div>
+
+    <div class="tarjeta">
+      <h2>✍️ Oraciones</h2>
+      <p>Aprende a formar oraciones completas.</p>
+      <button onclick="accionBoton('✍️ ¡Formemos oraciones juntas!')">Aprender</button>
+    </div>
+
+    <div class="tarjeta">
+      <h2>📝 Palabras</h2>
+      <p>Sustantivos, verbos y adjetivos.</p>
+      <button onclick="accionBoton('📝 ¡Descubramos nuevas palabras!')">Empezar</button>
+    </div>
+
+    <div class="tarjeta">
+      <h2>🎮 Juegos</h2>
+      <p>Aprende jugando con palabras y sonidos.</p>
+      <button onclick="accionBoton('🎮 ¡A jugar con palabras y sonidos!')">Jugar</button>
+    </div>
+
+    <div class="tarjeta">
+      <h2>🏅 Desafíos</h2>
+      <p>Gana monedas y completa retos.</p>
+      <button onclick="accionBoton('🏅 ¡Vamos por un nuevo reto!')">Entrar</button>
+    </div>
+
+    <div class="tarjeta">
+      <h2>🎥 Video</h2>
+      <p>Aprendamos juntos con un video divertido.</p>
+      <iframe src="https://www.youtube.com/embed/Ag8M7X0A4n4" allowfullscreen></iframe>
+    </div>
+  </section>
+
+  <section class="tarjetas">
+    <div class="tarjeta">
+      <h2>📖 Lección 1</h2>
+      <p>Hoy aprenderemos a formar oraciones correctamente.</p>
+      <button onclick="mostrarLeccion()">Comenzar</button>
+    </div>
+
+    <div class="tarjeta">
+      <h2>🎥 Video</h2>
+      <p>Observa el siguiente video educativo.</p>
+      <iframe src="https://www.youtube.com/embed/Ag8M7X0A4n4" allowfullscreen></iframe>
+    </div>
+  </section>
+
+  <section class="tarjetas">
+    <div class="tarjeta">
+      <h2>📚 Lee el cuento</h2>
+      <p>Sofía tenía una mascota llamada Luna. Todos los días jugaban en el parque y eran muy felices.</p>
+    </div>
+
+    <div class="tarjeta">
+      <h2>❓ Comprensión</h2>
+      <p>¿Cómo se llamaba la mascota?</p>
+      <button onclick="cuento('Luna')">Luna</button>
+      <button onclick="cuento('Sol')">Sol</button>
+      <button onclick="cuento('Nube')">Nube</button>
+      <p id="mensajeCuento" class="mensaje"></p>
+    </div>
+  </section>
+
+  <section class="tarjetas">
+    <div class="tarjeta">
+      <h2>✍️ Forma la oración</h2>
+      <p>Ordena correctamente.</p>
+      <h1>Ana - come - pan</h1>
+      <input type="text" id="oracion1" placeholder="Escribe la oración">
+      <button onclick="oracion1()">Responder</button>
+      <p id="mensajeOracion1" class="mensaje"></p>
+    </div>
+
+    <div class="tarjeta">
+      <h2>📝 Completa</h2>
+      <h1>El perro _____ .</h1>
+      <input type="text" id="oracion2" placeholder="Completa la oración">
+      <button onclick="oracion2()">Responder</button>
+      <p id="mensajeOracion2" class="mensaje"></p>
+    </div>
+  </section>
+
+  <section class="tarjetas">
+    <div class="tarjeta">
+      <h2>📦 Sustantivo</h2>
+      <p>¿Cuál es un sustantivo?</p>
+      <button onclick="sustantivo('Mesa')">Mesa</button>
+      <button onclick="sustantivo('Corre')">Corre</button>
+      <button onclick="sustantivo('Bonito')">Bonito</button>
+      <p id="mensajeSustantivo" class="mensaje"></p>
+    </div>
+
+    <div class="tarjeta">
+      <h2>🏃 Verbo</h2>
+      <p>¿Cuál es un verbo?</p>
+      <button onclick="verbo('Corre')">Corre</button>
+      <button onclick="verbo('Casa')">Casa</button>
+      <button onclick="verbo('Rojo')">Rojo</button>
+      <p id="mensajeVerbo" class="mensaje"></p>
+    </div>
+  </section>
+
+  <section class="tarjetas">
+    <div class="tarjeta">
+      <h2>🌟 Adjetivo</h2>
+      <p>¿Cuál describe al perro?</p>
+      <button onclick="adjetivo('Grande')">Grande</button>
+      <button onclick="adjetivo('Perro')">Perro</button>
+      <button onclick="adjetivo('Corre')">Corre</button>
+      <p id="mensajeAdjetivo" class="mensaje"></p>
+    </div>
+
+    <div class="tarjeta">
+      <h2>🔠 Sinónimo</h2>
+      <p>Sinónimo de feliz.</p>
+      <button onclick="sinonimo('Contento')">Contento</button>
+      <button onclick="sinonimo('Triste')">Triste</button>
+      <button onclick="sinonimo('Frío')">Frío</button>
+      <p id="mensajeSinonimo" class="mensaje"></p>
+    </div>
+  </section>
+
+  <section class="tarjetas">
+    <div class="tarjeta">
+      <h2>↔ Antónimo</h2>
+      <p>Antónimo de grande.</p>
+      <button onclick="antonimo('Pequeño')">Pequeño</button>
+      <button onclick="antonimo('Gigante')">Gigante</button>
+      <button onclick="antonimo('Alto')">Alto</button>
+      <p id="mensajeAntonimo" class="mensaje"></p>
+    </div>
+  </section>
+
+  <section class="tarjetas">
+    <div class="tarjeta">
+      <h2>🎮 Atrapa la palabra correcta</h2>
+      <p>Selecciona un verbo.</p>
+      <button onclick="juego('Corre')">Corre</button>
+      <button onclick="juego('Mesa')">Mesa</button>
+      <button onclick="juego('Bonito')">Bonito</button>
+      <button onclick="juego('Lápiz')">Lápiz</button>
+      <p id="mensajeJuego" class="mensaje"></p>
+    </div>
+  </section>
+
+  <section class="tarjetas">
+    <div class="tarjeta">
+      <h2>🧠 Memoria</h2>
+      <h1 id="palabraMemoria">MARIPOSA</h1>
+      <button onclick="memoria()">Comenzar</button>
+      <p id="mensajeMemoria" class="mensaje"></p>
+    </div>
+  </section>
+
+  <section class="tarjetas">
+    <div class="tarjeta">
+      <h2>🏆 Logros</h2>
+      <ul class="lista-logros">
+        <li>🔒 Leer un cuento.</li>
+        <li>🔒 Formar una oración.</li>
+        <li>🔒 Resolver 5 ejercicios.</li>
+        <li>🔒 Conseguir 100 monedas.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="tarjetas">
+    <div class="tarjeta">
+      <h2>🛒 Tienda</h2>
+      <button onclick="comprar('🦊', 50)">🦊 50 monedas</button>
+      <button onclick="comprar('🐼', 80)">🐼 80 monedas</button>
+      <button onclick="comprar('🦁', 120)">🦁 120 monedas</button>
+      <p id="mensajeTienda" class="mensaje"></p>
+    </div>
+  </section>
+
+  <section class="tarjetas">
+    <div class="tarjeta">
+      <h2>📜 Certificado</h2>
+      <p>Completa todas las actividades para obtener tu diploma.</p>
+      <button onclick="certificado()">Obtener certificado</button>
+      <p id="mensajeCertificado" class="mensaje"></p>
+    </div>
+  </section>
+
+  <footer>✨ LUMENIX | Comunicación 2° Primaria ✨</footer>
+
+  <script src="comunicacion2.js"></script>
+</body>
+</html>

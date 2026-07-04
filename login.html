@@ -1,0 +1,268 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Iniciar Sesión | LUMENIX</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="login.css">
+
+</head>
+
+<body>
+
+<!-- ========================= -->
+<!-- FONDO ANIMADO -->
+<!-- ========================= -->
+
+<div class="background">
+
+<div class="cloud cloud1">☁️</div>
+
+<div class="cloud cloud2">☁️</div>
+
+<div class="cloud cloud3">☁️</div>
+
+<div class="cloud cloud4">☁️</div>
+
+<div class="star star1">⭐</div>
+
+<div class="star star2">✨</div>
+
+<div class="star star3">🌟</div>
+
+<div class="star star4">⭐</div>
+
+<div class="star star5">✨</div>
+
+</div>
+
+<!-- ========================= -->
+<!-- MASCOTA LUMI -->
+<!-- ========================= -->
+
+<div class="owl">
+
+🦉
+
+<div class="speech" id="frase">
+
+¡Hola! 👋<br>
+
+¡Qué alegría volver a verte!
+
+</div>
+
+</div>
+
+<!-- ========================= -->
+<!-- TARJETA -->
+<!-- ========================= -->
+
+<div class="container">
+
+<div class="card">
+
+<div class="logo">
+
+🌟
+
+</div>
+
+<h1>
+
+LUMENIX
+
+</h1>
+
+<h2>
+
+¡Bienvenido de nuevo!
+
+</h2>
+
+<p>
+
+Inicia sesión para continuar tu aventura de aprendizaje.
+
+</p>
+
+<!-- ========================= -->
+<!-- BARRA DE CARGA -->
+<!-- ========================= -->
+
+<div class="progress">
+
+<div class="progress-bar" id="barra"></div>
+
+</div>
+
+<p class="contador">
+
+<span id="porcentaje">
+
+0%
+
+</span>
+
+Completado
+
+</p>
+
+<!-- ========================= -->
+<!-- FORMULARIO -->
+<!-- ========================= -->
+
+<div class="campo">
+
+<label>
+
+👦 Usuario
+
+</label>
+
+<input
+
+type="text"
+
+id="usuario"
+
+placeholder="Escribe tu nombre">
+
+</div>
+
+<div class="campo">
+
+<label>
+
+🔒 Contraseña
+
+</label>
+
+<div class="password-box">
+
+<input
+
+type="password"
+
+id="clave"
+
+placeholder="********">
+
+<button
+
+type="button"
+
+class="ojo"
+
+onclick="mostrarPassword()">
+
+👁️
+
+</button>
+
+</div>
+
+</div>
+
+<button
+
+id="btnEntrar"
+
+onclick="ingresar()">
+
+🚀 Entrar
+
+</button>
+
+<button
+
+class="btnRegistro"
+
+onclick="window.location.href='registro.html'">
+
+📝 Crear una cuenta
+
+</button>
+
+<p
+
+id="mensaje"
+
+class="mensaje">
+
+</p>
+
+<div class="decoracion">
+
+🌈 ⭐ 🎈 📚 🏆 🚀
+
+</div>
+
+</div>
+
+</div>
+
+<!-- ========================= -->
+<!-- PANTALLA DE CARGA -->
+<!-- ========================= -->
+
+<div
+
+id="pantallaCarga"
+
+class="pantallaCarga">
+
+<div class="loader">
+
+<div class="spinner"></div>
+
+<h2>
+
+🚀 Entrando a LUMENIX...
+
+</h2>
+
+<p>
+
+Preparando tu aventura...
+
+</p>
+
+</div>
+
+</div>
+
+<!-- ========================= -->
+<!-- SONIDOS -->
+<!-- ========================= -->
+
+<audio id="clickSound">
+
+<source src="sonidos/click.mp3" type="audio/mpeg">
+
+</audio>
+
+<audio id="successSound">
+
+<source src="sonidos/success.mp3" type="audio/mpeg">
+
+</audio>
+
+<canvas id="confetti"></canvas>
+
+<script src="login.js"></script>
+
+</body>
+
+</html>

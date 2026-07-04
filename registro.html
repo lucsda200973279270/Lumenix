@@ -1,0 +1,332 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Registro | LUMENIX</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="registro.css">
+
+</head>
+
+<body>
+
+<!-- ===================== -->
+<!-- FONDO ANIMADO -->
+<!-- ===================== -->
+
+<div class="background">
+
+<div class="cloud cloud1">☁️</div>
+
+<div class="cloud cloud2">☁️</div>
+
+<div class="cloud cloud3">☁️</div>
+
+<div class="cloud cloud4">☁️</div>
+
+<div class="star star1">⭐</div>
+
+<div class="star star2">✨</div>
+
+<div class="star star3">⭐</div>
+
+<div class="star star4">✨</div>
+
+<div class="star star5">⭐</div>
+
+</div>
+
+<!-- ===================== -->
+<!-- MASCOTA -->
+<!-- ===================== -->
+
+<div class="owl">
+
+🦉
+
+<div class="speech">
+
+¡Hola! 👋<br>
+
+Soy Lumi.<br>
+
+¡Vamos a crear tu cuenta!
+
+</div>
+
+</div>
+
+<!-- ===================== -->
+<!-- TARJETA -->
+<!-- ===================== -->
+
+<div class="container">
+
+<div class="card">
+
+<div class="logo">
+
+🌟
+
+</div>
+
+<h1>
+
+LUMENIX
+
+</h1>
+
+<h2>
+
+¡Únete a la aventura!
+
+</h2>
+
+<p>
+
+Aprender nunca fue tan divertido.
+
+</p>
+
+<!-- ===================== -->
+<!-- BARRA -->
+<!-- ===================== -->
+
+<div class="progress">
+
+<div class="progress-bar" id="barra"></div>
+
+</div>
+
+<p class="contador">
+
+<span id="porcentaje">
+
+0%
+
+</span>
+
+Completado
+
+</p>
+
+<!-- ===================== -->
+<!-- FORMULARIO -->
+<!-- ===================== -->
+
+<div class="campo">
+
+<label>
+
+👦 Nombre completo
+
+</label>
+
+<input
+
+type="text"
+
+id="nombre"
+
+placeholder="Escribe tu nombre">
+
+</div>
+
+<div class="campo">
+
+<label>
+
+🎂 Edad
+
+</label>
+
+<input
+
+type="number"
+
+id="edad"
+
+placeholder="¿Cuántos años tienes?">
+
+</div>
+
+<div class="campo">
+
+<label>
+
+🎒 Grado
+
+</label>
+
+<select id="grado">
+
+<option value="">
+
+Selecciona
+
+</option>
+
+<option>
+
+1° Primaria
+
+</option>
+
+<option>
+
+2° Primaria
+
+</option>
+
+<option>
+
+3° Primaria
+
+</option>
+
+<option>
+
+4° Primaria
+
+</option>
+
+<option>
+
+5° Primaria
+
+</option>
+
+<option>
+
+6° Primaria
+
+</option>
+
+</select>
+
+</div>
+
+<div class="campo">
+
+<label>
+
+🔒 Contraseña
+
+</label>
+
+<input
+
+type="password"
+
+id="password"
+
+placeholder="********">
+
+</div>
+
+<div class="campo">
+
+<label>
+
+🔐 Confirmar contraseña
+
+</label>
+
+<input
+
+type="password"
+
+id="confirmar"
+
+placeholder="********">
+
+</div>
+
+<button
+
+id="btnRegistro"
+
+onclick="registrar()">
+
+🚀 Crear mi cuenta
+
+</button>
+
+<button
+
+class="btnLogin"
+
+onclick="window.location.href='login.html'">
+
+🔑 Ya tengo una cuenta
+
+</button>
+
+<p
+
+id="mensaje"
+
+class="mensaje">
+
+</p>
+
+<div class="decoracion">
+
+🌈 ⭐ 🎈 🧩 📚 🎨 🚀
+
+</div>
+
+</div>
+
+</div>
+
+<!-- ===================== -->
+<!-- AUDIO -->
+<!-- ===================== -->
+
+<audio
+
+id="clickSound">
+
+<source
+
+src="sonidos/click.mp3"
+
+type="audio/mpeg">
+
+</audio>
+
+<audio
+
+id="successSound">
+
+<source
+
+src="sonidos/success.mp3"
+
+type="audio/mpeg">
+
+</audio>
+
+<canvas
+
+id="confetti">
+
+</canvas>
+
+<script src="registro.js"></script>
+
+</body>
+
+</html>

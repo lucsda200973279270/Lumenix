@@ -1,0 +1,2929 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>LUMENIX | Ciencia y Ambiente 6° Primaria</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Fredoka',sans-serif;
+}
+
+body{
+
+background:linear-gradient(135deg,#1565C0,#26C6DA,#A5D6A7);
+
+overflow-x:hidden;
+
+}
+
+/*================ HEADER ================*/
+
+header{
+
+background:white;
+
+padding:18px;
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+box-shadow:0 8px 20px rgba(0,0,0,.15);
+
+position:sticky;
+
+top:0;
+
+z-index:1000;
+
+}
+
+.logo{
+
+font-size:34px;
+
+font-weight:bold;
+
+color:#0D47A1;
+
+}
+
+nav a{
+
+text-decoration:none;
+
+margin:15px;
+
+font-size:18px;
+
+font-weight:bold;
+
+color:#1565C0;
+
+transition:.3s;
+
+}
+
+nav a:hover{
+
+color:#FF9800;
+
+}
+
+/*================ HERO ================*/
+
+.hero{
+
+text-align:center;
+
+padding:55px;
+
+}
+
+.personaje{
+
+font-size:150px;
+
+animation:flotar 2s infinite;
+
+}
+
+@keyframes flotar{
+
+0%{transform:translateY(0);}
+
+50%{transform:translateY(-18px);}
+
+100%{transform:translateY(0);}
+
+}
+
+.dialogo{
+
+background:white;
+
+display:inline-block;
+
+padding:30px;
+
+border-radius:25px;
+
+margin-top:20px;
+
+max-width:820px;
+
+box-shadow:0 10px 20px rgba(0,0,0,.18);
+
+}
+
+.dialogo h2{
+
+color:#1565C0;
+
+margin-bottom:15px;
+
+}
+
+.dialogo p{
+
+font-size:20px;
+
+line-height:1.8;
+
+}
+
+.barra{
+
+width:82%;
+
+height:28px;
+
+background:#ddd;
+
+margin:auto;
+
+margin-top:25px;
+
+border-radius:30px;
+
+overflow:hidden;
+
+}
+
+.progreso{
+
+width:0%;
+
+height:100%;
+
+background:#2E7D32;
+
+transition:1s;
+
+}
+
+.estado{
+
+display:flex;
+
+justify-content:center;
+
+gap:45px;
+
+margin-top:25px;
+
+font-size:24px;
+
+font-weight:bold;
+
+}
+
+.tarjetas{
+
+display:flex;
+
+justify-content:center;
+
+flex-wrap:wrap;
+
+gap:30px;
+
+padding:40px;
+
+}
+
+.tarjeta{
+
+width:300px;
+
+background:white;
+
+padding:25px;
+
+border-radius:25px;
+
+text-align:center;
+
+box-shadow:0 10px 20px rgba(0,0,0,.18);
+
+transition:.3s;
+
+}
+
+.tarjeta:hover{
+
+transform:translateY(-10px);
+
+}
+
+.tarjeta h2{
+
+color:#1565C0;
+
+margin-bottom:15px;
+
+}
+
+.tarjeta p{
+
+line-height:1.7;
+
+}
+
+button{
+
+padding:14px 24px;
+
+border:none;
+
+border-radius:15px;
+
+background:#FB8C00;
+
+color:white;
+
+font-size:18px;
+
+cursor:pointer;
+
+margin-top:15px;
+
+transition:.3s;
+
+}
+
+button:hover{
+
+background:#EF6C00;
+
+transform:scale(1.05);
+
+}
+
+footer{
+
+background:#0D47A1;
+
+color:white;
+
+padding:25px;
+
+text-align:center;
+
+margin-top:50px;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">
+
+🔬 LUMENIX
+
+</div>
+
+<nav>
+
+<a href="index.html">Inicio</a>
+
+<a href="ciencia.html">Grados</a>
+
+<a href="#">Logros</a>
+
+<a href="#">Tienda</a>
+
+</nav>
+
+</header>
+
+<section class="hero">
+
+<div class="personaje">
+
+🧑‍🔬
+
+</div>
+
+<div class="dialogo">
+
+<h2>
+
+🔬 Ciencia y Ambiente – 6.º de Primaria
+
+</h2>
+
+<p>
+
+Bienvenido al último nivel de primaria. Aquí estudiarás genética, biodiversidad, sistemas del cuerpo humano, materia, energía, Tierra, Universo y medio ambiente mediante actividades, juegos y experimentos para prepararte para 1.º de Secundaria.
+
+</p>
+
+</div>
+
+<div class="barra">
+
+<div class="progreso" id="barra"></div>
+
+</div>
+
+<div class="estado">
+
+<div>
+
+❤️❤️❤️
+
+</div>
+
+<div>
+
+🪙 <span id="monedas">0</span>
+
+</div>
+
+<div>
+
+⭐ Nivel 6
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================================= -->
+<!-- MENÚ DE UNIDADES -->
+<!-- ================================= -->
+
+<section class="tarjetas">
+
+<div class="tarjeta">
+
+<h2>🧬 Genética y Célula</h2>
+
+<p>
+
+Aprende sobre el ADN, cromosomas y organelos celulares.
+
+</p>
+
+<button onclick="mostrarLeccion()">
+
+Comenzar
+
+</button>
+
+</div>
+
+<div class="tarjeta">
+
+<h2>🌱 Biodiversidad</h2>
+
+<p>
+
+Explora la clasificación de los seres vivos y los ecosistemas del Perú.
+
+</p>
+
+<button>
+
+Explorar
+
+</button>
+
+</div>
+
+<div class="tarjeta">
+
+<h2>🫀 Cuerpo Humano</h2>
+
+<p>
+
+Conoce el funcionamiento de los sistemas del organismo.
+
+</p>
+
+<button>
+
+Aprender
+
+</button>
+
+</div>
+
+<div class="tarjeta">
+
+<h2>🌍 Tierra y Universo</h2>
+
+<p>
+
+Descubre los fenómenos naturales, el Sistema Solar y el cambio climático.
+
+</p>
+
+<button>
+
+Iniciar
+
+</button>
+
+</div>
+
+</section>
+
+<script>
+
+let progreso=0;
+
+let monedas=0;
+
+function actualizar(){
+
+document.getElementById("barra").style.width=progreso+"%";
+
+document.getElementById("monedas").innerHTML=monedas;
+
+}
+
+function ganar(){
+
+progreso+=4;
+
+monedas+=15;
+
+if(progreso>100){
+
+progreso=100;
+
+}
+
+actualizar();
+
+}
+
+function mostrarLeccion(){
+
+alert("🚀 ¡Bienvenido a Ciencia y Ambiente de 6.º de Primaria!");
+
+}
+
+actualizar();
+
+</script> <!-- ================================= -->
+<!-- LECCIÓN 1 -->
+<!-- ================================= -->
+
+<section class="tarjetas">
+
+<div class="tarjeta">
+
+<h2>📚 Lección 1</h2>
+
+<p>
+
+En esta unidad conocerás la célula, los organelos, el ADN y los cromosomas, bases fundamentales de la genética.
+
+</p>
+
+<button onclick="mostrarLeccion()">
+
+Comenzar
+
+</button>
+
+</div>
+
+<div class="tarjeta">
+
+<h2>🎥 Video Educativo</h2>
+
+<p>
+
+Observa el siguiente video antes de responder las actividades.
+
+</p>
+
+<iframe
+width="220"
+height="130"
+src="https://www.youtube.com/embed/YD6pYJxYH6A"
+allowfullscreen>
+</iframe>
+
+</div>
+
+</section>
+
+<!-- ================================= -->
+<!-- CÉLULA -->
+<!-- ================================= -->
+
+<section class="tarjetas">
+
+<div class="tarjeta">
+
+<h2>🧫 La célula</h2>
+
+<p>
+
+La célula es la unidad estructural y funcional de todos los seres vivos.
+
+</p>
+
+<h1>
+
+🧫
+
+</h1>
+
+</div>
+
+<div class="tarjeta">
+
+<h2>❓ Pregunta</h2>
+
+<p>
+
+¿Qué estudia la citología?
+
+</p>
+
+<button onclick="citologia6(1)">
+Las células
+</button>
+
+<br><br>
+
+<button onclick="citologia6(2)">
+Los planetas
+</button>
+
+<br><br>
+
+<button onclick="citologia6(3)">
+Los minerales
+</button>
+
+<p id="mensajeCitologia6"></p>
+
+</div>
+
+</section>
+
+<!-- ================================= -->
+<!-- PROCARIOTA Y EUCARIOTA -->
+<!-- ================================= -->
+
+<section class="tarjetas">
+
+<div class="tarjeta">
+
+<h2>🦠 Célula procariota</h2>
+
+<p>
+
+No posee núcleo definido y es característica de las bacterias.
+
+</p>
+
+<h1>
+
+🦠
+
+</h1>
+
+</div>
+
+<div class="tarjeta">
+
+<h2>🧬 Célula eucariota</h2>
+
+<p>
+
+Tiene núcleo definido y forma parte de animales, plantas, hongos y protistas.
+
+</p>
+
+<h1>
+
+🧫
+
+</h1>
+
+</div>
+
+</section>
+
+<section class="tarjetas">
+
+<div class="tarjeta">
+
+<h2>🎯 Actividad</h2>
+
+<p>
+
+¿Qué tipo de célula tienen los seres humanos?
+
+</p>
+
+<button onclick="eucariota6(1)">
+Eucariota
+</button>
+
+<br><br>
+
+<button onclick="eucariota6(2)">
+Procariota
+</button>
+
+<br><br>
+
+<button onclick="eucariota6(3)">
+Ninguna
+</button>
+
+<p id="mensajeEucariota6"></p>
+
+</div>
+
+</section>
+
+<!-- ================================= -->
+<!-- ORGANELOS -->
+<!-- ================================= -->
+
+<section class="tarjetas">
+
+<div class="tarjeta">
+
+<h2>🔬 Organelos</h2>
+
+<p>
+
+Los organelos realizan funciones específicas dentro de la célula.
+
+</p>
+
+<h1>
+
+🧫 🔵 🟢 🟡
+
+</h1>
+
+</div>
+
+<div class="tarjeta">
+
+<h2>❓ Pregunta</h2>
+
+<p>
+
+¿Cuál es el organelo que controla las actividades celulares?
+
+</p>
+
+<button onclick="organelo6(1)">
+Núcleo
+</button>
+
+<br><br>
+
+<button onclick="organelo6(2)">
+Membrana
+</button>
+
+<br><br>
+
+<button onclick="organelo6(3)">
+Citoplasma
+</button>
+
+<p id="mensajeOrganelo6"></p>
+
+</div>
+
+</section>
+
+<!-- ================================= -->
+<!-- ADN -->
+<!-- ================================= -->
+
+<section class="tarjetas">
+
+<div class="tarjeta">
+
+<h2>🧬 ADN</h2>
+
+<p>
+
+El ADN contiene la información genética que determina las características de los seres vivos.
+
+</p>
+
+<h1>
+
+🧬
+
+</h1>
+
+</div>
+
+<div class="tarjeta">
+
+<h2>❓ Pregunta</h2>
+
+<p>
+
+¿Dónde se encuentra principalmente el ADN?
+
+</p>
+
+<button onclick="adn6(1)">
+En el núcleo celular
+</button>
+
+<br><br>
+
+<button onclick="adn6(2)">
+En los huesos
+</button>
+
+<br><br>
+
+<button onclick="adn6(3)">
+En la piel únicamente
+</button>
+
+<p id="mensajeADN6"></p>
+
+</div>
+
+</section>
+
+<!-- ================================= -->
+<!-- CROMOSOMAS -->
+<!-- ================================= -->
+
+<section class="tarjetas">
+
+<div class="tarjeta">
+
+<h2>🧬 Cromosomas</h2>
+
+<p>
+
+Los cromosomas contienen el ADN y transmiten la información hereditaria.
+
+</p>
+
+<h1>
+
+❌❌
+
+</h1>
+
+</div>
+
+<div class="tarjeta">
+
+<h2>🎯 Pregunta</h2>
+
+<p>
+
+¿Cuántos cromosomas tiene normalmente una célula humana?
+
+</p>
+
+<button onclick="cromosomas6(1)">
+46
+</button>
+
+<br><br>
+
+<button onclick="cromosomas6(2)">
+12
+</button>
+
+<br><br>
+
+<button onclick="cromosomas6(3)">
+100
+</button>
+
+<p id="mensajeCromosomas6"></p>
+
+</div>
+
+</section>
+
+<!-- ================================= -->
+<!-- MICROSCOPIO -->
+<!-- ================================= -->
+
+<section class="tarjetas">
+
+<div class="tarjeta">
+
+<h2>🔬 Microscopio</h2>
+
+<p>
+
+El microscopio permite observar estructuras muy pequeñas que no se ven a simple vista.
+
+</p>
+
+<h1>
+
+🔬
+
+</h1>
+
+</div>
+
+<div class="tarjeta">
+
+<h2>🧪 Desafío</h2>
+
+<p>
+
+¿Qué instrumento permite observar las células?
+
+</p>
+
+<button onclick="microscopio6(1)">
+Microscopio
+</button>
+
+<br><br>
+
+<button onclick="microscopio6(2)">
+Telescopio
+</button>
+
+<br><br>
+
+<button onclick="microscopio6(3)">
+Brújula
+</button>
+
+<p id="mensajeMicroscopio6"></p>
+
+</div>
+
+</section>
+
+<script>
+
+function citologia6(opcion){
+
+if(opcion==1){
+
+mensajeCitologia6.innerHTML="✅ ¡Correcto!";
+
+ganar();
+
+}else{
+
+mensajeCitologia6.innerHTML="❌ Respuesta incorrecta.";
+
+}
+
+}
+
+function eucariota6(opcion){
+
+if(opcion==1){
+
+mensajeEucariota6.innerHTML="🧫 ¡Excelente!";
+
+ganar();
+
+}else{
+
+mensajeEucariota6.innerHTML="❌ Los seres humanos poseen células eucariotas.";
+
+}
+
+}
+
+function organelo6(opcion){
+
+if(opcion==1){
+
+mensajeOrganelo6.innerHTML="🔬 ¡Muy bien!";
+
+ganar();
+
+}else{
+
+mensajeOrganelo6.innerHTML="❌ Sigue intentando.";
+
+}
+
+}
+
+function adn6(opcion){
+
+if(opcion==1){
+
+mensajeADN6.innerHTML="🧬 ¡Correcto!";
+
+ganar();
+
+}else{
+
+mensajeADN6.innerHTML="❌ Revisa nuevamente el tema.";
+
+}
+
+}
+
+function cromosomas6(opcion){
+
+if(opcion==1){
+
+mensajeCromosomas6.innerHTML="🧬 ¡Excelente!";
+
+ganar();
+
+}else{
+
+mensajeCromosomas6.innerHTML="❌ La respuesta correcta es 46.";
+
+}
+
+}
+
+function microscopio6(opcion){
+
+if(opcion==1){
+
+mensajeMicroscopio6.innerHTML="🔬 ¡Correcto!";
+
+ganar();
+
+}else{
+
+mensajeMicroscopio6.innerHTML="❌ Ese instrumento tiene otra función.";
+
+}
+
+}
+
+</script> <!-- ================================= -->
+<!-- BIODIVERSIDAD DEL PERÚ -->
+<!-- ================================= -->
+
+<section class="tarjetas">
+
+<div class="tarjeta">
+
+<h2>🌎 Biodiversidad del Perú</h2>
+
+<p>
+
+El Perú es uno de los países con mayor biodiversidad del mundo. Posee costa, sierra y selva, con miles de especies de plantas y animales.
+
+</p>
+
+<h1>
+
+🦙 🐧 🦜 🌵 🌳
+
+</h1>
+
+</div>
+
+<div class="tarjeta">
+
+<h2>❓ Pregunta</h2>
+
+<p>
+
+¿Por qué el Perú es considerado un país megadiverso?
+
+</p>
+
+<button onclick="biodiversidad6(1)">
+Porque posee gran variedad de especies y ecosistemas.
+</button>
+
+<br><br>
+
+<button onclick="biodiversidad6(2)">
+Porque solo tiene desiertos.
+</button>
+
+<br><br>
+
+<button onclick="biodiversidad6(3)">
+Porque no existen animales silvestres.
+</button>
+
+<p id="mensajeBiodiversidad6"></p>
+
+</div>
+
+</section>
+
+<!-- ================================= -->
+<!-- CLASIFICACIÓN -->
+<!-- ================================= -->
+
+<section class="tarjetas">
+
+<div class="tarjeta">
+
+<h2>📚 Clasificación</h2>
+
+<p>
+
+Los seres vivos se agrupan en diferentes reinos según sus características.
+
+</p>
+
+<h1>
+
+🦠 🍄 🌿 🐯
+
+</h1>
+
+</div>
+
+<div class="tarjeta">
+
+<h2>🎯 Actividad</h2>
+
+<p>
+
+¿A qué reino pertenece un hongo?
+
+</p>
+
+<button onclick="reino6(1)">
+🍄 Hongos
+</button>
+
+<br><br>
+
+<button onclick="reino6(2)">
+🌿 Plantas
+</button>
+
+<br><br>
+
+<button onclick="reino6(3)">
+🐯 Animales
+</button>
+
+<p id="mensajeReino6"></p>
+
+</div>
+
+</section>
+
+<!-- ================================= -->
+<!-- VERTEBRADOS -->
+<!-- ================================= -->
+
+<section class="tarjetas">
+
+<div class="tarjeta">
+
+<h2>🦴 Vertebrados</h2>
+
+<p>
+
+Los vertebrados poseen columna vertebral.
+
+</p>
+
+<h1>
+
+🐶 🐟 🦅 🐍
+
+</h1>
+
+</div>
+
+<div class="tarjeta">
+
+<h2>🪱 Invertebrados</h2>
+
+<p>
+
+Los invertebrados no tienen columna vertebral.
+
+</p>
+
+<h1>
+
+🦋 🐜 🦑 🕷️
+
+</h1>
+
+</div>
+
+</section>
+
+<section class="tarjetas">
+
+<div class="tarjeta">
+
+<h2>❓ Pregunta</h2>
+
+<p>
+
+¿Cuál de estos animales es un invertebrado?
+
+</p>
+
+<button onclick="vertebrado6(1)">
+🦋 Mariposa
+</button>
+
+<br><br>
+
+<button onclick="vertebrado6(2)">
+🐶 Perro
+</button>
+
+<br><br>
+
+<button onclick="vertebrado6(3)">
+🦅 Águila
+</button>
+
+<p id="mensajeVertebrado6"></p>
+
+</div>
+
+</section>
+
+<!-- ================================= -->
+<!-- ADAPTACIONES -->
+<!-- ================================= -->
+
+<section class="tarjetas">
+
+<div class="tarjeta">
+
+<h2>🌿 Adaptaciones</h2>
+
+<p>
+
+Las adaptaciones ayudan a los seres vivos a sobrevivir en su ambiente.
+
+</p>
+
+<h1>
+
+🐫 🌵 🐧
+
+</h1>
+
+</div>
+
+<div class="tarjeta">
+
+<h2>❓ Pregunta</h2>
+
+<p>
+
+¿Por qué el camello puede vivir en el desierto?
+
+</p>
+
+<button onclick="adaptacion6(1)">
+Porque almacena grasa en sus jorobas.
+</button>
+
+<br><br>
+
+<button onclick="adaptacion6(2)">
+Porque vive bajo el agua.
+</button>
+
+<br><br>
+
+<button onclick="adaptacion6(3)">
+Porque no necesita alimentarse.
+</button>
+
+<p id="mensajeAdaptacion6"></p>
+
+</div>
+
+</section>
+
+<!-- ================================= -->
+<!-- ECOSISTEMAS -->
+<!-- ================================= -->
+
+<section class="tarjetas">
+
+<div class="tarjeta">
+
+<h2>🌳 Ecosistemas</h2>
+
+<p>
+
+Un ecosistema está formado por los seres vivos y el medio físico donde interactúan.
+
+</p>
+
+<h1>
+
+🌳 🌊 🏔️
+
+</h1>
+
+</div>
+
+<div class="tarjeta">
+
+<h2>❓ Pregunta</h2>
+
+<p>
+
+¿Cuál es un ecosistema acuático?
+
+</p>
+
+<button onclick="ecosistema6(1)">
+🌊 Océano
+</button>
+
+<br><br>
+
+<button onclick="ecosistema6(2)">
+🏜️ Desierto
+</button>
+
+<br><br>
+
+<button onclick="ecosistema6(3)">
+🏫 Escuela
+</button>
+
+<p id="mensajeEcosistema6"></p>
+
+</div>
+
+</section>
+
+<!-- ================================= -->
+<!-- RELACIONES ECOLÓGICAS -->
+<!-- ================================= -->
+
+<section class="tarjetas">
+
+<div class="tarjeta">
+
+<h2>🐝 Relaciones ecológicas</h2>
+
+<p>
+
+Los seres vivos establecen relaciones como mutualismo, competencia y depredación.
+
+</p>
+
+<h1>
+
+🐝 🌸
+
+</h1>
+
+</div>
+
+<div class="tarjeta">
+
+<h2>🎯 Actividad</h2>
+
+<p>
+
+La relación entre una abeja y una flor es un ejemplo de:
+
+</p>
+
+<button onclick="ecologia6(1)">
+Mutualismo
+</button>
+
+<br><br>
+
+<button onclick="ecologia6(2)">
+Parasitismo
+</button>
+
+<br><br>
+
+<button onclick="ecologia6(3)">
+Competencia
+</button>
+
+<p id="mensajeEcologia6"></p>
+
+</div>
+
+</section>
+
+<!-- ================================= -->
+<!-- MEMORIA -->
+<!-- ================================= -->
+
+<section class="tarjetas">
+
+<div class="tarjeta">
+
+<h2>🧠 Memoria Científica</h2>
+
+<h1 id="memoriaEco6">
+
+🦙 🐧 🦜 🌵 🌳
+
+</h1>
+
+<button onclick="memoriaEco6()">
+
+Comenzar
+
+</button>
+
+<p id="mensajeMemoriaEco6"></p>
+
+</div>
+
+</section>
+
+<script>
+
+function biodiversidad6(opcion){
+
+if(opcion==1){
+
+mensajeBiodiversidad6.innerHTML="🌎 ¡Excelente!";
+
+ganar();
+
+}else{
+
+mensajeBiodiversidad6.innerHTML="❌ Respuesta incorrecta.";
+
+}
+
+}
+
+function reino6(opcion){
+
+if(opcion==1){
+
+mensajeReino6.innerHTML="🍄 ¡Correcto!";
+
+ganar();
+
+}else{
+
+mensajeReino6.innerHTML="❌ Sigue intentando.";
+
+}
+
+}
+
+function vertebrado6(opcion){
+
+if(opcion==1){
+
+mensajeVertebrado6.innerHTML="🦋 ¡Muy bien!";
+
+ganar();
+
+}else{
+
+mensajeVertebrado6.innerHTML="❌ Ese animal sí tiene columna vertebral.";
+
+}
+
+}
+
+function adaptacion6(opcion){
+
+if(opcion==1){
+
+mensajeAdaptacion6.innerHTML="🐫 ¡Excelente!";
+
+ganar();
+
+}else{
+
+mensajeAdaptacion6.innerHTML="❌ Revisa las adaptaciones del camello.";
+
+}
+
+}
+
+function ecosistema6(opcion){
+
+if(opcion==1){
+
+mensajeEcosistema6.innerHTML="🌊 ¡Correcto!";
+
+ganar();
+
+}else{
+
+mensajeEcosistema6.innerHTML="❌ Esa opción no corresponde.";
+
+}
+
+}
+
+function ecologia6(opcion){
+
+if(opcion==1){
+
+mensajeEcologia6.innerHTML="🐝 ¡Muy bien!";
+
+ganar();
+
+}else{
+
+mensajeEcologia6.innerHTML="❌ La abeja y la flor se benefician mutuamente.";
+
+}
+
+}
+
+function memoriaEco6(){
+
+document.getElementById("memoriaEco6").innerHTML="❓ ❓ ❓ ❓ ❓";
+
+mensajeMemoriaEco6.innerHTML="🤔 ¿Recuerdas las especies observadas?";
+
+ganar();
+
+}
+
+</script> <!-- ================================= -->
+<!-- CUERPO HUMANO -->
+<!-- ================================= -->
+
+<section class="tarjetas">
+
+<div class="tarjeta">
+
+<h2>🫀 El cuerpo humano</h2>
+
+<p>
+
+El cuerpo humano está formado por sistemas que trabajan juntos para mantenernos con vida.
+
+</p>
+
+<h1>
+
+🧠 ❤️ 🫁 🦴
+
+</h1>
+
+</div>
+
+<div class="tarjeta">
+
+<h2>❓ Pregunta</h2>
+
+<p>
+
+¿Qué sistema transporta oxígeno y nutrientes por todo el cuerpo?
+
+</p>
+
+<button onclick="circulatorio6(1)">
+Sistema circulatorio
+</button>
+
+<br><br>
+
+<button onclick="circulatorio6(2)">
+Sistema digestivo
+</button>
+
+<br><br>
+
+<button onclick="circulatorio6(3)">
+Sistema óseo
+</button>
+
+<p id="mensajeCirculatorio6"></p>
+
+</div>
+
+</section>
+
+<!-- ================================= -->
+<!-- SISTEMA DIGESTIVO -->
+<!-- ================================= -->
+
+<section class="tarjetas">
+
+<div class="tarjeta">
+
+<h2>🍎 Sistema digestivo</h2>
+
+<p>
+
+Transforma los alimentos en nutrientes que el organismo utiliza para obtener energía.
+
+</p>
+
+<h1>
+
+👄 ➜ 🥣 ➜ 🩸
+
+</h1>
+
+</div>
+
+<div class="tarjeta">
+
+<h2>🎯 Actividad</h2>
+
+<p>
+
+¿En qué órgano comienza la digestión?
+
+</p>
+
+<button onclick="digestivo6(1)">
+👄 Boca
+</button>
+
+<br><br>
+
+<button onclick="digestivo6(2)">
+🫀 Corazón
+</button>
+
+<br><br>
+
+<button onclick="digestivo6(3)">
+🧠 Cerebro
+</button>
+
+<p id="mensajeDigestivo6"></p>
+
+</div>
+
+</section>
+
+<!-- ================================= -->
+<!-- SISTEMA RESPIRATORIO -->
+<!-- ================================= -->
+
+<section class="tarjetas">
+
+<div class="tarjeta">
+
+<h2>🫁 Sistema respiratorio</h2>
+
+<p>
+
+Permite el intercambio de oxígeno y dióxido de carbono mediante la respiración.
+
+</p>
+
+<h1>
+
+🌬️ 🫁
+
+</h1>
+
+</div>
+
+<div class="tarjeta">
+
+<h2>❓ Pregunta</h2>
+
+<p>
+
+¿Qué órganos realizan principalmente el intercambio de gases?
+
+</p>
+
+<button onclick="respiratorio6(1)">
+Pulmones
+</button>
+
+<br><br>
+
+<button onclick="respiratorio6(2)">
+Riñones
+</button>
+
+<br><br>
+
+<button onclick="respiratorio6(3)">
+Hígado
+</button>
+
+<p id="mensajeRespiratorio6"></p>
+
+</div>
+
+</section>
+
+<!-- ================================= -->
+<!-- SISTEMA CIRCULATORIO -->
+<!-- ================================= -->
+
+<section class="tarjetas">
+
+<div class="tarjeta">
+
+<h2>❤️ Sistema circulatorio</h2>
+
+<p>
+
+Está formado por el corazón, la sangre y los vasos sanguíneos.
+
+</p>
+
+<h1>
+
+❤️ 🩸
+
+</h1>
+
+</div>
+
+<div class="tarjeta">
+
+<h2>❓ Pregunta</h2>
+
+<p>
+
+¿Cuál es el órgano principal del sistema circulatorio?
+
+</p>
+
+<button onclick="corazon6(1)">
+❤️ Corazón
+</button>
+
+<br><br>
+
+<button onclick="corazon6(2)">
+🧠 Cerebro
+</button>
+
+<br><br>
+
+<button onclick="corazon6(3)">
+🫁 Pulmón
+</button>
+
+<p id="mensajeCorazon6"></p>
+
+</div>
+
+</section>
+
+<!-- ================================= -->
+<!-- SISTEMA NERVIOSO -->
+<!-- ================================= -->
+
+<section class="tarjetas">
+
+<div class="tarjeta">
+
+<h2>🧠 Sistema nervioso</h2>
+
+<p>
+
+Coordina todas las funciones del cuerpo mediante impulsos nerviosos.
+
+</p>
+
+<h1>
+
+🧠 ⚡
+
+</h1>
+
+</div>
+
+<div class="tarjeta">
+
+<h2>❓ Pregunta</h2>
+
+<p>
+
+¿Cuál es el órgano principal del sistema nervioso?
+
+</p>
+
+<button onclick="nervioso6(1)">
+🧠 Cerebro
+</button>
+
+<br><br>
+
+<button onclick="nervioso6(2)">
+🫀 Corazón
+</button>
+
+<br><br>
+
+<button onclick="nervioso6(3)">
+🦴 Hueso
+</button>
+
+<p id="mensajeNervioso6"></p>
+
+</div>
+
+</section>
+
+<!-- ================================= -->
+<!-- SISTEMA ENDOCRINO -->
+<!-- ================================= -->
+
+<section class="tarjetas">
+
+<div class="tarjeta">
+
+<h2>🧪 Sistema endocrino</h2>
+
+<p>
+
+Produce hormonas que regulan el crecimiento, el metabolismo y otras funciones del cuerpo.
+
+</p>
+
+<h1>
+
+🧪
+
+</h1>
+
+</div>
+
+<div class="tarjeta">
+
+<h2>🎯 Pregunta</h2>
+
+<p>
+
+¿Qué producen las glándulas endocrinas?
+
+</p>
+
+<button onclick="endocrino6(1)">
+Hormonas
+</button>
+
+<br><br>
+
+<button onclick="endocrino6(2)">
+Huesos
+</button>
+
+<br><br>
+
+<button onclick="endocrino6(3)">
+Músculos
+</button>
+
+<p id="mensajeEndocrino6"></p>
+
+</div>
+
+</section>
+
+<!-- ================================= -->
+<!-- SISTEMA EXCRETOR -->
+<!-- ================================= -->
+
+<section class="tarjetas">
+
+<div class="tarjeta">
+
+<h2>💧 Sistema excretor</h2>
+
+<p>
+
+Elimina los desechos del organismo y ayuda a mantener el equilibrio de agua y sales.
+
+</p>
+
+<h1>
+
+💧 🫘
+
+</h1>
+
+</div>
+
+<div class="tarjeta">
+
+<h2>❓ Pregunta</h2>
+
+<p>
+
+¿Qué órganos filtran la sangre y producen la orina?
+
+</p>
+
+<button onclick="rinones6(1)">
+Riñones
+</button>
+
+<br><br>
+
+<button onclick="rinones6(2)">
+Pulmones
+</button>
+
+<br><br>
+
+<button onclick="rinones6(3)">
+Estómago
+</button>
+
+<p id="mensajeRinones6"></p>
+
+</div>
+
+</section>
+
+<script>
+
+function circulatorio6(opcion){
+
+if(opcion==1){
+
+mensajeCirculatorio6.innerHTML="❤️ ¡Correcto!";
+
+ganar();
+
+}else{
+
+mensajeCirculatorio6.innerHTML="❌ Intenta nuevamente.";
+
+}
+
+}
+
+function digestivo6(opcion){
+
+if(opcion==1){
+
+mensajeDigestivo6.innerHTML="🍎 ¡Muy bien!";
+
+ganar();
+
+}else{
+
+mensajeDigestivo6.innerHTML="❌ Respuesta incorrecta.";
+
+}
+
+}
+
+function respiratorio6(opcion){
+
+if(opcion==1){
+
+mensajeRespiratorio6.innerHTML="🫁 ¡Excelente!";
+
+ganar();
+
+}else{
+
+mensajeRespiratorio6.innerHTML="❌ Sigue intentando.";
+
+}
+
+}
+
+function corazon6(opcion){
+
+if(opcion==1){
+
+mensajeCorazon6.innerHTML="❤️ ¡Correcto!";
+
+ganar();
+
+}else{
+
+mensajeCorazon6.innerHTML="❌ Ese no es el órgano principal.";
+
+}
+
+}
+
+function nervioso6(opcion){
+
+if(opcion==1){
+
+mensajeNervioso6.innerHTML="🧠 ¡Muy bien!";
+
+ganar();
+
+}else{
+
+mensajeNervioso6.innerHTML="❌ Revisa el tema.";
+
+}
+
+}
+
+function endocrino6(opcion){
+
+if(opcion==1){
+
+mensajeEndocrino6.innerHTML="🧪 ¡Excelente!";
+
+ganar();
+
+}else{
+
+mensajeEndocrino6.innerHTML="❌ Las glándulas endocrinas producen hormonas.";
+
+}
+
+}
+
+function rinones6(opcion){
+
+if(opcion==1){
+
+mensajeRinones6.innerHTML="💧 ¡Correcto!";
+
+ganar();
+
+}else{
+
+mensajeRinones6.innerHTML="❌ Esa respuesta no es correcta.";
+
+}
+
+}
+
+</script> <!-- ================================= -->
+<!-- PROPIEDADES DE LA MATERIA -->
+<!-- ================================= -->
+
+<section class="tarjetas">
+
+<div class="tarjeta">
+
+<h2>⚛️ Propiedades de la materia</h2>
+
+<p>
+
+La materia posee masa, volumen, inercia y ocupa un lugar en el espacio.
+
+</p>
+
+<h1>
+
+⚛️ 📦
+
+</h1>
+
+</div>
+
+<div class="tarjeta">
+
+<h2>❓ Pregunta</h2>
+
+<p>
+
+¿Cuál de las siguientes es una propiedad de la materia?
+
+</p>
+
+<button onclick="materia6(1)">
+Masa
+</button>
+
+<br><br>
+
+<button onclick="materia6(2)">
+Suerte
+</button>
+
+<br><br>
+
+<button onclick="materia6(3)">
+Inteligencia
+</button>
+
+<p id="mensajeMateria6"></p>
+
+</div>
+
+</section>
+
+<!-- ================================= -->
+<!-- CAMBIOS DE LA MATERIA -->
+<!-- ================================= -->
+
+<section class="tarjetas">
+
+<div class="tarjeta">
+
+<h2>🧪 Cambios físicos y químicos</h2>
+
+<p>
+
+Los cambios físicos no alteran la composición de la materia, mientras que los químicos forman nuevas sustancias.
+
+</p>
+
+</div>
+
+<div class="tarjeta">
+
+<h2>🎯 Actividad</h2>
+
+<p>
+
+¿Qué ejemplo representa un cambio químico?
+
+</p>
+
+<button onclick="cambios6(1)">
+Quemar papel
+</button>
+
+<br><br>
+
+<button onclick="cambios6(2)">
+Derretir hielo
+</button>
+
+<br><br>
+
+<button onclick="cambios6(3)">
+Romper un vaso
+</button>
+
+<p id="mensajeCambios6"></p>
+
+</div>
+
+</section>
+
+<!-- ================================= -->
+<!-- MEZCLAS -->
+<!-- ================================= -->
+
+<section class="tarjetas">
+
+<div class="tarjeta">
+
+<h2>🥣 Mezclas</h2>
+
+<p>
+
+Las mezclas pueden ser homogéneas o heterogéneas.
+
+</p>
+
+</div>
+
+<div class="tarjeta">
+
+<h2>❓ Pregunta</h2>
+
+<p>
+
+¿Cuál es una mezcla homogénea?
+
+</p>
+
+<button onclick="mezcla6(1)">
+Agua con sal
+</button>
+
+<br><br>
+
+<button onclick="mezcla6(2)">
+Ensalada
+</button>
+
+<br><br>
+
+<button onclick="mezcla6(3)">
+Arena con piedras
+</button>
+
+<p id="mensajeMezcla6"></p>
+
+</div>
+
+</section>
+
+<!-- ================================= -->
+<!-- MÉTODOS DE SEPARACIÓN -->
+<!-- ================================= -->
+
+<section class="tarjetas">
+
+<div class="tarjeta">
+
+<h2>🧫 Métodos de separación</h2>
+
+<p>
+
+Permiten separar los componentes de una mezcla sin modificar sus propiedades.
+
+</p>
+
+</div>
+
+<div class="tarjeta">
+
+<h2>🎯 Pregunta</h2>
+
+<p>
+
+¿Qué método utilizarías para separar arena del agua?
+
+</p>
+
+<button onclick="separacion6(1)">
+Filtración
+</button>
+
+<br><br>
+
+<button onclick="separacion6(2)">
+Evaporación
+</button>
+
+<br><br>
+
+<button onclick="separacion6(3)">
+Imantación
+</button>
+
+<p id="mensajeSeparacion6"></p>
+
+</div>
+
+</section>
+
+<!-- ================================= -->
+<!-- FUERZA Y MOVIMIENTO -->
+<!-- ================================= -->
+
+<section class="tarjetas">
+
+<div class="tarjeta">
+
+<h2>🏃 Fuerza y movimiento</h2>
+
+<p>
+
+Una fuerza puede cambiar el movimiento, la dirección o la forma de un objeto.
+
+</p>
+
+</div>
+
+<div class="tarjeta">
+
+<h2>❓ Pregunta</h2>
+
+<p>
+
+¿Qué ocurre cuando empujas una pelota?
+
+</p>
+
+<button onclick="fuerza6(1)">
+Se mueve.
+</button>
+
+<br><br>
+
+<button onclick="fuerza6(2)">
+Desaparece.
+</button>
+
+<br><br>
+
+<button onclick="fuerza6(3)">
+Se convierte en agua.
+</button>
+
+<p id="mensajeFuerza6"></p>
+
+</div>
+
+</section>
+
+<!-- ================================= -->
+<!-- ENERGÍA -->
+<!-- ================================= -->
+
+<section class="tarjetas">
+
+<div class="tarjeta">
+
+<h2>⚡ Energía</h2>
+
+<p>
+
+La energía puede transformarse, pero no se crea ni se destruye.
+
+</p>
+
+</div>
+
+<div class="tarjeta">
+
+<h2>🎯 Pregunta</h2>
+
+<p>
+
+¿Qué tipo de energía utiliza un foco para producir luz?
+
+</p>
+
+<button onclick="energia6(1)">
+Energía eléctrica
+</button>
+
+<br><br>
+
+<button onclick="energia6(2)">
+Energía nuclear
+</button>
+
+<br><br>
+
+<button onclick="energia6(3)">
+Energía eólica
+</button>
+
+<p id="mensajeEnergia6"></p>
+
+</div>
+
+</section>
+
+<!-- ================================= -->
+<!-- ELECTRICIDAD -->
+<!-- ================================= -->
+
+<section class="tarjetas">
+
+<div class="tarjeta">
+
+<h2>💡 Electricidad</h2>
+
+<p>
+
+La electricidad es el movimiento de cargas eléctricas a través de un conductor.
+
+</p>
+
+</div>
+
+<div class="tarjeta">
+
+<h2>❓ Pregunta</h2>
+
+<p>
+
+¿Cuál de estos materiales es buen conductor de la electricidad?
+
+</p>
+
+<button onclick="electricidad6(1)">
+Cobre
+</button>
+
+<br><br>
+
+<button onclick="electricidad6(2)">
+Madera
+</button>
+
+<br><br>
+
+<button onclick="electricidad6(3)">
+Plástico
+</button>
+
+<p id="mensajeElectricidad6"></p>
+
+</div>
+
+</section>
+
+<!-- ================================= -->
+<!-- MAGNETISMO -->
+<!-- ================================= -->
+
+<section class="tarjetas">
+
+<div class="tarjeta">
+
+<h2>🧲 Magnetismo</h2>
+
+<p>
+
+Los imanes atraen materiales como el hierro, el níquel y el cobalto.
+
+</p>
+
+</div>
+
+<div class="tarjeta">
+
+<h2>🎯 Pregunta</h2>
+
+<p>
+
+¿Cuál de estos objetos será atraído por un imán?
+
+</p>
+
+<button onclick="magnetismo6(1)">
+Clavo de hierro
+</button>
+
+<br><br>
+
+<button onclick="magnetismo6(2)">
+Botella de plástico
+</button>
+
+<br><br>
+
+<button onclick="magnetismo6(3)">
+Cuaderno
+</button>
+
+<p id="mensajeMagnetismo6"></p>
+
+</div>
+
+</section>
+
+<script>
+
+function materia6(opcion){
+if(opcion==1){
+mensajeMateria6.innerHTML="✅ ¡Correcto!";
+ganar();
+}else{
+mensajeMateria6.innerHTML="❌ Intenta nuevamente.";
+}
+}
+
+function cambios6(opcion){
+if(opcion==1){
+mensajeCambios6.innerHTML="🔥 ¡Excelente!";
+ganar();
+}else{
+mensajeCambios6.innerHTML="❌ Ese es un cambio físico.";
+}
+}
+
+function mezcla6(opcion){
+if(opcion==1){
+mensajeMezcla6.innerHTML="🥣 ¡Muy bien!";
+ganar();
+}else{
+mensajeMezcla6.innerHTML="❌ Esa es una mezcla heterogénea.";
+}
+}
+
+function separacion6(opcion){
+if(opcion==1){
+mensajeSeparacion6.innerHTML="🧪 ¡Correcto!";
+ganar();
+}else{
+mensajeSeparacion6.innerHTML="❌ Revisa los métodos de separación.";
+}
+}
+
+function fuerza6(opcion){
+if(opcion==1){
+mensajeFuerza6.innerHTML="🏃 ¡Excelente!";
+ganar();
+}else{
+mensajeFuerza6.innerHTML="❌ Esa respuesta no es correcta.";
+}
+}
+
+function energia6(opcion){
+if(opcion==1){
+mensajeEnergia6.innerHTML="⚡ ¡Muy bien!";
+ganar();
+}else{
+mensajeEnergia6.innerHTML="❌ Inténtalo otra vez.";
+}
+}
+
+function electricidad6(opcion){
+if(opcion==1){
+mensajeElectricidad6.innerHTML="💡 ¡Correcto!";
+ganar();
+}else{
+mensajeElectricidad6.innerHTML="❌ Ese material es aislante.";
+}
+}
+
+function magnetismo6(opcion){
+if(opcion==1){
+mensajeMagnetismo6.innerHTML="🧲 ¡Excelente!";
+ganar();
+}else{
+mensajeMagnetismo6.innerHTML="❌ Ese objeto no es atraído por un imán.";
+}
+}
+
+</script> <!-- ================================= -->
+<!-- LA TIERRA -->
+<!-- ================================= -->
+
+<section class="tarjetas">
+
+<div class="tarjeta">
+
+<h2>🌍 La estructura de la Tierra</h2>
+
+<p>
+
+La Tierra está formada por tres capas principales: corteza, manto y núcleo. Cada una tiene características y funciones diferentes.
+
+</p>
+
+<h1>
+
+🌍
+
+</h1>
+
+</div>
+
+<div class="tarjeta">
+
+<h2>❓ Pregunta</h2>
+
+<p>
+
+¿En qué capa vivimos los seres humanos?
+
+</p>
+
+<button onclick="tierra6(1)">
+Corteza
+</button>
+
+<br><br>
+
+<button onclick="tierra6(2)">
+Núcleo
+</button>
+
+<br><br>
+
+<button onclick="tierra6(3)">
+Manto
+</button>
+
+<p id="mensajeTierra6"></p>
+
+</div>
+
+</section>
+
+<!-- ================================= -->
+<!-- PLACAS TECTÓNICAS -->
+<!-- ================================= -->
+
+<section class="tarjetas">
+
+<div class="tarjeta">
+
+<h2>🧩 Placas tectónicas</h2>
+
+<p>
+
+La corteza terrestre está dividida en placas que se mueven lentamente debido al calor del interior de la Tierra.
+
+</p>
+
+<h1>
+
+🌎 ↔️ 🌎
+
+</h1>
+
+</div>
+
+<div class="tarjeta">
+
+<h2>🎯 Actividad</h2>
+
+<p>
+
+¿Qué puede ocurrir cuando dos placas chocan?
+
+</p>
+
+<button onclick="placas6(1)">
+Terremotos
+</button>
+
+<br><br>
+
+<button onclick="placas6(2)">
+Lluvia
+</button>
+
+<br><br>
+
+<button onclick="placas6(3)">
+Arcoíris
+</button>
+
+<p id="mensajePlacas6"></p>
+
+</div>
+
+</section>
+
+<!-- ================================= -->
+<!-- VOLCANES -->
+<!-- ================================= -->
+
+<section class="tarjetas">
+
+<div class="tarjeta">
+
+<h2>🌋 Volcanes</h2>
+
+<p>
+
+Los volcanes expulsan magma, gases y cenizas desde el interior de la Tierra.
+
+</p>
+
+<h1>
+
+🌋
+
+</h1>
+
+</div>
+
+<div class="tarjeta">
+
+<h2>❓ Pregunta</h2>
+
+<p>
+
+¿Cómo se llama el magma cuando sale al exterior?
+
+</p>
+
+<button onclick="volcan6(1)">
+Lava
+</button>
+
+<br><br>
+
+<button onclick="volcan6(2)">
+Arena
+</button>
+
+<br><br>
+
+<button onclick="volcan6(3)">
+Granito
+</button>
+
+<p id="mensajeVolcan6"></p>
+
+</div>
+
+</section>
+
+<!-- ================================= -->
+<!-- CICLO DEL AGUA -->
+<!-- ================================= -->
+
+<section class="tarjetas">
+
+<div class="tarjeta">
+
+<h2>💧 Ciclo del agua</h2>
+
+<p>
+
+El agua cambia constantemente de estado mediante evaporación, condensación, precipitación e infiltración.
+
+</p>
+
+<h1>
+
+☀️ 💧 ☁️ 🌧️
+
+</h1>
+
+</div>
+
+<div class="tarjeta">
+
+<h2>🎯 Pregunta</h2>
+
+<p>
+
+¿Qué proceso forma las nubes?
+
+</p>
+
+<button onclick="agua6(1)">
+Condensación
+</button>
+
+<br><br>
+
+<button onclick="agua6(2)">
+Evaporación
+</button>
+
+<br><br>
+
+<button onclick="agua6(3)">
+Filtración
+</button>
+
+<p id="mensajeAgua6"></p>
+
+</div>
+
+</section>
+
+<!-- ================================= -->
+<!-- ATMÓSFERA -->
+<!-- ================================= -->
+
+<section class="tarjetas">
+
+<div class="tarjeta">
+
+<h2>☁️ Atmósfera</h2>
+
+<p>
+
+La atmósfera protege la Tierra de la radiación solar y permite la vida.
+
+</p>
+
+<h1>
+
+🌍 ☁️
+
+</h1>
+
+</div>
+
+<div class="tarjeta">
+
+<h2>❓ Pregunta</h2>
+
+<p>
+
+¿Cuál es el gas más abundante en la atmósfera?
+
+</p>
+
+<button onclick="atmosfera6(1)">
+Nitrógeno
+</button>
+
+<br><br>
+
+<button onclick="atmosfera6(2)">
+Oxígeno
+</button>
+
+<br><br>
+
+<button onclick="atmosfera6(3)">
+Dióxido de carbono
+</button>
+
+<p id="mensajeAtmosfera6"></p>
+
+</div>
+
+</section>
+
+<!-- ================================= -->
+<!-- CLIMA -->
+<!-- ================================= -->
+
+<section class="tarjetas">
+
+<div class="tarjeta">
+
+<h2>🌦️ Tiempo y clima</h2>
+
+<p>
+
+El tiempo atmosférico cambia diariamente, mientras que el clima corresponde a las condiciones promedio de muchos años.
+
+</p>
+
+<h1>
+
+☀️ 🌧️ 🌩️
+
+</h1>
+
+</div>
+
+<div class="tarjeta">
+
+<h2>❓ Pregunta</h2>
+
+<p>
+
+¿Qué estudia la climatología?
+
+</p>
+
+<button onclick="clima6(1)">
+El clima
+</button>
+
+<br><br>
+
+<button onclick="clima6(2)">
+Los planetas
+</button>
+
+<br><br>
+
+<button onclick="clima6(3)">
+Las células
+</button>
+
+<p id="mensajeClima6"></p>
+
+</div>
+
+</section>
+
+<!-- ================================= -->
+<!-- SISTEMA SOLAR -->
+<!-- ================================= -->
+
+<section class="tarjetas">
+
+<div class="tarjeta">
+
+<h2>🪐 Sistema Solar</h2>
+
+<p>
+
+Está formado por el Sol, ocho planetas, planetas enanos, asteroides, cometas y satélites.
+
+</p>
+
+<h1>
+
+☀️ 🪐
+
+</h1>
+
+</div>
+
+<div class="tarjeta">
+
+<h2>🎯 Pregunta</h2>
+
+<p>
+
+¿Cuál es el planeta más grande del Sistema Solar?
+
+</p>
+
+<button onclick="solar6(1)">
+Júpiter
+</button>
+
+<br><br>
+
+<button onclick="solar6(2)">
+Marte
+</button>
+
+<br><br>
+
+<button onclick="solar6(3)">
+Venus
+</button>
+
+<p id="mensajeSolar6"></p>
+
+</div>
+
+</section>
+
+<script>
+
+function tierra6(opcion){
+if(opcion==1){
+mensajeTierra6.innerHTML="🌍 ¡Correcto!";
+ganar();
+}else{
+mensajeTierra6.innerHTML="❌ Intenta nuevamente.";
+}
+}
+
+function placas6(opcion){
+if(opcion==1){
+mensajePlacas6.innerHTML="🌎 ¡Excelente!";
+ganar();
+}else{
+mensajePlacas6.innerHTML="❌ Revisa el tema.";
+}
+}
+
+function volcan6(opcion){
+if(opcion==1){
+mensajeVolcan6.innerHTML="🌋 ¡Muy bien!";
+ganar();
+}else{
+mensajeVolcan6.innerHTML="❌ La respuesta correcta es lava.";
+}
+}
+
+function agua6(opcion){
+if(opcion==1){
+mensajeAgua6.innerHTML="💧 ¡Correcto!";
+ganar();
+}else{
+mensajeAgua6.innerHTML="❌ Sigue intentando.";
+}
+}
+
+function atmosfera6(opcion){
+if(opcion==1){
+mensajeAtmosfera6.innerHTML="☁️ ¡Excelente!";
+ganar();
+}else{
+mensajeAtmosfera6.innerHTML="❌ El nitrógeno representa aproximadamente el 78% del aire.";
+}
+}
+
+function clima6(opcion){
+if(opcion==1){
+mensajeClima6.innerHTML="🌦️ ¡Muy bien!";
+ganar();
+}else{
+mensajeClima6.innerHTML="❌ Respuesta incorrecta.";
+}
+}
+
+function solar6(opcion){
+if(opcion==1){
+mensajeSolar6.innerHTML="🪐 ¡Correcto!";
+ganar();
+}else{
+mensajeSolar6.innerHTML="❌ Júpiter es el planeta más grande.";
+}
+}
+
+</script>

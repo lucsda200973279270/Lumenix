@@ -1,0 +1,117 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LUMENIX | Matemática 5° Primaria</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="matematica5.css">
+</head>
+<body>
+  <header>
+    <div class="logo">🧮 LUMENIX</div>
+    <nav>
+      <a href="index.html">Inicio</a>
+      <a href="matematica.html">Grados</a>
+      <a href="#">Tienda</a>
+      <a href="#">Logros</a>
+      <a href="#">Perfil</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="personaje">🦊</div>
+    <div class="dialogo">
+      <h2>¡Bienvenido a Matemática 5° Primaria!</h2>
+      <p>
+        Hoy aprenderás contenidos más avanzados con retos, juegos y actividades
+        interactivas para que estudiar sea divertido y claro.
+      </p>
+    </div>
+
+    <div class="barra">
+      <div class="progreso" id="barra"></div>
+    </div>
+
+    <div class="estado">
+      <div>❤️❤️❤️</div>
+      <div>🪙 <span id="monedas">0</span></div>
+      <div>⭐ Nivel 5</div>
+    </div>
+  </section>
+
+  <section class="tarjetas">
+    <div class="tarjeta">
+      <h2>🔢 Números Grandes</h2>
+      <p>Lee y ordena números hasta millones.</p>
+      <button onclick="mostrarLeccion()">Comenzar</button>
+    </div>
+
+    <div class="tarjeta">
+      <h2>➕ Operaciones</h2>
+      <p>Sumas y restas con números grandes.</p>
+      <button>Practicar</button>
+    </div>
+
+    <div class="tarjeta">
+      <h2>✖ Multiplicación</h2>
+      <p>Multiplicaciones de varias cifras.</p>
+      <button>Practicar</button>
+    </div>
+
+    <div class="tarjeta">
+      <h2>➗ División</h2>
+      <p>Divisiones largas paso a paso.</p>
+      <button>Practicar</button>
+    </div>
+
+    <div class="tarjeta">
+      <h2>🍕 Fracciones</h2>
+      <p>Fracciones equivalentes y operaciones.</p>
+      <button>Aprender</button>
+    </div>
+
+    <div class="tarjeta">
+      <h2>🎮 Juegos</h2>
+      <p>Desafíos para ganar monedas y puntos.</p>
+      <button>Jugar</button>
+    </div>
+  </section>
+
+  <section class="actividad">
+    <div class="actividad-card">
+      <h3>📚 Lección rápida</h3>
+      <p>Resuelve los ejercicios y gana monedas mientras aprendes.</p>
+    </div>
+
+    <div class="actividad-card">
+      <h3>➕ Suma</h3>
+      <p>12 458 + 31 742</p>
+      <input type="number" id="suma1" placeholder="Respuesta">
+      <button onclick="suma1()">Comprobar</button>
+      <p id="mensajeSuma1" class="mensaje"></p>
+    </div>
+
+    <div class="actividad-card">
+      <h3>➖ Resta</h3>
+      <p>90 000 - 24 675</p>
+      <input type="number" id="resta1" placeholder="Respuesta">
+      <button onclick="resta1()">Responder</button>
+      <p id="mensajeResta1" class="mensaje"></p>
+    </div>
+
+    <div class="actividad-card">
+      <h3>🍕 Fracciones</h3>
+      <p>¿Cuál equivale a 1/2?</p>
+      <button onclick="fraccion(1)">2/4</button>
+      <button onclick="fraccion(2)">3/4</button>
+      <button onclick="fraccion(3)">4/5</button>
+      <p id="mensajeFraccion" class="mensaje"></p>
+    </div>
+  </section>
+
+  <footer>✨ LUMENIX | Matemática 5° Primaria ✨</footer>
+
+  <script src="matematica5.js"></script>
+</body>
+</html>

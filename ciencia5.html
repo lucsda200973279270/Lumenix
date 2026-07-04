@@ -1,0 +1,2808 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>LUMENIX | Ciencia y Ambiente 5° Primaria</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Fredoka',sans-serif;
+}
+
+body{
+
+background:linear-gradient(135deg,#66BB6A,#29B6F6,#FFF176);
+
+overflow-x:hidden;
+}
+
+/*================ HEADER ================*/
+
+header{
+
+background:white;
+
+padding:18px;
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+box-shadow:0 8px 20px rgba(0,0,0,.15);
+
+position:sticky;
+
+top:0;
+
+z-index:1000;
+}
+
+.logo{
+
+font-size:34px;
+
+font-weight:bold;
+
+color:#1B5E20;
+}
+
+nav a{
+
+text-decoration:none;
+
+margin:15px;
+
+font-size:18px;
+
+font-weight:bold;
+
+color:#2E7D32;
+
+transition:.3s;
+}
+
+nav a:hover{
+
+color:#FF9800;
+}
+
+/*================ HERO ================*/
+
+.hero{
+
+text-align:center;
+
+padding:50px;
+}
+
+.personaje{
+
+font-size:140px;
+
+animation:flotar 2s infinite;
+}
+
+@keyframes flotar{
+
+0%{transform:translateY(0);}
+
+50%{transform:translateY(-15px);}
+
+100%{transform:translateY(0);}
+}
+
+.dialogo{
+
+background:white;
+
+display:inline-block;
+
+padding:25px;
+
+border-radius:25px;
+
+margin-top:20px;
+
+box-shadow:0 10px 20px rgba(0,0,0,.15);
+
+max-width:760px;
+
+font-size:20px;
+}
+
+.barra{
+
+width:80%;
+
+height:28px;
+
+background:#ddd;
+
+margin:auto;
+
+margin-top:25px;
+
+border-radius:30px;
+
+overflow:hidden;
+}
+
+.progreso{
+
+width:0%;
+
+height:100%;
+
+background:#43A047;
+
+transition:1s;
+}
+
+.estado{
+
+display:flex;
+
+justify-content:center;
+
+gap:45px;
+
+margin-top:25px;
+
+font-size:24px;
+
+font-weight:bold;
+}
+
+/*================ TARJETAS ================*/
+
+.tarjetas{
+
+display:flex;
+
+justify-content:center;
+
+flex-wrap:wrap;
+
+gap:30px;
+
+padding:40px;
+}
+
+.tarjeta{
+
+width:290px;
+
+background:white;
+
+padding:25px;
+
+border-radius:25px;
+
+box-shadow:0 10px 20px rgba(0,0,0,.15);
+
+text-align:center;
+
+transition:.3s;
+}
+
+.tarjeta:hover{
+
+transform:translateY(-10px);
+}
+
+.tarjeta h2{
+
+color:#1B5E20;
+
+margin-bottom:15px;
+}
+
+.tarjeta p{
+
+line-height:1.7;
+}
+
+button{
+
+padding:14px 25px;
+
+border:none;
+
+border-radius:15px;
+
+background:#FB8C00;
+
+color:white;
+
+font-size:18px;
+
+cursor:pointer;
+
+margin-top:15px;
+
+transition:.3s;
+}
+
+button:hover{
+
+background:#EF6C00;
+
+transform:scale(1.05);
+}
+
+footer{
+
+background:#1B5E20;
+
+color:white;
+
+padding:25px;
+
+text-align:center;
+
+margin-top:50px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">
+
+🔬 LUMENIX
+
+</div>
+
+<nav>
+
+<a href="index.html">Inicio</a>
+
+<a href="ciencia.html">Grados</a>
+
+<a href="#">Logros</a>
+
+<a href="#">Tienda</a>
+
+</nav>
+
+</header>
+
+<section class="hero">
+
+<div class="personaje">
+
+👨‍🔬
+
+</div>
+
+<div class="dialogo">
+
+<h2>
+
+🧪 Ciencia y Ambiente – 5.º de Primaria
+
+</h2>
+
+<p>
+
+En este curso aprenderás sobre la célula, los reinos de la naturaleza, los sistemas del cuerpo humano, la materia, la energía, el Sistema Solar y el cuidado del ambiente mediante experimentos, juegos y desafíos.
+
+</p>
+
+</div>
+
+<div class="barra">
+
+<div class="progreso" id="barra"></div>
+
+</div>
+
+<div class="estado">
+
+<div>
+
+❤️❤️❤️
+
+</div>
+
+<div>
+
+🪙 <span id="monedas">0</span>
+
+</div>
+
+<div>
+
+⭐ Nivel 5
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================================= -->
+<!-- MENÚ DE UNIDADES -->
+<!-- ================================= -->
+
+<section class="tarjetas">
+
+<div class="tarjeta">
+
+<h2>🧫 La célula</h2>
+
+<p>
+
+Conoce la unidad básica de todos los seres vivos.
+
+</p>
+
+<button onclick="mostrarLeccion()">
+
+Comenzar
+
+</button>
+
+</div>
+
+<div class="tarjeta">
+
+<h2>🌱 Reinos de la naturaleza</h2>
+
+<p>
+
+Aprende a clasificar los seres vivos en diferentes reinos.
+
+</p>
+
+<button>
+
+Explorar
+
+</button>
+
+</div>
+
+<div class="tarjeta">
+
+<h2>🫀 Cuerpo humano</h2>
+
+<p>
+
+Descubre cómo funcionan los sistemas de nuestro organismo.
+
+</p>
+
+<button>
+
+Aprender
+
+</button>
+
+</div>
+
+<div class="tarjeta">
+
+<h2>🌍 Materia y Universo</h2>
+
+<p>
+
+Estudia la materia, la energía, la Tierra y el Sistema Solar.
+
+</p>
+
+<button>
+
+Iniciar
+
+</button>
+
+</div>
+
+</section>
+
+<script>
+
+let progreso=0;
+
+let monedas=0;
+
+function actualizar(){
+
+document.getElementById("barra").style.width=progreso+"%";
+
+document.getElementById("monedas").innerHTML=monedas;
+
+}
+
+function ganar(){
+
+progreso+=5;
+
+monedas+=10;
+
+if(progreso>100){
+
+progreso=100;
+
+}
+
+actualizar();
+
+}
+
+function mostrarLeccion(){
+
+alert("🔬 ¡Bienvenido a Ciencia y Ambiente de 5.º de Primaria!");
+
+}
+
+actualizar();
+
+</script> <!-- ================================= -->
+<!-- LECCIÓN 1 -->
+<!-- ================================= -->
+
+<section class="tarjetas">
+
+<div class="tarjeta">
+
+<h2>📚 Lección 1</h2>
+
+<p>
+
+En esta lección conocerás la célula, sus partes y por qué es considerada la unidad básica de los seres vivos.
+
+</p>
+
+<button onclick="mostrarLeccion()">
+
+Comenzar
+
+</button>
+
+</div>
+
+<div class="tarjeta">
+
+<h2>🎥 Video Educativo</h2>
+
+<p>
+
+Observa el video antes de realizar las actividades.
+
+</p>
+
+<iframe
+width="220"
+height="130"
+src="https://www.youtube.com/embed/YD6pYJxYH6A"
+allowfullscreen>
+</iframe>
+
+</div>
+
+</section>
+
+<!-- ================================= -->
+<!-- LA CÉLULA -->
+<!-- ================================= -->
+
+<section class="tarjetas">
+
+<div class="tarjeta">
+
+<h2>🧫 La célula</h2>
+
+<p>
+
+La célula es la unidad básica estructural y funcional de todos los seres vivos.
+
+</p>
+
+<h1>
+
+🧫
+
+</h1>
+
+</div>
+
+<div class="tarjeta">
+
+<h2>❓ Pregunta</h2>
+
+<p>
+
+¿Qué es la célula?
+
+</p>
+
+<button onclick="celula5(1)">
+
+La unidad básica de los seres vivos.
+
+</button>
+
+<br><br>
+
+<button onclick="celula5(2)">
+
+Un planeta.
+
+</button>
+
+<br><br>
+
+<button onclick="celula5(3)">
+
+Una estrella.
+
+</button>
+
+<p id="mensajeCelula5"></p>
+
+</div>
+
+</section>
+
+<!-- ================================= -->
+<!-- PARTES DE LA CÉLULA -->
+<!-- ================================= -->
+
+<section class="tarjetas">
+
+<div class="tarjeta">
+
+<h2>🔬 Partes de la célula</h2>
+
+<p>
+
+Las principales partes son la membrana celular, el citoplasma y el núcleo.
+
+</p>
+
+<h1>
+
+⭕ 🟡 🔵
+
+</h1>
+
+</div>
+
+<div class="tarjeta">
+
+<h2>🎯 Actividad</h2>
+
+<p>
+
+¿Cuál es el centro de control de la célula?
+
+</p>
+
+<button onclick="nucleo(1)">
+
+🔵 Núcleo
+
+</button>
+
+<br><br>
+
+<button onclick="nucleo(2)">
+
+⭕ Membrana
+
+</button>
+
+<br><br>
+
+<button onclick="nucleo(3)">
+
+🟡 Citoplasma
+
+</button>
+
+<p id="mensajeNucleo"></p>
+
+</div>
+
+</section>
+
+<!-- ================================= -->
+<!-- TIPOS DE CÉLULAS -->
+<!-- ================================= -->
+
+<section class="tarjetas">
+
+<div class="tarjeta">
+
+<h2>🌱 Célula vegetal</h2>
+
+<p>
+
+Tiene pared celular, cloroplastos y una gran vacuola.
+
+</p>
+
+<h1>
+
+🌿
+
+</h1>
+
+</div>
+
+<div class="tarjeta">
+
+<h2>🐶 Célula animal</h2>
+
+<p>
+
+No posee pared celular ni cloroplastos.
+
+</p>
+
+<h1>
+
+🐾
+
+</h1>
+
+</div>
+
+</section>
+
+<!-- ================================= -->
+<!-- COMPARACIÓN -->
+<!-- ================================= -->
+
+<section class="tarjetas">
+
+<div class="tarjeta">
+
+<h2>⚖️ Compara</h2>
+
+<p>
+
+¿Qué célula realiza la fotosíntesis?
+
+</p>
+
+<button onclick="vegetal(1)">
+
+🌿 Célula vegetal
+
+</button>
+
+<br><br>
+
+<button onclick="vegetal(2)">
+
+🐾 Célula animal
+
+</button>
+
+<p id="mensajeVegetal"></p>
+
+</div>
+
+<div class="tarjeta">
+
+<h2>💡 Dato curioso</h2>
+
+<p>
+
+El cuerpo humano posee aproximadamente 37 billones de células.
+
+</p>
+
+<h1>
+
+🧍🧫
+
+</h1>
+
+</div>
+
+</section>
+
+<!-- ================================= -->
+<!-- NIVELES DE ORGANIZACIÓN -->
+<!-- ================================= -->
+
+<section class="tarjetas">
+
+<div class="tarjeta">
+
+<h2>🧬 Organización</h2>
+
+<p>
+
+Célula ➜ Tejido ➜ Órgano ➜ Sistema ➜ Organismo
+
+</p>
+
+<h1>
+
+🧫➡️🧩➡️❤️➡️🫀➡️🧍
+
+</h1>
+
+</div>
+
+<div class="tarjeta">
+
+<h2>❓ Desafío</h2>
+
+<p>
+
+¿Qué se forma cuando varias células semejantes se unen?
+
+</p>
+
+<button onclick="tejido(1)">
+
+🧩 Tejido
+
+</button>
+
+<br><br>
+
+<button onclick="tejido(2)">
+
+🌍 Planeta
+
+</button>
+
+<br><br>
+
+<button onclick="tejido(3)">
+
+☀️ Sol
+
+</button>
+
+<p id="mensajeTejido"></p>
+
+</div>
+
+</section>
+
+<script>
+
+function celula5(opcion){
+
+if(opcion==1){
+
+mensajeCelula5.innerHTML="✅ ¡Correcto!";
+
+ganar();
+
+}else{
+
+mensajeCelula5.innerHTML="❌ Intenta nuevamente.";
+
+}
+
+}
+
+function nucleo(opcion){
+
+if(opcion==1){
+
+mensajeNucleo.innerHTML="🔬 ¡Excelente!";
+
+ganar();
+
+}else{
+
+mensajeNucleo.innerHTML="❌ Esa no es la respuesta.";
+
+}
+
+}
+
+function vegetal(opcion){
+
+if(opcion==1){
+
+mensajeVegetal.innerHTML="🌿 ¡Muy bien!";
+
+ganar();
+
+}else{
+
+mensajeVegetal.innerHTML="❌ La fotosíntesis ocurre en la célula vegetal.";
+
+}
+
+}
+
+function tejido(opcion){
+
+if(opcion==1){
+
+mensajeTejido.innerHTML="🧩 ¡Correcto!";
+
+ganar();
+
+}else{
+
+mensajeTejido.innerHTML="❌ Revisa los niveles de organización.";
+
+}
+
+}
+
+</script> <!-- ================================= -->
+<!-- LOS CINCO REINOS -->
+<!-- ================================= -->
+
+<section class="tarjetas">
+
+<div class="tarjeta">
+
+<h2>👑 Los cinco reinos</h2>
+
+<p>
+
+Los seres vivos se clasifican en cinco reinos: Monera, Protista, Hongos, Plantas y Animales.
+
+</p>
+
+<h1>
+
+🦠 🦑 🍄 🌳 🦁
+
+</h1>
+
+</div>
+
+<div class="tarjeta">
+
+<h2>❓ Pregunta</h2>
+
+<p>
+
+¿En qué reino pertenece un árbol?
+
+</p>
+
+<button onclick="reino(1)">
+🌳 Reino Plantae
+</button>
+
+<br><br>
+
+<button onclick="reino(2)">
+🦁 Reino Animal
+</button>
+
+<br><br>
+
+<button onclick="reino(3)">
+🍄 Reino Hongos
+</button>
+
+<p id="mensajeReino"></p>
+
+</div>
+
+</section>
+
+<!-- ================================= -->
+<!-- CADENA ALIMENTICIA -->
+<!-- ================================= -->
+
+<section class="tarjetas">
+
+<div class="tarjeta">
+
+<h2>🌿 Cadena alimenticia</h2>
+
+<p>
+
+La energía pasa desde los productores hacia los consumidores.
+
+</p>
+
+<h1>
+
+🌱 ➜ 🐛 ➜ 🐦 ➜ 🦅
+
+</h1>
+
+</div>
+
+<div class="tarjeta">
+
+<h2>🎯 Actividad</h2>
+
+<p>
+
+¿Quién es el productor?
+
+</p>
+
+<button onclick="productor5(1)">
+🌱 Planta
+</button>
+
+<br><br>
+
+<button onclick="productor5(2)">
+🐦 Ave
+</button>
+
+<br><br>
+
+<button onclick="productor5(3)">
+🦅 Águila
+</button>
+
+<p id="mensajeProductor5"></p>
+
+</div>
+
+</section>
+
+<!-- ================================= -->
+<!-- RED ALIMENTICIA -->
+<!-- ================================= -->
+
+<section class="tarjetas">
+
+<div class="tarjeta">
+
+<h2>🕸️ Red alimenticia</h2>
+
+<p>
+
+Una red alimenticia está formada por varias cadenas alimenticias relacionadas.
+
+</p>
+
+<h1>
+
+🌱 🐛 🐭
+
+⬇️
+
+🦊
+
+⬇️
+
+🦅
+
+</h1>
+
+</div>
+
+<div class="tarjeta">
+
+<h2>❓ Pregunta</h2>
+
+<p>
+
+¿Qué representa una red alimenticia?
+
+</p>
+
+<button onclick="red5(1)">
+Varias cadenas relacionadas.
+</button>
+
+<br><br>
+
+<button onclick="red5(2)">
+Solo un animal.
+</button>
+
+<br><br>
+
+<button onclick="red5(3)">
+Solo una planta.
+</button>
+
+<p id="mensajeRed5"></p>
+
+</div>
+
+</section>
+
+<!-- ================================= -->
+<!-- ECOSISTEMAS -->
+<!-- ================================= -->
+
+<section class="tarjetas">
+
+<div class="tarjeta">
+
+<h2>🌍 Ecosistemas</h2>
+
+<p>
+
+Los ecosistemas pueden ser terrestres, acuáticos o mixtos.
+
+</p>
+
+<h1>
+
+🏕️ 🌊 🌳
+
+</h1>
+
+</div>
+
+<div class="tarjeta">
+
+<h2>🌎 Pregunta</h2>
+
+<p>
+
+¿Cuál es un ecosistema acuático?
+
+</p>
+
+<button onclick="ecosistema5(1)">
+🌊 Océano
+</button>
+
+<br><br>
+
+<button onclick="ecosistema5(2)">
+🏫 Escuela
+</button>
+
+<br><br>
+
+<button onclick="ecosistema5(3)">
+🏠 Casa
+</button>
+
+<p id="mensajeEco5"></p>
+
+</div>
+
+</section>
+
+<!-- ================================= -->
+<!-- RELACIONES ENTRE LOS SERES VIVOS -->
+<!-- ================================= -->
+
+<section class="tarjetas">
+
+<div class="tarjeta">
+
+<h2>🤝 Relaciones</h2>
+
+<p>
+
+Los seres vivos pueden cooperar, competir o depender unos de otros para sobrevivir.
+
+</p>
+
+<h1>
+
+🐝 🌼
+
+</h1>
+
+</div>
+
+<div class="tarjeta">
+
+<h2>❓ Pregunta</h2>
+
+<p>
+
+¿Qué obtiene la abeja de la flor?
+
+</p>
+
+<button onclick="relacion(1)">
+🌸 Néctar
+</button>
+
+<br><br>
+
+<button onclick="relacion(2)">
+🪨 Piedra
+</button>
+
+<br><br>
+
+<button onclick="relacion(3)">
+📚 Libro
+</button>
+
+<p id="mensajeRelacion"></p>
+
+</div>
+
+</section>
+
+<!-- ================================= -->
+<!-- JUEGO DE MEMORIA -->
+<!-- ================================= -->
+
+<section class="tarjetas">
+
+<div class="tarjeta">
+
+<h2>🧠 Memoria</h2>
+
+<p>
+
+Memoriza los cinco reinos.
+
+</p>
+
+<h1 id="memoriaReinos">
+
+🦠 🦑 🍄 🌳 🦁
+
+</h1>
+
+<button onclick="memoriaReinos()">
+
+Comenzar
+
+</button>
+
+<p id="mensajeMemoriaReinos"></p>
+
+</div>
+
+<div class="tarjeta">
+
+<h2>🎮 Desafío</h2>
+
+<p>
+
+Selecciona únicamente productores.
+
+</p>
+
+<button onclick="desafio5(1)">🌳 Plantar árboles</button>
+
+<button onclick="desafio5(2)">🌿 Planta</button>
+
+<button onclick="desafio5(3)">🦁 León</button>
+
+<button onclick="desafio5(4)">🦊 Zorro</button>
+
+<p id="mensajeDesafio5"></p>
+
+</div>
+
+</section>
+
+<script>
+
+function reino(opcion){
+
+if(opcion==1){
+
+mensajeReino.innerHTML="🌳 ¡Correcto!";
+
+ganar();
+
+}else{
+
+mensajeReino.innerHTML="❌ Intenta nuevamente.";
+
+}
+
+}
+
+function productor5(opcion){
+
+if(opcion==1){
+
+mensajeProductor5.innerHTML="🌱 ¡Muy bien!";
+
+ganar();
+
+}else{
+
+mensajeProductor5.innerHTML="❌ Los productores fabrican su propio alimento.";
+
+}
+
+}
+
+function red5(opcion){
+
+if(opcion==1){
+
+mensajeRed5.innerHTML="🕸️ ¡Excelente!";
+
+ganar();
+
+}else{
+
+mensajeRed5.innerHTML="❌ Respuesta incorrecta.";
+
+}
+
+}
+
+function ecosistema5(opcion){
+
+if(opcion==1){
+
+mensajeEco5.innerHTML="🌊 ¡Correcto!";
+
+ganar();
+
+}else{
+
+mensajeEco5.innerHTML="❌ Sigue intentando.";
+
+}
+
+}
+
+function relacion(opcion){
+
+if(opcion==1){
+
+mensajeRelacion.innerHTML="🐝 ¡Muy bien!";
+
+ganar();
+
+}else{
+
+mensajeRelacion.innerHTML="❌ Esa no es la respuesta.";
+
+}
+
+}
+
+function memoriaReinos(){
+
+document.getElementById("memoriaReinos").innerHTML="❓ ❓ ❓ ❓ ❓";
+
+document.getElementById("mensajeMemoriaReinos").innerHTML="🤔 ¿Recuerdas los cinco reinos?";
+
+ganar();
+
+}
+
+function desafio5(opcion){
+
+if(opcion==1 || opcion==2){
+
+mensajeDesafio5.innerHTML="🌿 ¡Correcto! Son productores.";
+
+ganar();
+
+}else{
+
+mensajeDesafio5.innerHTML="❌ Son consumidores.";
+
+}
+
+}
+
+</script> <!-- ================================= -->
+<!-- EL CUERPO HUMANO -->
+<!-- ================================= -->
+
+<section class="tarjetas">
+
+<div class="tarjeta">
+
+<h2>🧍 El cuerpo humano</h2>
+
+<p>
+
+El cuerpo humano está formado por diferentes sistemas que trabajan de manera coordinada para mantenernos vivos y saludables.
+
+</p>
+
+<h1>
+
+🧠 ❤️ 🫁 🦴 💪
+
+</h1>
+
+</div>
+
+<div class="tarjeta">
+
+<h2>❓ Pregunta</h2>
+
+<p>
+
+¿Cuál es la función principal del sistema circulatorio?
+
+</p>
+
+<button onclick="circulatorio5(1)">
+
+Transportar sangre, oxígeno y nutrientes.
+
+</button>
+
+<br><br>
+
+<button onclick="circulatorio5(2)">
+
+Permitir la digestión.
+
+</button>
+
+<br><br>
+
+<button onclick="circulatorio5(3)">
+
+Producir huesos.
+
+</button>
+
+<p id="mensajeCirculatorio5"></p>
+
+</div>
+
+</section>
+
+<!-- ================================= -->
+<!-- SISTEMA DIGESTIVO -->
+<!-- ================================= -->
+
+<section class="tarjetas">
+
+<div class="tarjeta">
+
+<h2>🍎 Sistema digestivo</h2>
+
+<p>
+
+Transforma los alimentos en nutrientes que el cuerpo utiliza para obtener energía y crecer.
+
+</p>
+
+<h1>
+
+👄 ➜ 🥣 ➜ 😊
+
+</h1>
+
+</div>
+
+<div class="tarjeta">
+
+<h2>🎯 Actividad</h2>
+
+<p>
+
+¿Dónde comienza la digestión?
+
+</p>
+
+<button onclick="digestivo5(1)">
+
+👄 En la boca
+
+</button>
+
+<br><br>
+
+<button onclick="digestivo5(2)">
+
+🫀 En el corazón
+
+</button>
+
+<br><br>
+
+<button onclick="digestivo5(3)">
+
+🦴 En los huesos
+
+</button>
+
+<p id="mensajeDigestivo5"></p>
+
+</div>
+
+</section>
+
+<!-- ================================= -->
+<!-- SISTEMA RESPIRATORIO -->
+<!-- ================================= -->
+
+<section class="tarjetas">
+
+<div class="tarjeta">
+
+<h2>🫁 Sistema respiratorio</h2>
+
+<p>
+
+Permite el intercambio de oxígeno y dióxido de carbono mediante la respiración.
+
+</p>
+
+<h1>
+
+🌬️ 🫁
+
+</h1>
+
+</div>
+
+<div class="tarjeta">
+
+<h2>❓ Pregunta</h2>
+
+<p>
+
+¿Qué órganos forman parte del sistema respiratorio?
+
+</p>
+
+<button onclick="respiratorio5(1)">
+
+🫁 Pulmones
+
+</button>
+
+<br><br>
+
+<button onclick="respiratorio5(2)">
+
+🦵 Piernas
+
+</button>
+
+<br><br>
+
+<button onclick="respiratorio5(3)">
+
+🦷 Dientes
+
+</button>
+
+<p id="mensajeRespiratorio5"></p>
+
+</div>
+
+</section>
+
+<!-- ================================= -->
+<!-- SISTEMA NERVIOSO -->
+<!-- ================================= -->
+
+<section class="tarjetas">
+
+<div class="tarjeta">
+
+<h2>🧠 Sistema nervioso</h2>
+
+<p>
+
+Controla y coordina todas las funciones del cuerpo mediante el cerebro, la médula espinal y los nervios.
+
+</p>
+
+<h1>
+
+🧠 ⚡
+
+</h1>
+
+</div>
+
+<div class="tarjeta">
+
+<h2>❓ Pregunta</h2>
+
+<p>
+
+¿Cuál es el órgano principal del sistema nervioso?
+
+</p>
+
+<button onclick="nervioso5(1)">
+
+🧠 Cerebro
+
+</button>
+
+<br><br>
+
+<button onclick="nervioso5(2)">
+
+🦴 Fémur
+
+</button>
+
+<br><br>
+
+<button onclick="nervioso5(3)">
+
+🫀 Corazón
+
+</button>
+
+<p id="mensajeNervioso5"></p>
+
+</div>
+
+</section>
+
+<!-- ================================= -->
+<!-- SISTEMA ÓSEO Y MUSCULAR -->
+<!-- ================================= -->
+
+<section class="tarjetas">
+
+<div class="tarjeta">
+
+<h2>🦴 Sistema óseo y muscular</h2>
+
+<p>
+
+Los huesos sostienen el cuerpo y los músculos permiten el movimiento.
+
+</p>
+
+<h1>
+
+🦴 💪
+
+</h1>
+
+</div>
+
+<div class="tarjeta">
+
+<h2>🎯 Desafío</h2>
+
+<p>
+
+¿Qué sistema permite mover los brazos y las piernas?
+
+</p>
+
+<button onclick="muscular5(1)">
+
+💪 Sistema muscular
+
+</button>
+
+<br><br>
+
+<button onclick="muscular5(2)">
+
+🌬️ Sistema respiratorio
+
+</button>
+
+<br><br>
+
+<button onclick="muscular5(3)">
+
+🍎 Sistema digestivo
+
+</button>
+
+<p id="mensajeMuscular5"></p>
+
+</div>
+
+</section>
+
+<!-- ================================= -->
+<!-- ALIMENTACIÓN SALUDABLE -->
+<!-- ================================= -->
+
+<section class="tarjetas">
+
+<div class="tarjeta">
+
+<h2>🥗 Alimentación saludable</h2>
+
+<p>
+
+Consumir frutas, verduras, cereales y beber suficiente agua ayuda a mantener un cuerpo sano.
+
+</p>
+
+<h1>
+
+🍎 🥦 💧
+
+</h1>
+
+</div>
+
+<div class="tarjeta">
+
+<h2>🌟 Selecciona el alimento más saludable</h2>
+
+<button onclick="saludable5(1)">🥦 Verduras</button>
+
+<button onclick="saludable5(2)">🍟 Papas fritas</button>
+
+<button onclick="saludable5(3)">🥤 Gaseosa</button>
+
+<p id="mensajeSaludable5"></p>
+
+</div>
+
+</section>
+
+<script>
+
+function circulatorio5(opcion){
+
+if(opcion==1){
+
+mensajeCirculatorio5.innerHTML="❤️ ¡Excelente!";
+
+ganar();
+
+}else{
+
+mensajeCirculatorio5.innerHTML="❌ Respuesta incorrecta.";
+
+}
+
+}
+
+function digestivo5(opcion){
+
+if(opcion==1){
+
+mensajeDigestivo5.innerHTML="🍎 ¡Muy bien!";
+
+ganar();
+
+}else{
+
+mensajeDigestivo5.innerHTML="❌ Vuelve a intentarlo.";
+
+}
+
+}
+
+function respiratorio5(opcion){
+
+if(opcion==1){
+
+mensajeRespiratorio5.innerHTML="🫁 ¡Correcto!";
+
+ganar();
+
+}else{
+
+mensajeRespiratorio5.innerHTML="❌ Esa opción no pertenece al sistema respiratorio.";
+
+}
+
+}
+
+function nervioso5(opcion){
+
+if(opcion==1){
+
+mensajeNervioso5.innerHTML="🧠 ¡Excelente!";
+
+ganar();
+
+}else{
+
+mensajeNervioso5.innerHTML="❌ Sigue intentando.";
+
+}
+
+}
+
+function muscular5(opcion){
+
+if(opcion==1){
+
+mensajeMuscular5.innerHTML="💪 ¡Correcto!";
+
+ganar();
+
+}else{
+
+mensajeMuscular5.innerHTML="❌ Esa no es la respuesta.";
+
+}
+
+}
+
+function saludable5(opcion){
+
+if(opcion==1){
+
+mensajeSaludable5.innerHTML="🥗 ¡Muy buena elección!";
+
+ganar();
+
+}else{
+
+mensajeSaludable5.innerHTML="❌ Recuerda elegir alimentos saludables.";
+
+}
+
+}
+
+</script> <!-- ================================= -->
+<!-- PROPIEDADES DE LA MATERIA -->
+<!-- ================================= -->
+
+<section class="tarjetas">
+
+<div class="tarjeta">
+
+<h2>⚛️ Propiedades de la materia</h2>
+
+<p>
+
+La materia tiene masa, volumen y ocupa un lugar en el espacio.
+
+</p>
+
+<h1>
+
+⚛️ 📦
+
+</h1>
+
+</div>
+
+<div class="tarjeta">
+
+<h2>❓ Pregunta</h2>
+
+<p>
+
+¿Cuál es una propiedad de la materia?
+
+</p>
+
+<button onclick="materia5(1)">
+
+Tiene masa.
+
+</button>
+
+<br><br>
+
+<button onclick="materia5(2)">
+
+No ocupa espacio.
+
+</button>
+
+<br><br>
+
+<button onclick="materia5(3)">
+
+Es invisible siempre.
+
+</button>
+
+<p id="mensajeMateria5"></p>
+
+</div>
+
+</section>
+
+<!-- ================================= -->
+<!-- MEZCLAS -->
+<!-- ================================= -->
+
+<section class="tarjetas">
+
+<div class="tarjeta">
+
+<h2>🧪 Mezclas</h2>
+
+<p>
+
+Las mezclas pueden ser homogéneas o heterogéneas.
+
+</p>
+
+<h1>
+
+🥛 🥗
+
+</h1>
+
+</div>
+
+<div class="tarjeta">
+
+<h2>🎯 Actividad</h2>
+
+<p>
+
+¿Cuál es una mezcla homogénea?
+
+</p>
+
+<button onclick="mezcla5(1)">
+
+💧 Agua con sal
+
+</button>
+
+<br><br>
+
+<button onclick="mezcla5(2)">
+
+🥗 Ensalada
+
+</button>
+
+<br><br>
+
+<button onclick="mezcla5(3)">
+
+🍎 Manzana
+
+</button>
+
+<p id="mensajeMezcla5"></p>
+
+</div>
+
+</section>
+
+<!-- ================================= -->
+<!-- MÉTODOS DE SEPARACIÓN -->
+<!-- ================================= -->
+
+<section class="tarjetas">
+
+<div class="tarjeta">
+
+<h2>🧫 Separación de mezclas</h2>
+
+<p>
+
+Las mezclas pueden separarse mediante filtración, decantación o evaporación.
+
+</p>
+
+<h1>
+
+🧪 ☕ 💧
+
+</h1>
+
+</div>
+
+<div class="tarjeta">
+
+<h2>❓ Pregunta</h2>
+
+<p>
+
+¿Qué método usarías para separar arena y agua?
+
+</p>
+
+<button onclick="separacion5(1)">
+
+Filtración
+
+</button>
+
+<br><br>
+
+<button onclick="separacion5(2)">
+
+Congelación
+
+</button>
+
+<br><br>
+
+<button onclick="separacion5(3)">
+
+Fermentación
+
+</button>
+
+<p id="mensajeSeparacion5"></p>
+
+</div>
+
+</section>
+
+<!-- ================================= -->
+<!-- ENERGÍA -->
+<!-- ================================= -->
+
+<section class="tarjetas">
+
+<div class="tarjeta">
+
+<h2>⚡ Transformaciones de la energía</h2>
+
+<p>
+
+La energía puede transformarse de una forma a otra.
+
+</p>
+
+<h1>
+
+☀️ ➜ ⚡ ➜ 💡
+
+</h1>
+
+</div>
+
+<div class="tarjeta">
+
+<h2>🎯 Pregunta</h2>
+
+<p>
+
+¿Qué tipo de energía produce el Sol?
+
+</p>
+
+<button onclick="energia5(1)">
+
+Luminosa y térmica.
+
+</button>
+
+<br><br>
+
+<button onclick="energia5(2)">
+
+Nuclear únicamente.
+
+</button>
+
+<br><br>
+
+<button onclick="energia5(3)">
+
+Química.
+
+</button>
+
+<p id="mensajeEnergia5"></p>
+
+</div>
+
+</section>
+
+<!-- ================================= -->
+<!-- CAPAS DE LA TIERRA -->
+<!-- ================================= -->
+
+<section class="tarjetas">
+
+<div class="tarjeta">
+
+<h2>🌍 Capas de la Tierra</h2>
+
+<p>
+
+La Tierra está formada por la corteza, el manto y el núcleo.
+
+</p>
+
+<h1>
+
+🌍
+
+</h1>
+
+</div>
+
+<div class="tarjeta">
+
+<h2>❓ Pregunta</h2>
+
+<p>
+
+¿En qué capa vivimos?
+
+</p>
+
+<button onclick="tierra5(1)">
+
+Corteza
+
+</button>
+
+<br><br>
+
+<button onclick="tierra5(2)">
+
+Núcleo
+
+</button>
+
+<br><br>
+
+<button onclick="tierra5(3)">
+
+Manto interno
+
+</button>
+
+<p id="mensajeTierra5"></p>
+
+</div>
+
+</section>
+
+<!-- ================================= -->
+<!-- FENÓMENOS NATURALES -->
+<!-- ================================= -->
+
+<section class="tarjetas">
+
+<div class="tarjeta">
+
+<h2>🌋 Fenómenos naturales</h2>
+
+<p>
+
+Los terremotos, tsunamis, huracanes y erupciones volcánicas son fenómenos naturales.
+
+</p>
+
+<h1>
+
+🌋 🌪️ 🌊
+
+</h1>
+
+</div>
+
+<div class="tarjeta">
+
+<h2>🌎 Pregunta</h2>
+
+<p>
+
+¿Cuál de estos es un fenómeno natural?
+
+</p>
+
+<button onclick="fenomeno5(1)">
+
+🌋 Erupción volcánica
+
+</button>
+
+<br><br>
+
+<button onclick="fenomeno5(2)">
+
+🚲 Bicicleta
+
+</button>
+
+<br><br>
+
+<button onclick="fenomeno5(3)">
+
+📱 Celular
+
+</button>
+
+<p id="mensajeFenomeno5"></p>
+
+</div>
+
+</section>
+
+<!-- ================================= -->
+<!-- EXPERIMENTO -->
+<!-- ================================= -->
+
+<section class="tarjetas">
+
+<div class="tarjeta">
+
+<h2>🧪 Experimento</h2>
+
+<p>
+
+Mezcla agua y arena. Luego utiliza un filtro para separarlas.
+
+</p>
+
+<textarea id="experimento5"
+rows="5"
+style="width:90%;padding:10px;border-radius:10px;">
+</textarea>
+
+<br><br>
+
+<button onclick="guardarExperimento5()">
+
+Guardar observación
+
+</button>
+
+<p id="mensajeExperimento5"></p>
+
+</div>
+
+</section>
+
+<script>
+
+function materia5(opcion){
+
+if(opcion==1){
+
+mensajeMateria5.innerHTML="✅ ¡Correcto!";
+
+ganar();
+
+}else{
+
+mensajeMateria5.innerHTML="❌ Respuesta incorrecta.";
+
+}
+
+}
+
+function mezcla5(opcion){
+
+if(opcion==1){
+
+mensajeMezcla5.innerHTML="🥛 ¡Excelente!";
+
+ganar();
+
+}else{
+
+mensajeMezcla5.innerHTML="❌ Esa mezcla es heterogénea.";
+
+}
+
+}
+
+function separacion5(opcion){
+
+if(opcion==1){
+
+mensajeSeparacion5.innerHTML="🧪 ¡Muy bien!";
+
+ganar();
+
+}else{
+
+mensajeSeparacion5.innerHTML="❌ Inténtalo nuevamente.";
+
+}
+
+}
+
+function energia5(opcion){
+
+if(opcion==1){
+
+mensajeEnergia5.innerHTML="☀️ ¡Correcto!";
+
+ganar();
+
+}else{
+
+mensajeEnergia5.innerHTML="❌ Esa respuesta no es correcta.";
+
+}
+
+}
+
+function tierra5(opcion){
+
+if(opcion==1){
+
+mensajeTierra5.innerHTML="🌍 ¡Excelente!";
+
+ganar();
+
+}else{
+
+mensajeTierra5.innerHTML="❌ Vivimos sobre la corteza terrestre.";
+
+}
+
+}
+
+function fenomeno5(opcion){
+
+if(opcion==1){
+
+mensajeFenomeno5.innerHTML="🌋 ¡Muy bien!";
+
+ganar();
+
+}else{
+
+mensajeFenomeno5.innerHTML="❌ Esa opción no es un fenómeno natural.";
+
+}
+
+}
+
+function guardarExperimento5(){
+
+let texto=document.getElementById("experimento5").value;
+
+if(texto.trim()!=""){
+
+mensajeExperimento5.innerHTML="🧪 ¡Observación guardada correctamente!";
+
+ganar();
+
+}else{
+
+mensajeExperimento5.innerHTML="✍️ Escribe tu observación antes de guardar.";
+
+}
+
+}
+
+</script><!-- ================================= -->
+<!-- SISTEMA SOLAR -->
+<!-- ================================= -->
+
+<section class="tarjetas">
+
+<div class="tarjeta">
+
+<h2>🪐 Sistema Solar</h2>
+
+<p>
+
+El Sistema Solar está formado por el Sol y ocho planetas que giran a su alrededor.
+
+</p>
+
+<h1>
+
+☀️ ☿️ ♀️ 🌍 ♂️ 🪐
+
+</h1>
+
+</div>
+
+<div class="tarjeta">
+
+<h2>❓ Pregunta</h2>
+
+<p>
+
+¿Cuál es el planeta conocido como el planeta rojo?
+
+</p>
+
+<button onclick="marte5(1)">
+🔴 Marte
+</button>
+
+<br><br>
+
+<button onclick="marte5(2)">
+🪐 Saturno
+</button>
+
+<br><br>
+
+<button onclick="marte5(3)">
+🌍 Tierra
+</button>
+
+<p id="mensajeMarte5"></p>
+
+</div>
+
+</section>
+
+<!-- ================================= -->
+<!-- MOVIMIENTOS DE LA TIERRA -->
+<!-- ================================= -->
+
+<section class="tarjetas">
+
+<div class="tarjeta">
+
+<h2>🌍 Movimientos de la Tierra</h2>
+
+<p>
+
+La Tierra realiza dos movimientos principales: rotación y traslación.
+
+</p>
+
+<h1>
+
+🌍 🔄 ☀️
+
+</h1>
+
+</div>
+
+<div class="tarjeta">
+
+<h2>🎯 Pregunta</h2>
+
+<p>
+
+¿Qué movimiento produce el día y la noche?
+
+</p>
+
+<button onclick="rotacion5(1)">
+Rotación
+</button>
+
+<br><br>
+
+<button onclick="rotacion5(2)">
+Traslación
+</button>
+
+<br><br>
+
+<button onclick="rotacion5(3)">
+Órbita lunar
+</button>
+
+<p id="mensajeRotacion5"></p>
+
+</div>
+
+</section>
+
+<!-- ================================= -->
+<!-- CAMBIO CLIMÁTICO -->
+<!-- ================================= -->
+
+<section class="tarjetas">
+
+<div class="tarjeta">
+
+<h2>🌦️ Cambio climático</h2>
+
+<p>
+
+Las actividades humanas pueden aumentar la contaminación y afectar el clima del planeta.
+
+</p>
+
+<h1>
+
+🌍 🌡️
+
+</h1>
+
+</div>
+
+<div class="tarjeta">
+
+<h2>❓ ¿Cómo podemos ayudar?</h2>
+
+<button onclick="clima5(1)">♻️ Reciclar</button>
+
+<button onclick="clima5(2)">🚯 Botar basura al río</button>
+
+<button onclick="clima5(3)">🔥 Quemar basura</button>
+
+<p id="mensajeClima5"></p>
+
+</div>
+
+</section>
+
+<!-- ================================= -->
+<!-- RECICLAJE -->
+<!-- ================================= -->
+
+<section class="tarjetas">
+
+<div class="tarjeta">
+
+<h2>♻️ Reciclaje</h2>
+
+<p>
+
+Separar correctamente los residuos ayuda a proteger el ambiente.
+
+</p>
+
+<h1>
+
+🟦 🟨 🟩
+
+</h1>
+
+</div>
+
+<div class="tarjeta">
+
+<h2>🎯 Clasifica</h2>
+
+<p>
+
+¿Dónde debe ir una botella de plástico?
+
+</p>
+
+<button onclick="reciclaje5(1)">
+🟨 Contenedor de reciclaje
+</button>
+
+<br><br>
+
+<button onclick="reciclaje5(2)">
+🔥 Quemarla
+</button>
+
+<br><br>
+
+<button onclick="reciclaje5(3)">
+🌊 Arrojarla al río
+</button>
+
+<p id="mensajeReciclaje5"></p>
+
+</div>
+
+</section>
+
+<!-- ================================= -->
+<!-- MEMORIA -->
+<!-- ================================= -->
+
+<section class="tarjetas">
+
+<div class="tarjeta">
+
+<h2>🧠 Memoria</h2>
+
+<h1 id="memoriaPlanetas5">
+
+☿️ ♀️ 🌍 ♂️
+
+</h1>
+
+<button onclick="memoria5()">
+
+Comenzar
+
+</button>
+
+<p id="mensajeMemoria5"></p>
+
+</div>
+
+<div class="tarjeta">
+
+<h2>🎮 Desafío Final</h2>
+
+<p>
+
+Selecciona únicamente acciones que cuidan el ambiente.
+
+</p>
+
+<button onclick="desafioFinal5(1)">🌳 Plantar árboles</button>
+
+<button onclick="desafioFinal5(2)">♻️ Reciclar</button>
+
+<button onclick="desafioFinal5(3)">🚯 Tirar basura</button>
+
+<button onclick="desafioFinal5(4)">💧 Ahorrar agua</button>
+
+<p id="mensajeDesafioFinal5"></p>
+
+</div>
+
+</section>
+
+<!-- ================================= -->
+<!-- LOGROS -->
+<!-- ================================= -->
+
+<section class="tarjetas">
+
+<div class="tarjeta">
+
+<h2>🏆 Logros</h2>
+
+<ul>
+
+<li>🔬 Aprender sobre la célula.</li>
+
+<li>🌱 Clasificar los seres vivos.</li>
+
+<li>🫀 Conocer el cuerpo humano.</li>
+
+<li>⚛️ Estudiar la materia.</li>
+
+<li>🪐 Explorar el Sistema Solar.</li>
+
+<li>♻️ Proteger el ambiente.</li>
+
+<li>🪙 Obtener 500 monedas.</li>
+
+</ul>
+
+</div>
+
+</section>
+
+<!-- ================================= -->
+<!-- COFRE -->
+<!-- ================================= -->
+
+<section class="tarjetas">
+
+<div class="tarjeta">
+
+<h2>🎁 Cofre Diario</h2>
+
+<button onclick="cofre5()">
+
+Abrir Cofre
+
+</button>
+
+<p id="mensajeCofre5"></p>
+
+</div>
+
+</section>
+
+<!-- ================================= -->
+<!-- TIENDA -->
+<!-- ================================= -->
+
+<section class="tarjetas">
+
+<div class="tarjeta">
+
+<h2>🛒 Tienda</h2>
+
+<button onclick="comprar5('🦉',150)">
+🦉 150 monedas
+</button>
+
+<br><br>
+
+<button onclick="comprar5('🦊',250)">
+🦊 250 monedas
+</button>
+
+<br><br>
+
+<button onclick="comprar5('🦅',400)">
+🦅 400 monedas
+</button>
+
+<p id="mensajeCompra5"></p>
+
+</div>
+
+</section>
+
+<!-- ================================= -->
+<!-- CERTIFICADO -->
+<!-- ================================= -->
+
+<section class="tarjetas">
+
+<div class="tarjeta">
+
+<h2>📜 Certificado</h2>
+
+<p>
+
+Escribe tu nombre para obtener tu diploma.
+
+</p>
+
+<input
+type="text"
+id="nombreAlumno5"
+placeholder="Tu nombre">
+
+<br><br>
+
+<button onclick="certificado5()">
+
+Generar certificado
+
+</button>
+
+</div>
+
+</section>
+
+<footer>
+
+<h2>🔬 LUMENIX</h2>
+
+<p>
+
+¡Felicitaciones por completar Ciencia y Ambiente de 5.º de Primaria! 
+
+</p>
+
+</footer>
+
+<script>
+
+function marte5(opcion){
+
+if(opcion==1){
+
+mensajeMarte5.innerHTML="🔴 ¡Correcto!";
+
+ganar();
+
+}else{
+
+mensajeMarte5.innerHTML="❌ Sigue intentando.";
+
+}
+
+}
+
+function rotacion5(opcion){
+
+if(opcion==1){
+
+mensajeRotacion5.innerHTML="🌍 ¡Excelente!";
+
+ganar();
+
+}else{
+
+mensajeRotacion5.innerHTML="❌ Respuesta incorrecta.";
+
+}
+
+}
+
+function clima5(opcion){
+
+if(opcion==1){
+
+mensajeClima5.innerHTML="♻️ ¡Muy bien!";
+
+ganar();
+
+}else{
+
+mensajeClima5.innerHTML="❌ Esa acción contamina el ambiente.";
+
+}
+
+}
+
+function reciclaje5(opcion){
+
+if(opcion==1){
+
+mensajeReciclaje5.innerHTML="♻️ ¡Correcto!";
+
+ganar();
+
+}else{
+
+mensajeReciclaje5.innerHTML="❌ Esa no es una buena práctica.";
+
+}
+
+}
+
+function memoria5(){
+
+document.getElementById("memoriaPlanetas5").innerHTML="❓ ❓ ❓ ❓";
+
+document.getElementById("mensajeMemoria5").innerHTML="🤔 ¿Recuerdas los cuatro primeros planetas?";
+
+ganar();
+
+}
+
+function desafioFinal5(opcion){
+
+if(opcion==1 || opcion==2 || opcion==4){
+
+mensajeDesafioFinal5.innerHTML="🌍 ¡Excelente acción para cuidar el ambiente!";
+
+ganar();
+
+}else{
+
+mensajeDesafioFinal5.innerHTML="❌ Esa acción perjudica el ambiente.";
+
+}
+
+}
+
+function cofre5(){
+
+let premio=Math.floor(Math.random()*101)+50;
+
+monedas+=premio;
+
+actualizar();
+
+mensajeCofre5.innerHTML="🎉 Ganaste "+premio+" monedas.";
+
+}
+
+function comprar5(personaje,costo){
+
+if(monedas>=costo){
+
+monedas-=costo;
+
+actualizar();
+
+mensajeCompra5.innerHTML="✅ Compraste "+personaje;
+
+}else{
+
+mensajeCompra5.innerHTML="❌ No tienes suficientes monedas.";
+
+}
+
+}
+
+function certificado5(){
+
+let nombre=document.getElementById("nombreAlumno5").value;
+
+if(nombre==""){
+
+alert("Escribe tu nombre.");
+
+return;
+
+}
+
+alert("🏅 FELICIDADES "+nombre+
+"\n\nHas completado Ciencia y Ambiente de 5.º de Primaria en LUMENIX.");
+
+}
+
+</script>
+
+</body>
+</html>

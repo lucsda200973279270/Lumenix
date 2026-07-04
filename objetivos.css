@@ -1,0 +1,476 @@
+/*======================================
+        LUMENIX - OBJETIVOS
+======================================*/
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Fredoka',sans-serif;
+    background:linear-gradient(135deg,#d7b5ff,#edd6ff,#ffe8f8);
+    min-height:100vh;
+    overflow-x:hidden;
+}
+
+/*==========================
+        FONDO
+==========================*/
+
+.background{
+    position:fixed;
+    inset:0;
+    overflow:hidden;
+    z-index:-1;
+}
+
+.cloud{
+    position:absolute;
+    font-size:55px;
+    opacity:.55;
+    animation:cloudMove linear infinite;
+}
+
+.cloud1{
+    top:8%;
+    left:-10%;
+    animation-duration:18s;
+}
+
+.cloud2{
+    top:28%;
+    left:-20%;
+    animation-duration:25s;
+}
+
+.cloud3{
+    top:55%;
+    left:-12%;
+    animation-duration:20s;
+}
+
+.cloud4{
+    top:78%;
+    left:-15%;
+    animation-duration:28s;
+}
+
+.star{
+    position:absolute;
+    font-size:28px;
+    animation:twinkle 3s infinite;
+}
+
+.star1{
+    top:12%;
+    left:15%;
+}
+
+.star2{
+    top:18%;
+    right:15%;
+}
+
+.star3{
+    top:48%;
+    left:8%;
+}
+
+.star4{
+    bottom:18%;
+    right:18%;
+}
+
+.star5{
+    bottom:10%;
+    left:35%;
+}
+
+/*==========================
+        CONTENEDOR
+==========================*/
+
+.container{
+    width:100%;
+    display:flex;
+    justify-content:center;
+    padding:60px 20px;
+}
+
+.card{
+
+    width:100%;
+    max-width:1200px;
+
+    background:white;
+
+    border-radius:35px;
+
+    padding:45px;
+
+    box-shadow:0 20px 45px rgba(0,0,0,.12);
+
+    animation:subir .8s ease;
+
+}
+
+/*==========================
+        LOGO
+==========================*/
+
+.logo{
+
+    width:110px;
+
+    height:110px;
+
+    margin:auto;
+
+    border-radius:50%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:55px;
+
+    background:linear-gradient(135deg,#ff67d4,#8d63ff);
+
+    color:white;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.18);
+
+}
+
+h1{
+
+    text-align:center;
+
+    color:#7d4dff;
+
+    margin-top:20px;
+
+    font-size:48px;
+
+}
+
+h2{
+
+    text-align:center;
+
+    color:#ff5bb2;
+
+    margin-top:10px;
+
+    font-size:34px;
+
+}
+
+.intro{
+
+    text-align:center;
+
+    max-width:800px;
+
+    margin:25px auto 45px;
+
+    font-size:20px;
+
+    color:#666;
+
+    line-height:1.8;
+
+}
+
+/*==========================
+        GRID
+==========================*/
+
+.grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+
+    gap:25px;
+
+}
+/*==========================
+        TARJETAS
+==========================*/
+
+.objetivo{
+
+    background:linear-gradient(135deg,#fff6fd,#f5ebff);
+
+    border-radius:28px;
+
+    padding:30px;
+
+    text-align:center;
+
+    transition:.35s;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+}
+
+.objetivo:hover{
+
+    transform:translateY(-10px);
+
+    box-shadow:0 18px 35px rgba(168,85,247,.25);
+
+}
+
+.emoji{
+
+    display:block;
+
+    font-size:55px;
+
+    margin-bottom:18px;
+
+}
+
+.objetivo h3{
+
+    color:#7b49ff;
+
+    font-size:28px;
+
+    margin-bottom:15px;
+
+}
+
+.objetivo p{
+
+    color:#666;
+
+    font-size:18px;
+
+    line-height:1.8;
+
+}
+
+/*==========================
+        BOTONES
+==========================*/
+
+.botones{
+
+    margin-top:45px;
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:20px;
+
+    flex-wrap:wrap;
+
+}
+
+.btn{
+
+    border:none;
+
+    border-radius:50px;
+
+    padding:18px 38px;
+
+    font-family:'Fredoka',sans-serif;
+
+    font-size:20px;
+
+    cursor:pointer;
+
+    transition:.35s;
+
+    color:white;
+
+}
+
+.btnPrincipal{
+
+    background:linear-gradient(135deg,#ff63d7,#8c63ff);
+
+}
+
+.btnSecundario{
+
+    background:linear-gradient(135deg,#6e8cff,#5f5cff);
+
+}
+
+.btn:hover{
+
+    transform:translateY(-6px);
+
+    box-shadow:0 12px 25px rgba(0,0,0,.18);
+
+}
+
+/*==========================
+        FRASE
+==========================*/
+
+.frase{
+
+    margin-top:40px;
+
+    text-align:center;
+
+    color:#8d49ff;
+
+    font-size:26px;
+
+    font-weight:700;
+
+}
+
+/*==========================
+        DECORACIONES
+==========================*/
+
+.decoracion{
+
+    position:fixed;
+
+    font-size:38px;
+
+    animation:flotar 4s ease-in-out infinite;
+
+    opacity:.7;
+
+}
+
+.decoracion1{top:18%;left:4%;}
+.decoracion2{top:72%;left:8%;}
+.decoracion3{top:20%;right:5%;}
+.decoracion4{bottom:15%;right:8%;}
+.decoracion5{bottom:8%;left:45%;}
+
+/*==========================
+        ANIMACIONES
+==========================*/
+
+@keyframes subir{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(40px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+@keyframes cloudMove{
+
+    from{
+
+        transform:translateX(-220px);
+
+    }
+
+    to{
+
+        transform:translateX(calc(100vw + 250px));
+
+    }
+
+}
+
+@keyframes twinkle{
+
+    0%,100%{
+
+        transform:scale(1);
+
+        opacity:.6;
+
+    }
+
+    50%{
+
+        transform:scale(1.25);
+
+        opacity:1;
+
+    }
+
+}
+
+@keyframes flotar{
+
+    0%,100%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-15px);
+
+    }
+
+}
+
+/*==========================
+        RESPONSIVE
+==========================*/
+
+@media(max-width:768px){
+
+    .card{
+
+        padding:30px 20px;
+
+    }
+
+    h1{
+
+        font-size:36px;
+
+    }
+
+    h2{
+
+        font-size:28px;
+
+    }
+
+    .intro{
+
+        font-size:17px;
+
+    }
+
+    .grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .btn{
+
+        width:100%;
+
+    }
+
+}

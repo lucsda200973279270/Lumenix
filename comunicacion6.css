@@ -1,0 +1,256 @@
+/*=========================================
+LUMENIX | COMUNICACIÓN 6°
+=========================================*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Fredoka', sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #1976D2, #64B5F6, #FFF176, #81C784);
+  overflow-x: hidden;
+}
+
+header {
+  background: white;
+  padding: 18px 35px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, .15);
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+.logo {
+  font-size: 34px;
+  font-weight: bold;
+  color: #0D47A1;
+}
+
+nav {
+  display: flex;
+  gap: 20px;
+}
+
+nav a {
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: bold;
+  color: #1565C0;
+  transition: .3s;
+}
+
+nav a:hover {
+  color: #FB8C00;
+}
+
+.hero {
+  text-align: center;
+  padding: 55px;
+}
+
+.personaje {
+  font-size: 130px;
+  animation: flotar 2.8s infinite;
+}
+
+@keyframes flotar {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+  100% { transform: translateY(0); }
+}
+
+.dialogo {
+  background: white;
+  display: inline-block;
+  padding: 30px;
+  border-radius: 25px;
+  margin-top: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, .15);
+  max-width: 900px;
+}
+
+.dialogo h2 {
+  font-size: 36px;
+  color: #0D47A1;
+  margin-bottom: 15px;
+}
+
+.dialogo p {
+  font-size: 21px;
+  line-height: 34px;
+  color: #444;
+}
+
+.barra {
+  width: 80%;
+  height: 30px;
+  background: #ddd;
+  margin: auto;
+  margin-top: 25px;
+  border-radius: 30px;
+  overflow: hidden;
+}
+
+.progreso {
+  width: 0%;
+  height: 100%;
+  background: linear-gradient(90deg, #43A047, #8BC34A);
+  transition: 1s;
+}
+
+.estado {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 30px;
+  font-size: 24px;
+}
+
+.tarjetas {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+  padding: 50px;
+  max-width: 1400px;
+  margin: auto;
+}
+
+.tarjeta {
+  background: white;
+  padding: 25px;
+  border-radius: 25px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, .15);
+  transition: .35s;
+  text-align: center;
+}
+
+.tarjeta:hover {
+  transform: translateY(-10px);
+}
+
+.tarjeta h2 {
+  color: #1565C0;
+  margin-bottom: 15px;
+}
+
+.tarjeta p {
+  font-size: 18px;
+  line-height: 30px;
+  color: #555;
+}
+
+button {
+  padding: 14px 28px;
+  margin-top: 18px;
+  border: none;
+  border-radius: 15px;
+  background: #FB8C00;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: .3s;
+}
+
+button:hover {
+  background: #EF6C00;
+  transform: scale(1.05);
+}
+
+input {
+  margin-top: 15px;
+  padding: 12px;
+  width: 90%;
+  font-size: 18px;
+  border-radius: 12px;
+  border: 2px solid #90CAF9;
+  text-align: center;
+}
+
+textarea {
+  margin-top: 15px;
+  padding: 15px;
+  width: 95%;
+  height: 140px;
+  font-size: 17px;
+  border-radius: 15px;
+  border: 2px solid #90CAF9;
+  resize: none;
+}
+
+iframe {
+  margin-top: 15px;
+  border-radius: 18px;
+  border: none;
+  width: 100%;
+  height: 180px;
+}
+
+ul {
+  text-align: left;
+  padding-left: 25px;
+  line-height: 32px;
+  font-size: 18px;
+}
+
+footer {
+  background: #1565C0;
+  color: white;
+  padding: 30px;
+  text-align: center;
+  font-size: 20px;
+  margin-top: 40px;
+}
+
+.correcto {
+  color: #2E7D32;
+  font-weight: bold;
+  font-size: 20px;
+  margin-top: 10px;
+}
+
+.error {
+  color: #C62828;
+  font-weight: bold;
+  font-size: 20px;
+  margin-top: 10px;
+}
+
+@media (max-width:900px) {
+  header {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  nav {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .personaje {
+    font-size: 90px;
+  }
+
+  .dialogo h2 {
+    font-size: 28px;
+  }
+
+  .dialogo p {
+    font-size: 18px;
+  }
+
+  .estado {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .tarjetas {
+    padding: 20px;
+  }
+}

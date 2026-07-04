@@ -1,0 +1,206 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LUMENIX | Comunicación 3° Primaria</title>
+  <link rel="stylesheet" href="comunicacion3.css">
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <div class="logo">📚 LUMENIX</div>
+    <nav>
+      <a href="index.html">🏠 Inicio</a>
+      <a href="comunicacion.html">📖 Grados</a>
+      <a href="#">🏆 Logros</a>
+      <a href="#">🛒 Tienda</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="personaje">🦉</div>
+    <div class="dialogo">
+      <h2>¡Bienvenido a Comunicación 3°!</h2>
+      <p>Hoy aprenderemos comprensión lectora, gramática, sinónimos, antónimos, sujeto y predicado mediante juegos y desafíos.</p>
+    </div>
+
+    <div class="barra">
+      <div class="progreso" id="barra"></div>
+    </div>
+
+    <div class="estado">
+      <div>❤️❤️❤️</div>
+      <div>🪙 <span id="monedas">0</span></div>
+      <div>⭐ Nivel 3</div>
+    </div>
+  </section>
+
+  <section class="tarjetas">
+    <div class="tarjeta">
+      <h2>📚 Lección 1</h2>
+      <p>Aprenderemos comprensión lectora y gramática.</p>
+      <button onclick="mostrarLeccion()">Comenzar</button>
+    </div>
+
+    <div class="tarjeta">
+      <h2>🎥 Video</h2>
+      <p>Observa el siguiente video educativo.</p>
+      <iframe src="https://www.youtube.com/embed/Ag8M7X0A4n4" allowfullscreen></iframe>
+    </div>
+  </section>
+
+  <section class="tarjetas">
+    <div class="tarjeta">
+      <h2>📖 Lee el texto</h2>
+      <p>María sembró una pequeña planta en su jardín. Cada día la regaba con agua y la cuidaba con mucho cariño. Después de varias semanas, la planta creció y dio hermosas flores.</p>
+    </div>
+
+    <div class="tarjeta">
+      <h2>❓ Pregunta</h2>
+      <p>¿Qué hizo María todos los días?</p>
+      <button onclick="lectura('Regó la planta')">Regó la planta</button>
+      <button onclick="lectura('Compró flores')">Compró flores</button>
+      <button onclick="lectura('Vendió plantas')">Vendió plantas</button>
+      <p id="mensajeLectura" class="mensaje"></p>
+    </div>
+  </section>
+
+  <section class="tarjetas">
+    <div class="tarjeta">
+      <h2>👤 Sujeto</h2>
+      <p>¿Cuál es el sujeto?</p>
+      <h3>"El perro corre rápido."</h3>
+      <button onclick="sujeto('El perro')">El perro</button>
+      <button onclick="sujeto('Corre rápido')">Corre rápido</button>
+      <p id="mensajeSujeto" class="mensaje"></p>
+    </div>
+
+    <div class="tarjeta">
+      <h2>📝 Predicado</h2>
+      <p>¿Cuál es el predicado?</p>
+      <h3>"La niña canta bonito."</h3>
+      <button onclick="predicado('La niña')">La niña</button>
+      <button onclick="predicado('canta bonito')">Canta bonito</button>
+      <p id="mensajePredicado" class="mensaje"></p>
+    </div>
+  </section>
+
+  <section class="tarjetas">
+    <div class="tarjeta">
+      <h2>🔤 Sinónimo</h2>
+      <p>Sinónimo de "rápido".</p>
+      <button onclick="sinonimo('Veloz')">Veloz</button>
+      <button onclick="sinonimo('Lento')">Lento</button>
+      <button onclick="sinonimo('Pequeño')">Pequeño</button>
+      <p id="mensajeSinonimo" class="mensaje"></p>
+    </div>
+
+    <div class="tarjeta">
+      <h2>↔ Antónimo</h2>
+      <p>Antónimo de "alto".</p>
+      <button onclick="antonimo('Bajo')">Bajo</button>
+      <button onclick="antonimo('Grande')">Grande</button>
+      <button onclick="antonimo('Ancho')">Ancho</button>
+      <p id="mensajeAntonimo" class="mensaje"></p>
+    </div>
+  </section>
+
+  <section class="tarjetas">
+    <div class="tarjeta">
+      <h2>📦 Sustantivo</h2>
+      <p>Selecciona un sustantivo.</p>
+      <button onclick="sustantivo('Casa')">Casa</button>
+      <button onclick="sustantivo('Corre')">Corre</button>
+      <button onclick="sustantivo('Bonito')">Bonito</button>
+      <p id="mensajeSustantivo" class="mensaje"></p>
+    </div>
+
+    <div class="tarjeta">
+      <h2>🏃 Verbo</h2>
+      <p>Selecciona un verbo.</p>
+      <button onclick="verbo('Escribe')">Escribe</button>
+      <button onclick="verbo('Lápiz')">Lápiz</button>
+      <button onclick="verbo('Azul')">Azul</button>
+      <p id="mensajeVerbo" class="mensaje"></p>
+    </div>
+  </section>
+
+  <section class="tarjetas">
+    <div class="tarjeta">
+      <h2>❗ Completa</h2>
+      <p>Hola ____ ¿Cómo estás?</p>
+      <button onclick="puntuacion('!')">!</button>
+      <button onclick="puntuacion('.')">.</button>
+      <button onclick="puntuacion(',')">,</button>
+      <p id="mensajePuntuacion" class="mensaje"></p>
+    </div>
+
+    <div class="tarjeta">
+      <h2>✍ Ordena</h2>
+      <p>Ordena correctamente.</p>
+      <h3>escuela - voy - Yo - a - la</h3>
+      <input type="text" id="ordenar" placeholder="Escribe la oración">
+      <button onclick="ordenarOracion()">Comprobar</button>
+      <p id="mensajeOrdenar" class="mensaje"></p>
+    </div>
+  </section>
+
+  <section class="tarjetas">
+    <div class="tarjeta">
+      <h2>🎮 Desafío</h2>
+      <p>Selecciona el adjetivo.</p>
+      <button onclick="juego('Hermoso')">Hermoso</button>
+      <button onclick="juego('Mesa')">Mesa</button>
+      <button onclick="juego('Corre')">Corre</button>
+      <button onclick="juego('Libro')">Libro</button>
+      <p id="mensajeJuego" class="mensaje"></p>
+    </div>
+  </section>
+
+  <section class="tarjetas">
+    <div class="tarjeta">
+      <h2>🧠 Memoria</h2>
+      <h1 id="palabraMemoria">BIBLIOTECA</h1>
+      <button onclick="memoria()">Comenzar</button>
+      <p id="mensajeMemoria" class="mensaje"></p>
+    </div>
+  </section>
+
+  <section class="tarjetas">
+    <div class="tarjeta">
+      <h2>🏆 Logros</h2>
+      <ul class="lista-logros">
+        <li>🔒 Leer un texto.</li>
+        <li>🔒 Resolver comprensión.</li>
+        <li>🔒 Identificar sujeto.</li>
+        <li>🔒 Conseguir 100 monedas.</li>
+        <li>🔒 Completar Comunicación 3°.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="tarjetas">
+    <div class="tarjeta">
+      <h2>🛒 Tienda</h2>
+      <button onclick="comprar('🦉', 60)">🦉 60 monedas</button>
+      <button onclick="comprar('🦊', 90)">🦊 90 monedas</button>
+      <button onclick="comprar('🦁', 140)">🦁 140 monedas</button>
+      <p id="mensajeTienda" class="mensaje"></p>
+    </div>
+  </section>
+
+  <section class="tarjetas">
+    <div class="tarjeta">
+      <h2>📜 Certificado</h2>
+      <p>¡Completa todas las actividades para obtener tu certificado!</p>
+      <button onclick="certificado()">Obtener certificado</button>
+      <p id="mensajeCertificado" class="mensaje"></p>
+    </div>
+  </section>
+
+  <footer>✨ LUMENIX | Comunicación 3° Primaria ✨</footer>
+
+  <script src="comunicacion3.js"></script>
+</body>
+</html>

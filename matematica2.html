@@ -1,0 +1,405 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LUMENIX | Matemática 2° Primaria</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Fredoka', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #81D4FA, #FFF59D, #F8BBD0);
+      overflow-x: hidden;
+    }
+
+    /*========== HEADER ==========*/
+    header {
+      background: white;
+      padding: 18px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, .15);
+      position: sticky;
+      top: 0;
+      z-index: 999;
+    }
+
+    .logo {
+      font-size: 34px;
+      font-weight: bold;
+      color: #2196F3;
+    }
+
+    nav a {
+      text-decoration: none;
+      margin: 15px;
+      font-size: 19px;
+      font-weight: bold;
+      color: #2196F3;
+    }
+
+    nav a:hover {
+      color: #FF9800;
+    }
+
+    /*========== HERO ==========*/
+    .hero {
+      text-align: center;
+      padding: 50px;
+    }
+
+    .personaje {
+      font-size: 130px;
+      animation: flotar 2s infinite;
+    }
+
+    @keyframes flotar {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-15px); }
+      100% { transform: translateY(0); }
+    }
+
+    .dialogo {
+      background: white;
+      display: inline-block;
+      padding: 25px;
+      border-radius: 25px;
+      margin-top: 20px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, .2);
+      font-size: 22px;
+    }
+
+    .barra {
+      width: 80%;
+      height: 28px;
+      background: #ddd;
+      margin: auto;
+      margin-top: 25px;
+      border-radius: 30px;
+      overflow: hidden;
+    }
+
+    .progreso {
+      width: 0%;
+      height: 100%;
+      background: #4CAF50;
+      transition: 1s;
+    }
+
+    .estado {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      margin-top: 30px;
+      font-size: 24px;
+    }
+
+    /*========== TARJETAS ==========*/
+    .tarjetas {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+      padding: 40px;
+    }
+
+    .tarjeta {
+      width: 260px;
+      background: white;
+      padding: 25px;
+      border-radius: 25px;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, .15);
+      transition: .4s;
+      text-align: center;
+    }
+
+    .tarjeta:hover {
+      transform: translateY(-10px);
+    }
+
+    .tarjeta h2 {
+      color: #2196F3;
+      margin-bottom: 15px;
+    }
+
+    button {
+      padding: 14px 25px;
+      font-size: 18px;
+      border: none;
+      border-radius: 15px;
+      background: #FF9800;
+      color: white;
+      cursor: pointer;
+      transition: .3s;
+    }
+
+    button:hover {
+      transform: scale(1.05);
+      background: #F57C00;
+    }
+
+    input {
+      padding: 10px;
+      border: 2px solid #90CAF9;
+      border-radius: 10px;
+      width: 100%;
+      margin-top: 10px;
+    }
+
+    footer {
+      background: #2196F3;
+      padding: 25px;
+      color: white;
+      text-align: center;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">🧮 LUMENIX</div>
+    <nav>
+      <a href="index.html">Inicio</a>
+      <a href="matematica.html">Grados</a>
+      <a href="#">Tienda</a>
+      <a href="#">Logros</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="personaje">🦉</div>
+    <div class="dialogo">
+      <h2>¡Bienvenido a Matemática 2°!</h2>
+      <p>
+        Hoy aprenderemos números hasta el 100,
+        sumas más difíciles,
+        restas,
+        patrones
+        y muchos juegos.
+      </p>
+    </div>
+
+    <div class="barra">
+      <div class="progreso" id="barra"></div>
+    </div>
+
+    <div class="estado">
+      <div>❤️❤️❤️</div>
+      <div>🪙 <span id="monedas">0</span></div>
+      <div>⭐ Nivel 2</div>
+    </div>
+  </section>
+
+  <section class="tarjetas">
+    <div class="tarjeta">
+      <h2>🔢 Números hasta 100</h2>
+      <p>Aprenderemos a leer, escribir y ordenar números.</p>
+      <button>Comenzar</button>
+    </div>
+
+    <div class="tarjeta">
+      <h2>➕ Sumas</h2>
+      <p>Resolveremos sumas de dos cifras.</p>
+      <button>Comenzar</button>
+    </div>
+
+    <div class="tarjeta">
+      <h2>➖ Restas</h2>
+      <p>Resolveremos restas con y sin llevadas.</p>
+      <button>Comenzar</button>
+    </div>
+
+    <div class="tarjeta">
+      <h2>🧩 Juegos</h2>
+      <p>Aprenderemos jugando.</p>
+      <button>Jugar</button>
+    </div>
+  </section>
+
+  <!-- ========================= -->
+  <!-- LECCIÓN 1 -->
+  <!-- ========================= -->
+  <section class="tarjetas">
+    <div class="tarjeta">
+      <h2>📚 Lección 1</h2>
+      <p>Conoceremos los números del 1 al 100.</p>
+      <button onclick="mostrarLeccion()">Empezar</button>
+    </div>
+
+    <div class="tarjeta">
+      <h2>🎥 Video</h2>
+      <p>Observa el siguiente video.</p>
+      <iframe width="220" height="130"
+        src="https://www.youtube.com/embed/4c0lF2V8Yw8"
+        title="Video"
+        frameborder="0"
+        allowfullscreen></iframe>
+    </div>
+  </section>
+
+  <!-- ========================= -->
+  <!-- NÚMEROS -->
+  <!-- ========================= -->
+  <section class="tarjetas">
+    <div class="tarjeta">
+      <h2>🔢 ¿Qué número es?</h2>
+      <h1>48</h1>
+      <p>Cuarenta y ocho</p>
+    </div>
+
+    <div class="tarjeta">
+      <h2>🔢 ¿Qué número sigue?</h2>
+      <h1>25 - 26 - 27 - ?</h1>
+      <input type="number" id="numero1">
+      <br><br>
+      <button onclick="numero1()">Responder</button>
+      <p id="mensajeNumero1"></p>
+    </div>
+  </section>
+
+  <!-- ========================= -->
+  <!-- SUMAS -->
+  <!-- ========================= -->
+  <section class="tarjetas">
+    <div class="tarjeta">
+      <h2>➕ Suma</h2>
+      <h1>24 + 15 = ?</h1>
+      <input type="number" id="suma2">
+      <br><br>
+      <button onclick="suma2()">Comprobar</button>
+      <p id="mensajeSuma2"></p>
+    </div>
+
+    <div class="tarjeta">
+      <h2>➕ Suma</h2>
+      <h1>37 + 22 = ?</h1>
+      <input type="number" id="suma3">
+      <br><br>
+      <button onclick="suma3()">Comprobar</button>
+      <p id="mensajeSuma3"></p>
+    </div>
+  </section>
+
+  <!-- ========================= -->
+  <!-- RESTAS -->
+  <!-- ========================= -->
+  <section class="tarjetas">
+    <div class="tarjeta">
+      <h2>➖ Resta</h2>
+      <h1>62 - 20 = ?</h1>
+      <input type="number" id="resta2">
+      <br><br>
+      <button onclick="resta2()">Comprobar</button>
+      <p id="mensajeResta2"></p>
+    </div>
+
+    <div class="tarjeta">
+      <h2>➖ Resta</h2>
+      <h1>90 - 35 = ?</h1>
+      <input type="number" id="resta3">
+      <br><br>
+      <button onclick="resta3()">Comprobar</button>
+      <p id="mensajeResta3"></p>
+    </div>
+  </section>
+
+  <footer>✨ LUMENIX | Matemática 2° Primaria ✨</footer>
+
+  <script>
+    let progreso = 0;
+    let monedas = 0;
+
+    function actualizar() {
+      const barra = document.getElementById("barra");
+      const monedasTexto = document.getElementById("monedas");
+
+      if (barra) barra.style.width = progreso + "%";
+      if (monedasTexto) monedasTexto.innerHTML = monedas;
+    }
+
+    function ganar() {
+      monedas += 10;
+      progreso += 10;
+
+      if (progreso > 100) {
+        progreso = 100;
+      }
+
+      actualizar();
+    }
+
+    function mostrarLeccion() {
+      alert("🎉 ¡Comencemos la lección!");
+    }
+
+    function numero1() {
+      const r = document.getElementById("numero1").value;
+      const mensaje = document.getElementById("mensajeNumero1");
+
+      if (r == 28) {
+        mensaje.innerHTML = "✅ ¡Correcto!";
+        ganar();
+      } else {
+        mensaje.innerHTML = "❌ Intenta nuevamente.";
+      }
+    }
+
+    function suma2() {
+      const r = document.getElementById("suma2").value;
+      const mensaje = document.getElementById("mensajeSuma2");
+
+      if (r == 39) {
+        mensaje.innerHTML = "🎉 ¡Muy bien!";
+        ganar();
+      } else {
+        mensaje.innerHTML = "❌ Incorrecto.";
+      }
+    }
+
+    function suma3() {
+      const r = document.getElementById("suma3").value;
+      const mensaje = document.getElementById("mensajeSuma3");
+
+      if (r == 59) {
+        mensaje.innerHTML = "🎉 Excelente.";
+        ganar();
+      } else {
+        mensaje.innerHTML = "❌ Sigue practicando.";
+      }
+    }
+
+    function resta2() {
+      const r = document.getElementById("resta2").value;
+      const mensaje = document.getElementById("mensajeResta2");
+
+      if (r == 42) {
+        mensaje.innerHTML = "⭐ Correcto.";
+        ganar();
+      } else {
+        mensaje.innerHTML = "❌ Intenta otra vez.";
+      }
+    }
+
+    function resta3() {
+      const r = document.getElementById("resta3").value;
+      const mensaje = document.getElementById("mensajeResta3");
+
+      if (r == 55) {
+        mensaje.innerHTML = "🏆 Muy bien.";
+        ganar();
+      } else {
+        mensaje.innerHTML = "❌ Incorrecto.";
+      }
+    }
+
+    window.addEventListener("load", actualizar);
+  </script>
+</body>
+</html>

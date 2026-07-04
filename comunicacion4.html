@@ -1,0 +1,233 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LUMENIX | Comunicación 4° Primaria</title>
+  <link rel="stylesheet" href="comunicacion4.css">
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <div class="logo">📚 LUMENIX</div>
+    <nav>
+      <a href="index.html">🏠 Inicio</a>
+      <a href="comunicacion.html">📖 Grados</a>
+      <a href="#">🏆 Logros</a>
+      <a href="#">🛒 Tienda</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="personaje">🦅</div>
+    <div class="dialogo">
+      <h2>¡Bienvenido a Comunicación 4°!</h2>
+      <p>Hoy aprenderemos comprensión lectora, tipos de textos, gramática, idea principal, signos de puntuación y mucho más.</p>
+    </div>
+
+    <div class="barra">
+      <div class="progreso" id="barra"></div>
+    </div>
+
+    <div class="estado">
+      <div>❤️❤️❤️</div>
+      <div>🪙 <span id="monedas">0</span></div>
+      <div>⭐ Nivel 4</div>
+    </div>
+  </section>
+
+  <section class="tarjetas">
+    <div class="tarjeta">
+      <h2>📚 Lección 1</h2>
+      <p>Hoy aprenderemos a identificar la idea principal y comprender textos.</p>
+      <button onclick="mostrarLeccion()">Comenzar</button>
+    </div>
+
+    <div class="tarjeta">
+      <h2>🎥 Video Educativo</h2>
+      <p>Observa el siguiente video.</p>
+      <iframe src="https://www.youtube.com/embed/Ag8M7X0A4n4" allowfullscreen></iframe>
+    </div>
+  </section>
+
+  <section class="tarjetas">
+    <div class="tarjeta">
+      <h2>📖 Lectura</h2>
+      <p>Los delfines son mamíferos marinos muy inteligentes. Viven en grupos llamados manadas y se comunican mediante sonidos. Además, ayudan a otros delfines cuando están heridos.</p>
+    </div>
+
+    <div class="tarjeta">
+      <h2>❓ Pregunta</h2>
+      <p>¿Cuál es la idea principal?</p>
+      <button onclick="ideaPrincipal(1)">Los delfines son inteligentes y viven en grupo.</button>
+      <button onclick="ideaPrincipal(2)">Los peces viven en el mar.</button>
+      <button onclick="ideaPrincipal(3)">Los delfines vuelan.</button>
+      <p id="mensajeIdea" class="mensaje"></p>
+    </div>
+  </section>
+
+  <section class="tarjetas">
+    <div class="tarjeta">
+      <h2>📰 ¿Qué tipo de texto es?</h2>
+      <p>"El alcalde inauguró un nuevo parque para la ciudad."</p>
+      <button onclick="texto(1)">Noticia</button>
+      <button onclick="texto(2)">Poema</button>
+      <button onclick="texto(3)">Receta</button>
+      <p id="mensajeTexto" class="mensaje"></p>
+    </div>
+
+    <div class="tarjeta">
+      <h2>📩 Carta</h2>
+      <p>¿Qué parte aparece al final de una carta?</p>
+      <button onclick="carta(1)">Despedida</button>
+      <button onclick="carta(2)">Título</button>
+      <button onclick="carta(3)">Índice</button>
+      <p id="mensajeCarta" class="mensaje"></p>
+    </div>
+  </section>
+
+  <section class="tarjetas">
+    <div class="tarjeta">
+      <h2>👤 Sujeto</h2>
+      <p>"Los niños juegan fútbol."</p>
+      <button onclick="sujeto(1)">Los niños</button>
+      <button onclick="sujeto(2)">Juegan fútbol</button>
+      <p id="mensajeSujeto" class="mensaje"></p>
+    </div>
+
+    <div class="tarjeta">
+      <h2>📝 Predicado</h2>
+      <p>"Mi mamá cocina delicioso."</p>
+      <button onclick="predicado(1)">Mi mamá</button>
+      <button onclick="predicado(2)">Cocina delicioso</button>
+      <p id="mensajePredicado" class="mensaje"></p>
+    </div>
+  </section>
+
+  <section class="tarjetas">
+    <div class="tarjeta">
+      <h2>🔤 Sinónimo</h2>
+      <p>Sinónimo de "feliz".</p>
+      <button onclick="sinonimo(1)">Contento</button>
+      <button onclick="sinonimo(2)">Molesto</button>
+      <button onclick="sinonimo(3)">Oscuro</button>
+      <p id="mensajeSinonimo" class="mensaje"></p>
+    </div>
+
+    <div class="tarjeta">
+      <h2>↔ Antónimo</h2>
+      <p>Antónimo de "rápido".</p>
+      <button onclick="antonimo(1)">Lento</button>
+      <button onclick="antonimo(2)">Grande</button>
+      <button onclick="antonimo(3)">Bonito</button>
+      <p id="mensajeAntonimo" class="mensaje"></p>
+    </div>
+  </section>
+
+  <section class="tarjetas">
+    <div class="tarjeta">
+      <h2>🧩 Prefijos</h2>
+      <p>¿Cuál palabra tiene prefijo?</p>
+      <button onclick="prefijo(1)">Deshacer</button>
+      <button onclick="prefijo(2)">Mesa</button>
+      <button onclick="prefijo(3)">Casa</button>
+      <p id="mensajePrefijo" class="mensaje"></p>
+    </div>
+
+    <div class="tarjeta">
+      <h2>🧩 Sufijos</h2>
+      <p>¿Cuál palabra tiene sufijo?</p>
+      <button onclick="sufijo(1)">Panadero</button>
+      <button onclick="sufijo(2)">Sol</button>
+      <button onclick="sufijo(3)">Mar</button>
+      <p id="mensajeSufijo" class="mensaje"></p>
+    </div>
+  </section>
+
+  <section class="tarjetas">
+    <div class="tarjeta">
+      <h2>❗ Completa</h2>
+      <p>¡Qué bonito ___</p>
+      <button onclick="puntuacion(1)">!</button>
+      <button onclick="puntuacion(2)">.</button>
+      <button onclick="puntuacion(3)">,</button>
+      <p id="mensajePuntuacion" class="mensaje"></p>
+    </div>
+
+    <div class="tarjeta">
+      <h2>✍ Ordena la oración</h2>
+      <h3>ayer - al - parque - Fuimos</h3>
+      <input type="text" id="ordenar" placeholder="Escribe la oración">
+      <button onclick="ordenarOracion()">Comprobar</button>
+      <p id="mensajeOrdenar" class="mensaje"></p>
+    </div>
+  </section>
+
+  <section class="tarjetas">
+    <div class="tarjeta">
+      <h2>📝 Escribe una oración</h2>
+      <p>Escribe una oración con la palabra: <b>Amistad</b></p>
+      <input type="text" id="redaccion" placeholder="Escribe tu oración">
+      <button onclick="redaccion()">Enviar</button>
+      <p id="mensajeRedaccion" class="mensaje"></p>
+    </div>
+  </section>
+
+  <section class="tarjetas">
+    <div class="tarjeta">
+      <h2>🎮 Desafío</h2>
+      <p>Selecciona un adjetivo.</p>
+      <button onclick="juego(1)">Hermoso</button>
+      <button onclick="juego(2)">Mesa</button>
+      <button onclick="juego(3)">Corre</button>
+      <button onclick="juego(4)">Libro</button>
+      <p id="mensajeJuego" class="mensaje"></p>
+    </div>
+  </section>
+
+  <section class="tarjetas">
+    <div class="tarjeta">
+      <h2>🧠 Memoria</h2>
+      <h1 id="palabraMemoria">RESPONSABILIDAD</h1>
+      <button onclick="memoria()">Comenzar</button>
+      <p id="mensajeMemoria" class="mensaje"></p>
+    </div>
+  </section>
+
+  <section class="tarjetas">
+    <div class="tarjeta">
+      <h2>🏆 Logros</h2>
+      <ul class="lista-logros">
+        <li>🔒 Resolver comprensión lectora.</li>
+        <li>🔒 Identificar la idea principal.</li>
+        <li>🔒 Resolver gramática.</li>
+        <li>🔒 Conseguir 150 monedas.</li>
+        <li>🔒 Completar Comunicación 4°.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="tarjetas">
+    <div class="tarjeta">
+      <h2>🛒 Tienda</h2>
+      <button onclick="comprar('🦅', 80)">🦅 80 monedas</button>
+      <button onclick="comprar('🦉', 120)">🦉 120 monedas</button>
+      <button onclick="comprar('🐬', 180)">🐬 180 monedas</button>
+      <p id="mensajeTienda" class="mensaje"></p>
+    </div>
+  </section>
+
+  <section class="tarjetas">
+    <div class="tarjeta">
+      <h2>📜 Certificado</h2>
+      <p>Cuando completes todas las actividades podrás obtener tu diploma de Comunicación 4°.</p>
+      <button onclick="certificado()">Obtener certificado</button>
+      <p id="mensajeCertificado" class="mensaje"></p>
+    </div>
+  </section>
+
+  <footer>✨ LUMENIX | Comunicación 4° Primaria ✨</footer>
+
+  <script src="comunicacion4.js"></script>
+</body>
+</html>

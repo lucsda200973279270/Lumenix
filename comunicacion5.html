@@ -1,0 +1,202 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LUMENIX | Comunicación 5° Primaria</title>
+  <link rel="stylesheet" href="comunicacion5.css">
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <div class="logo">📚 LUMENIX</div>
+    <nav>
+      <a href="index.html">🏠 Inicio</a>
+      <a href="comunicacion.html">📖 Grados</a>
+      <a href="#">🏆 Logros</a>
+      <a href="#">🛒 Tienda</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="personaje">🦜</div>
+    <div class="dialogo">
+      <h2>¡Bienvenido a Comunicación 5°!</h2>
+      <p>
+        Hoy fortalecerás tu comprensión lectora, analizarás noticias, aprenderás conectores,
+        mejorarás tu ortografía y escribirás textos creativos.
+      </p>
+    </div>
+
+    <div class="barra">
+      <div class="progreso" id="barra"></div>
+    </div>
+
+    <div class="estado">
+      <div>❤️❤️❤️</div>
+      <div>🪙 <span id="monedas">0</span></div>
+      <div>⭐ Nivel 5</div>
+    </div>
+  </section>
+
+  <section class="tarjetas">
+    <div class="tarjeta">
+      <h2>📚 Lección 1</h2>
+      <p>Aprenderemos comprensión lectora, inferencias y producción de textos.</p>
+      <button onclick="mostrarLeccion()">Comenzar</button>
+    </div>
+
+    <div class="tarjeta">
+      <h2>🎥 Video Educativo</h2>
+      <p>Aprende con este video.</p>
+      <iframe src="https://www.youtube.com/embed/Ag8M7X0A4n4" allowfullscreen></iframe>
+    </div>
+  </section>
+
+  <section class="tarjetas">
+    <div class="tarjeta">
+      <h2>📖 Lectura</h2>
+      <p>
+        Los bosques son fundamentales para la vida en el planeta. Producen oxígeno,
+        albergan miles de especies y ayudan a regular el clima. Por ello, es importante
+        protegerlos y evitar la tala indiscriminada.
+      </p>
+    </div>
+
+    <div class="tarjeta">
+      <h2>❓ Pregunta</h2>
+      <p>¿Cuál es la idea principal del texto?</p>
+      <button onclick="ideaPrincipal(1)">Los bosques son importantes para la vida.</button>
+      <button onclick="ideaPrincipal(2)">Los bosques tienen animales.</button>
+      <button onclick="ideaPrincipal(3)">La tala es divertida.</button>
+      <p id="mensajeIdea"></p>
+    </div>
+  </section>
+
+  <section class="tarjetas">
+    <div class="tarjeta">
+      <h2>💡 Inferencia</h2>
+      <p>¿Por qué debemos cuidar los bosques?</p>
+      <button onclick="inferencia(1)">Porque benefician al planeta.</button>
+      <button onclick="inferencia(2)">Porque ocupan espacio.</button>
+      <button onclick="inferencia(3)">Porque son de color verde.</button>
+      <p id="mensajeInferencia"></p>
+    </div>
+
+    <div class="tarjeta">
+      <h2>📰 Tipo de texto</h2>
+      <p>“El ministro inauguró una nueva biblioteca.”</p>
+      <button onclick="tipoTexto(1)">Noticia</button>
+      <button onclick="tipoTexto(2)">Poema</button>
+      <button onclick="tipoTexto(3)">Leyenda</button>
+      <p id="mensajeTexto"></p>
+    </div>
+  </section>
+
+  <section class="tarjetas">
+    <div class="tarjeta">
+      <h2>🔗 Conectores</h2>
+      <p>Completa: “Estudié mucho, ______ aprobé el examen.”</p>
+      <button onclick="conector(1)">por eso</button>
+      <button onclick="conector(2)">aunque</button>
+      <button onclick="conector(3)">sin embargo</button>
+      <p id="mensajeConector"></p>
+    </div>
+
+    <div class="tarjeta">
+      <h2>🔤 Analogía</h2>
+      <p>Perro es a cachorro como gato es a...</p>
+      <button onclick="analogia(1)">gatito</button>
+      <button onclick="analogia(2)">león</button>
+      <button onclick="analogia(3)">tigre</button>
+      <p id="mensajeAnalogia"></p>
+    </div>
+  </section>
+
+  <section class="tarjetas">
+    <div class="tarjeta">
+      <h2>✍ Ortografía</h2>
+      <p>Selecciona la palabra correcta.</p>
+      <button onclick="ortografia(1)">Hervir</button>
+      <button onclick="ortografia(2)">Ervir</button>
+      <button onclick="ortografia(3)">Hervír</button>
+      <p id="mensajeOrtografia"></p>
+    </div>
+
+    <div class="tarjeta">
+      <h2>📝 Completa</h2>
+      <p>Escribe correctamente: “_____imos al parque.”</p>
+      <input type="text" id="palabra" placeholder="Escribe la palabra">
+      <button onclick="completar()">Comprobar</button>
+      <p id="mensajeCompletar"></p>
+    </div>
+  </section>
+
+  <section class="tarjetas">
+    <div class="tarjeta">
+      <h2>📄 Redacción</h2>
+      <p>Escribe un pequeño párrafo sobre: <b>¿Cómo podemos cuidar el medio ambiente?</b></p>
+      <textarea id="texto" placeholder="Escribe tu texto aquí..."></textarea>
+      <button onclick="redaccion()">Guardar</button>
+      <p id="mensajeRedaccion"></p>
+    </div>
+  </section>
+
+  <section class="tarjetas">
+    <div class="tarjeta">
+      <h2>🎮 Desafío</h2>
+      <p>Selecciona un adverbio.</p>
+      <button onclick="juego(1)">Rápidamente</button>
+      <button onclick="juego(2)">Mesa</button>
+      <button onclick="juego(3)">Libro</button>
+      <button onclick="juego(4)">Árbol</button>
+      <p id="mensajeJuego"></p>
+    </div>
+  </section>
+
+  <section class="tarjetas">
+    <div class="tarjeta">
+      <h2>🧠 Memoria</h2>
+      <h1 id="palabraMemoria">RESPONSABILIDAD</h1>
+      <button onclick="memoria()">Comenzar</button>
+      <p id="mensajeMemoria"></p>
+    </div>
+  </section>
+
+  <section class="tarjetas">
+    <div class="tarjeta">
+      <h2>🏆 Logros</h2>
+      <ul>
+        <li>🔒 Leer un texto informativo.</li>
+        <li>🔒 Resolver una inferencia.</li>
+        <li>🔒 Completar ortografía.</li>
+        <li>🔒 Escribir un párrafo.</li>
+        <li>🔒 Conseguir 200 monedas.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="tarjetas">
+    <div class="tarjeta">
+      <h2>🛒 Tienda</h2>
+      <button onclick="comprar('🦜',100)">🦜 100 monedas</button>
+      <button onclick="comprar('🦉',160)">🦉 160 monedas</button>
+      <button onclick="comprar('🦅',220)">🦅 220 monedas</button>
+      <p id="mensajeTienda"></p>
+    </div>
+  </section>
+
+  <section class="tarjetas">
+    <div class="tarjeta">
+      <h2>📜 Certificado</h2>
+      <p>¡Completa todos los desafíos para obtener tu diploma de Comunicación 5°!</p>
+      <button onclick="certificado()">Obtener certificado</button>
+      <p id="mensajeCertificado"></p>
+    </div>
+  </section>
+
+  <footer>✨ LUMENIX | Comunicación 5° Primaria ✨</footer>
+
+  <script src="comunicacion5.js"></script>
+</body>
+</html>

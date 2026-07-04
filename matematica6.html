@@ -1,0 +1,314 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LUMENIX | Matemática 6° Primaria</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="matematica6.css">
+</head>
+<body>
+  <header>
+    <div class="logo">🧮 LUMENIX</div>
+    <nav>
+      <a href="index.html">🏠 Inicio</a>
+      <a href="matematica.html">📚 Grados</a>
+      <a href="#">🏆 Logros</a>
+      <a href="#">🛒 Tienda</a>
+      <a href="#">👤 Perfil</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="personaje">🦅</div>
+      <div class="dialogo">
+        <h2>🎓 ¡Bienvenido a Matemática 6° Primaria!</h2>
+        <p>
+          Reforzarás operaciones combinadas, fracciones, decimales, porcentajes,
+          álgebra, geometría, estadística y problemas de razonamiento con retos
+          divertidos y un diseño muy atractivo.
+        </p>
+      </div>
+
+      <div class="barra">
+        <div class="progreso" id="barra"></div>
+      </div>
+
+      <div class="estado">
+        <div>❤️❤️❤️</div>
+        <div>🪙 <span id="monedas">0</span></div>
+        <div>⭐ Nivel 6</div>
+      </div>
+    </section>
+
+    <section class="tarjetas">
+      <div class="tarjeta">
+        <h2>🔢 Números Enteros</h2>
+        <p>Valor absoluto, comparación y recta numérica.</p>
+        <button onclick="mostrarLeccion()">Comenzar</button>
+      </div>
+
+      <div class="tarjeta">
+        <h2>➕ Operaciones Combinadas</h2>
+        <p>Resuelve expresiones con varios pasos.</p>
+        <button>Practicar</button>
+      </div>
+
+      <div class="tarjeta">
+        <h2>🍕 Fracciones</h2>
+        <p>Operaciones entre fracciones.</p>
+        <button>Practicar</button>
+      </div>
+
+      <div class="tarjeta">
+        <h2>💯 Porcentajes</h2>
+        <p>Descuentos, aumentos e intereses.</p>
+        <button>Practicar</button>
+      </div>
+
+      <div class="tarjeta">
+        <h2>📐 Geometría</h2>
+        <p>Área, perímetro y volumen de figuras.</p>
+        <button>Estudiar</button>
+      </div>
+
+      <div class="tarjeta">
+        <h2>🎥 Video Educativo</h2>
+        <p>Repasa todos los temas con un video.</p>
+        <iframe src="https://www.youtube.com/embed/5kQ0M7mQ5qY" allowfullscreen></iframe>
+      </div>
+    </section>
+
+    <section class="tarjetas">
+      <div class="tarjeta">
+        <h2>➕➖ Operación</h2>
+        <p>125 + 48 × 2</p>
+        <input type="number" id="op1" placeholder="Respuesta">
+        <button onclick="op1()">Responder</button>
+        <p id="mensajeOp1" class="mensaje"></p>
+      </div>
+
+      <div class="tarjeta">
+        <h2>➕➖ Operación</h2>
+        <p>300 - 45 ÷ 5</p>
+        <input type="number" id="op2" placeholder="Respuesta">
+        <button onclick="op2()">Responder</button>
+        <p id="mensajeOp2" class="mensaje"></p>
+      </div>
+
+      <div class="tarjeta">
+        <h2>⚖ Álgebra</h2>
+        <p>x + 18 = 45</p>
+        <input type="number" id="algebra1" placeholder="Respuesta">
+        <button onclick="algebra1()">Resolver</button>
+        <p id="mensajeAlgebra1" class="mensaje"></p>
+      </div>
+
+      <div class="tarjeta">
+        <h2>⚖ Álgebra</h2>
+        <p>3x = 81</p>
+        <input type="number" id="algebra2" placeholder="Respuesta">
+        <button onclick="algebra2()">Resolver</button>
+        <p id="mensajeAlgebra2" class="mensaje"></p>
+      </div>
+    </section>
+
+    <section class="tarjetas">
+      <div class="tarjeta">
+        <h2>🍕 Fracciones</h2>
+        <p>¿Cuál da 3/4?</p>
+        <button onclick="fraccion(1)">3/4</button>
+        <button onclick="fraccion(2)">2/4</button>
+        <button onclick="fraccion(3)">1</button>
+        <p id="mensajeFraccion" class="mensaje"></p>
+      </div>
+
+      <div class="tarjeta">
+        <h2>🍰 Multiplica</h2>
+        <p>2/3 × 3/4</p>
+        <button onclick="fraccion2(1)">1/2</button>
+        <button onclick="fraccion2(2)">2/3</button>
+        <button onclick="fraccion2(3)">3/2</button>
+        <p id="mensajeFraccion2" class="mensaje"></p>
+      </div>
+
+      <div class="tarjeta">
+        <h2>🔟 Decimales</h2>
+        <p>5.8 + 2.45</p>
+        <input type="number" step="0.01" id="decimal1" placeholder="Respuesta">
+        <button onclick="decimal1()">Resolver</button>
+        <p id="mensajeDecimal1" class="mensaje"></p>
+      </div>
+
+      <div class="tarjeta">
+        <h2>🔟 Decimales</h2>
+        <p>9.6 - 3.75</p>
+        <input type="number" step="0.01" id="decimal2" placeholder="Respuesta">
+        <button onclick="decimal2()">Resolver</button>
+        <p id="mensajeDecimal2" class="mensaje"></p>
+      </div>
+    </section>
+
+    <section class="tarjetas">
+      <div class="tarjeta">
+        <h2>💯 Porcentaje</h2>
+        <p>25% de 200</p>
+        <input type="number" id="porcentaje1" placeholder="Respuesta">
+        <button onclick="porcentaje1()">Responder</button>
+        <p id="mensajePorcentaje1" class="mensaje"></p>
+      </div>
+
+      <div class="tarjeta">
+        <h2>💯 Descuento</h2>
+        <p>Una mochila cuesta S/120 con 10% de descuento.</p>
+        <input type="number" id="porcentaje2" placeholder="Respuesta">
+        <button onclick="porcentaje2()">Resolver</button>
+        <p id="mensajePorcentaje2" class="mensaje"></p>
+      </div>
+
+      <div class="tarjeta">
+        <h2>🧠 Problema</h2>
+        <p>Un autobús lleva 48 pasajeros. Bajan 15 y suben 22.</p>
+        <input type="number" id="problema1" placeholder="Respuesta">
+        <button onclick="problema1()">Resolver</button>
+        <p id="mensajeProblema1" class="mensaje"></p>
+      </div>
+
+      <div class="tarjeta">
+        <h2>🧠 Problema</h2>
+        <p>Si 6 cuadernos cuestan S/48, ¿cuánto cuestan 9?</p>
+        <input type="number" id="problema2" placeholder="Respuesta">
+        <button onclick="problema2()">Resolver</button>
+        <p id="mensajeProblema2" class="mensaje"></p>
+      </div>
+    </section>
+
+    <section class="tarjetas">
+      <div class="tarjeta">
+        <h2>📐 Perímetro</h2>
+        <p>Un cuadrado de 12 cm de lado</p>
+        <input type="number" id="perimetro" placeholder="Respuesta">
+        <button onclick="perimetro()">Responder</button>
+        <p id="mensajePerimetro" class="mensaje"></p>
+      </div>
+
+      <div class="tarjeta">
+        <h2>📏 Área</h2>
+        <p>Rectángulo 15 cm × 8 cm</p>
+        <input type="number" id="area" placeholder="Respuesta">
+        <button onclick="area()">Responder</button>
+        <p id="mensajeArea" class="mensaje"></p>
+      </div>
+
+      <div class="tarjeta">
+        <h2>📦 Volumen</h2>
+        <p>Cubo con aristas de 6 cm</p>
+        <input type="number" id="volumen" placeholder="Respuesta">
+        <button onclick="volumen()">Responder</button>
+        <p id="mensajeVolumen" class="mensaje"></p>
+      </div>
+
+      <div class="tarjeta">
+        <h2>📊 Estadística</h2>
+        <p>Promedio de 8, 10, 12 y 14</p>
+        <input type="number" id="promedio" placeholder="Respuesta">
+        <button onclick="promedio()">Responder</button>
+        <p id="mensajePromedio" class="mensaje"></p>
+      </div>
+    </section>
+
+    <section class="tarjetas">
+      <div class="tarjeta">
+        <h2>📊 Moda</h2>
+        <p>5, 8, 5, 9, 5, 10</p>
+        <input type="number" id="moda" placeholder="Respuesta">
+        <button onclick="moda()">Responder</button>
+        <p id="mensajeModa" class="mensaje"></p>
+      </div>
+
+      <div class="tarjeta">
+        <h2>📊 Mediana</h2>
+        <p>2, 4, 6, 8, 10</p>
+        <input type="number" id="mediana" placeholder="Respuesta">
+        <button onclick="mediana()">Responder</button>
+        <p id="mensajeMediana" class="mensaje"></p>
+      </div>
+
+      <div class="tarjeta">
+        <h2>🎲 Probabilidad</h2>
+        <p>Probabilidad de obtener un 6 al lanzar un dado</p>
+        <button onclick="probabilidad(1)">1/6</button>
+        <button onclick="probabilidad(2)">1/3</button>
+        <button onclick="probabilidad(3)">1/2</button>
+        <p id="mensajeProbabilidad" class="mensaje"></p>
+      </div>
+
+      <div class="tarjeta">
+        <h2>📈 Razón</h2>
+        <p>12 niños y 8 niñas</p>
+        <button onclick="razon(1)">3 : 2</button>
+        <button onclick="razon(2)">2 : 3</button>
+        <button onclick="razon(3)">12 : 20</button>
+        <p id="mensajeRazon" class="mensaje"></p>
+      </div>
+    </section>
+
+    <section class="tarjetas">
+      <div class="tarjeta">
+        <h2>⚖ Proporción</h2>
+        <p>Si 5 cuadernos cuestan S/25, ¿cuánto cuestan 8?</p>
+        <input type="number" id="proporcion" placeholder="Respuesta">
+        <button onclick="proporcion()">Resolver</button>
+        <p id="mensajeProporcion" class="mensaje"></p>
+      </div>
+
+      <div class="tarjeta">
+        <h2>🏆 Desafío Final</h2>
+        <p>45 × 12 - 120 ÷ 6</p>
+        <input type="number" id="desafio" placeholder="Respuesta">
+        <button onclick="desafio()">Resolver</button>
+        <p id="mensajeDesafio" class="mensaje"></p>
+      </div>
+
+      <div class="tarjeta">
+        <h2>🧠 Memoria Matemática</h2>
+        <p>Memoriza este número:</p>
+        <h1 id="numeroMemoria">845731</h1>
+        <button onclick="memoria()">Comenzar</button>
+        <p id="mensajeMemoria" class="mensaje"></p>
+      </div>
+
+      <div class="tarjeta">
+        <h2>🏅 Logros</h2>
+        <ul id="logros">
+          <li>🔒 Resolver 5 ejercicios.</li>
+          <li>🔒 Resolver Álgebra.</li>
+          <li>🔒 Resolver Geometría.</li>
+          <li>🔒 Conseguir 100 monedas.</li>
+          <li>🔒 Completar Matemática 6°.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="tarjetas">
+      <div class="tarjeta">
+        <h2>🛒 Tienda</h2>
+        <button onclick="comprar('🦁', 60)">🦁 60 monedas</button>
+        <button onclick="comprar('🐯', 100)">🐯 100 monedas</button>
+        <button onclick="comprar('🐲', 180)">🐲 180 monedas</button>
+      </div>
+
+      <div class="tarjeta">
+        <h2>📜 Certificado</h2>
+        <p>Al completar todas las actividades podrás obtener tu certificado.</p>
+        <button onclick="certificado()">Obtener certificado</button>
+      </div>
+    </section>
+  </main>
+
+  <footer>✨ LUMENIX | Matemática 6° Primaria ✨</footer>
+
+  <script src="matematica6.js"></script>
+</body>
+</html>

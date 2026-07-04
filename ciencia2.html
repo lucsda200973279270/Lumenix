@@ -1,0 +1,2209 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>LUMENIX | Ciencia y Ambiente 2° Primaria</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Fredoka',sans-serif;
+}
+
+body{
+
+background:linear-gradient(135deg,#81D4FA,#C8E6C9,#FFF9C4);
+
+overflow-x:hidden;
+}
+
+/*================ HEADER ================*/
+
+header{
+
+background:white;
+
+padding:18px;
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+box-shadow:0 8px 20px rgba(0,0,0,.15);
+
+position:sticky;
+
+top:0;
+
+z-index:999;
+}
+
+.logo{
+
+font-size:34px;
+
+font-weight:bold;
+
+color:#2E7D32;
+}
+
+nav a{
+
+text-decoration:none;
+
+margin:15px;
+
+font-size:19px;
+
+font-weight:bold;
+
+color:#2E7D32;
+
+transition:.3s;
+}
+
+nav a:hover{
+
+color:#FF9800;
+}
+
+/*================ HERO ================*/
+
+.hero{
+
+text-align:center;
+
+padding:50px;
+}
+
+.personaje{
+
+font-size:130px;
+
+animation:flotar 2s infinite;
+}
+
+@keyframes flotar{
+
+0%{transform:translateY(0);}
+50%{transform:translateY(-15px);}
+100%{transform:translateY(0);}
+
+}
+
+.dialogo{
+
+background:white;
+
+display:inline-block;
+
+padding:25px;
+
+border-radius:25px;
+
+margin-top:20px;
+
+box-shadow:0 10px 20px rgba(0,0,0,.2);
+
+font-size:22px;
+
+max-width:700px;
+
+}
+
+.barra{
+
+width:80%;
+
+height:28px;
+
+background:#ddd;
+
+margin:auto;
+
+margin-top:25px;
+
+border-radius:30px;
+
+overflow:hidden;
+}
+
+.progreso{
+
+width:0%;
+
+height:100%;
+
+background:#4CAF50;
+
+transition:1s;
+}
+
+.estado{
+
+display:flex;
+
+justify-content:center;
+
+gap:40px;
+
+margin-top:30px;
+
+font-size:24px;
+}
+
+/*================ TARJETAS ================*/
+
+.tarjetas{
+
+display:flex;
+
+justify-content:center;
+
+gap:30px;
+
+flex-wrap:wrap;
+
+padding:40px;
+}
+
+.tarjeta{
+
+width:270px;
+
+background:white;
+
+padding:25px;
+
+border-radius:25px;
+
+box-shadow:0 10px 20px rgba(0,0,0,.15);
+
+transition:.4s;
+
+text-align:center;
+}
+
+.tarjeta:hover{
+
+transform:translateY(-10px);
+}
+
+.tarjeta h2{
+
+color:#2E7D32;
+
+margin-bottom:15px;
+}
+
+button{
+
+padding:14px 25px;
+
+font-size:18px;
+
+border:none;
+
+border-radius:15px;
+
+background:#FF9800;
+
+color:white;
+
+cursor:pointer;
+
+margin-top:15px;
+
+transition:.3s;
+}
+
+button:hover{
+
+background:#F57C00;
+
+transform:scale(1.05);
+}
+
+iframe{
+
+border-radius:15px;
+
+margin-top:15px;
+}
+
+input{
+
+padding:12px;
+
+border-radius:10px;
+
+border:2px solid #4CAF50;
+
+font-size:18px;
+
+width:80%;
+
+text-align:center;
+}
+
+footer{
+
+background:#2E7D32;
+
+color:white;
+
+padding:25px;
+
+text-align:center;
+
+margin-top:40px;
+
+font-size:18px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">
+
+🌿 LUMENIX
+
+</div>
+
+<nav>
+
+<a href="index.html">Inicio</a>
+
+<a href="ciencia.html">Grados</a>
+
+<a href="#">Tienda</a>
+
+<a href="#">Logros</a>
+
+</nav>
+
+</header>
+
+<section class="hero">
+
+<div class="personaje">
+
+🦉
+
+</div>
+
+<div class="dialogo">
+
+<h2>
+
+🌿 ¡Bienvenido a Ciencia y Ambiente 2.º!
+
+</h2>
+
+<p>
+
+Hoy aprenderemos sobre las necesidades de los seres vivos, los ciclos de vida, la alimentación saludable, el agua, el aire, el suelo y cómo cuidar nuestro planeta mediante actividades y juegos.
+
+</p>
+
+</div>
+
+<div class="barra">
+
+<div class="progreso" id="barra"></div>
+
+</div>
+
+<div class="estado">
+
+<div>
+
+❤️❤️❤️
+
+</div>
+
+<div>
+
+🪙 <span id="monedas">0</span>
+
+</div>
+
+<div>
+
+⭐ Nivel 2
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================================= -->
+<!-- TARJETAS PRINCIPALES -->
+<!-- ================================= -->
+
+<section class="tarjetas">
+
+<div class="tarjeta">
+
+<h2>🌱 Seres vivos</h2>
+
+<p>
+
+Conoceremos las necesidades de los seres vivos y su ciclo de vida.
+
+</p>
+
+<button onclick="mostrarLeccion()">
+
+Comenzar
+
+</button>
+
+</div>
+
+<div class="tarjeta">
+
+<h2>🍎 Alimentación</h2>
+
+<p>
+
+Descubriremos cómo llevar una alimentación saludable.
+
+</p>
+
+<button>
+
+Comenzar
+
+</button>
+
+</div>
+
+<div class="tarjeta">
+
+<h2>💧 Agua y aire</h2>
+
+<p>
+
+Aprenderemos por qué son importantes para la vida.
+
+</p>
+
+<button>
+
+Comenzar
+
+</button>
+
+</div>
+
+<div class="tarjeta">
+
+<h2>♻️ Cuidemos el ambiente</h2>
+
+<p>
+
+Realizaremos acciones para proteger la naturaleza.
+
+</p>
+
+<button>
+
+Jugar
+
+</button>
+
+</div>
+
+</section> <!-- ================================= -->
+<!-- LECCIÓN 1 -->
+<!-- ================================= -->
+
+<section class="tarjetas">
+
+<div class="tarjeta">
+
+<h2>📚 Lección 1</h2>
+
+<p>
+
+Hoy aprenderemos cuáles son las necesidades de los seres vivos y cómo cambian durante su vida.
+
+</p>
+
+<button onclick="mostrarLeccion()">
+
+Empezar
+
+</button>
+
+</div>
+
+<div class="tarjeta">
+
+<h2>🎥 Video Educativo</h2>
+
+<p>
+
+Observa el siguiente video.
+
+</p>
+
+<iframe
+
+width="220"
+
+height="130"
+
+src="https://www.youtube.com/embed/qXn5Y7vVgXU"
+
+allowfullscreen>
+
+</iframe>
+
+</div>
+
+</section>
+
+<!-- ================================= -->
+<!-- NECESIDADES DE LOS SERES VIVOS -->
+<!-- ================================= -->
+
+<section class="tarjetas">
+
+<div class="tarjeta">
+
+<h2>🌱 Necesidades</h2>
+
+<p>
+
+Todos los seres vivos necesitan agua, aire, alimento y un lugar donde vivir.
+
+</p>
+
+<h1>
+
+💧 🌬️ 🍎 ☀️
+
+</h1>
+
+</div>
+
+<div class="tarjeta">
+
+<h2>❓ Pregunta</h2>
+
+<p>
+
+¿Qué necesitan las plantas para crecer?
+
+</p>
+
+<button onclick="planta(1)">
+
+💧 Agua y luz solar
+
+</button>
+
+<br><br>
+
+<button onclick="planta(2)">
+
+📱 Celular
+
+</button>
+
+<br><br>
+
+<button onclick="planta(3)">
+
+🚗 Gasolina
+
+</button>
+
+<p id="mensajePlanta"></p>
+
+</div>
+
+</section>
+
+<!-- ================================= -->
+<!-- CICLO DE VIDA -->
+<!-- ================================= -->
+
+<section class="tarjetas">
+
+<div class="tarjeta">
+
+<h2>🦋 Ciclo de vida</h2>
+
+<p>
+
+Todos los seres vivos nacen, crecen, se reproducen y mueren.
+
+</p>
+
+<h1>
+
+🥚➡️🐣➡️🐔
+
+</h1>
+
+</div>
+
+<div class="tarjeta">
+
+<h2>🤔 ¿Qué ocurre primero?</h2>
+
+<button onclick="ciclo(1)">
+
+Nacer
+
+</button>
+
+<br><br>
+
+<button onclick="ciclo(2)">
+
+Crecer
+
+</button>
+
+<br><br>
+
+<button onclick="ciclo(3)">
+
+Morir
+
+</button>
+
+<p id="mensajeCiclo"></p>
+
+</div>
+
+</section>
+
+<!-- ================================= -->
+<!-- CICLO DE LA PLANTA -->
+<!-- ================================= -->
+
+<section class="tarjetas">
+
+<div class="tarjeta">
+
+<h2>🌻 Crecimiento de una planta</h2>
+
+<p>
+
+La planta nace de una semilla y necesita agua y sol para crecer.
+
+</p>
+
+<h1>
+
+🌰➡️🌱➡️🌼
+
+</h1>
+
+</div>
+
+<div class="tarjeta">
+
+<h2>🌱 Pregunta</h2>
+
+<p>
+
+¿De dónde nace una planta?
+
+</p>
+
+<button onclick="semilla(1)">
+
+🌰 Semilla
+
+</button>
+
+<br><br>
+
+<button onclick="semilla(2)">
+
+🪨 Piedra
+
+</button>
+
+<br><br>
+
+<button onclick="semilla(3)">
+
+⚽ Pelota
+
+</button>
+
+<p id="mensajeSemilla"></p>
+
+</div>
+
+</section>
+
+<!-- ================================= -->
+<!-- CLASIFICA -->
+<!-- ================================= -->
+
+<section class="tarjetas">
+
+<div class="tarjeta">
+
+<h2>🎯 Clasifica</h2>
+
+<p>
+
+Selecciona únicamente seres vivos.
+
+</p>
+
+<button onclick="clasificar(1)">🐶</button>
+
+<button onclick="clasificar(2)">🌳</button>
+
+<button onclick="clasificar(3)">🚗</button>
+
+<button onclick="clasificar(4)">🪑</button>
+
+<p id="mensajeClasificar"></p>
+
+</div>
+
+<div class="tarjeta">
+
+<h2>⭐ Sabías que...</h2>
+
+<p>
+
+Las plantas producen el oxígeno que respiramos.
+
+</p>
+
+<h1>
+
+🌳💚🌎
+
+</h1>
+
+</div>
+
+</section>
+
+<script>
+
+function mostrarLeccion(){
+
+alert("🌿 ¡Comencemos la Lección 1!");
+
+}
+
+function planta(opcion){
+
+if(opcion==1){
+
+mensajePlanta.innerHTML="🌱 ¡Muy bien!";
+
+ganar();
+
+}else{
+
+mensajePlanta.innerHTML="❌ Intenta nuevamente.";
+
+}
+
+}
+
+function ciclo(opcion){
+
+if(opcion==1){
+
+mensajeCiclo.innerHTML="🦋 ¡Correcto!";
+
+ganar();
+
+}else{
+
+mensajeCiclo.innerHTML="❌ Observa el ciclo otra vez.";
+
+}
+
+}
+
+function semilla(opcion){
+
+if(opcion==1){
+
+mensajeSemilla.innerHTML="🌼 ¡Excelente!";
+
+ganar();
+
+}else{
+
+mensajeSemilla.innerHTML="❌ Sigue intentando.";
+
+}
+
+}
+
+function clasificar(opcion){
+
+if(opcion==1 || opcion==2){
+
+mensajeClasificar.innerHTML="🌟 ¡Correcto! Son seres vivos.";
+
+ganar();
+
+}else{
+
+mensajeClasificar.innerHTML="❌ Ese no es un ser vivo.";
+
+}
+
+}
+
+</script> <!-- ================================= -->
+<!-- ANIMALES VERTEBRADOS E INVERTEBRADOS -->
+<!-- ================================= -->
+
+<section class="tarjetas">
+
+<div class="tarjeta">
+
+<h2>🐶 Animales vertebrados</h2>
+
+<p>
+
+Los vertebrados tienen columna vertebral.
+
+</p>
+
+<h1>
+
+🐶 🐱 🐦 🐟
+
+</h1>
+
+</div>
+
+<div class="tarjeta">
+
+<h2>🦋 Animales invertebrados</h2>
+
+<p>
+
+Los invertebrados no tienen columna vertebral.
+
+</p>
+
+<h1>
+
+🦋 🐜 🕷️ 🐌
+
+</h1>
+
+</div>
+
+</section>
+
+<!-- ================================= -->
+<!-- PREGUNTA -->
+<!-- ================================= -->
+
+<section class="tarjetas">
+
+<div class="tarjeta">
+
+<h2>❓ Clasifica</h2>
+
+<p>
+
+¿Cuál es un animal vertebrado?
+
+</p>
+
+<button onclick="vertebrado(1)">
+
+🐶 Perro
+
+</button>
+
+<br><br>
+
+<button onclick="vertebrado(2)">
+
+🦋 Mariposa
+
+</button>
+
+<br><br>
+
+<button onclick="vertebrado(3)">
+
+🐜 Hormiga
+
+</button>
+
+<p id="mensajeVertebrado"></p>
+
+</div>
+
+<div class="tarjeta">
+
+<h2>❓ Clasifica</h2>
+
+<p>
+
+¿Cuál es un animal invertebrado?
+
+</p>
+
+<button onclick="invertebrado(1)">
+
+🐟 Pez
+
+</button>
+
+<br><br>
+
+<button onclick="invertebrado(2)">
+
+🐌 Caracol
+
+</button>
+
+<br><br>
+
+<button onclick="invertebrado(3)">
+
+🐶 Perro
+
+</button>
+
+<p id="mensajeInvertebrado"></p>
+
+</div>
+
+</section>
+
+<!-- ================================= -->
+<!-- ALIMENTACIÓN -->
+<!-- ================================= -->
+
+<section class="tarjetas">
+
+<div class="tarjeta">
+
+<h2>🍎 Alimentación saludable</h2>
+
+<p>
+
+Comer frutas y verduras ayuda a crecer fuertes y sanos.
+
+</p>
+
+<h1>
+
+🍎🥦🥕🥛
+
+</h1>
+
+</div>
+
+<div class="tarjeta">
+
+<h2>🥗 Pregunta</h2>
+
+<p>
+
+¿Cuál alimento es saludable?
+
+</p>
+
+<button onclick="alimento(1)">
+
+🍎 Manzana
+
+</button>
+
+<br><br>
+
+<button onclick="alimento(2)">
+
+🍬 Caramelo
+
+</button>
+
+<br><br>
+
+<button onclick="alimento(3)">
+
+🥤 Gaseosa
+
+</button>
+
+<p id="mensajeAlimento"></p>
+
+</div>
+
+</section>
+
+<!-- ================================= -->
+<!-- HIGIENE -->
+<!-- ================================= -->
+
+<section class="tarjetas">
+
+<div class="tarjeta">
+
+<h2>🪥 Higiene personal</h2>
+
+<p>
+
+Lavarse las manos y cepillarse los dientes evita enfermedades.
+
+</p>
+
+<h1>
+
+🧼🪥🚿
+
+</h1>
+
+</div>
+
+<div class="tarjeta">
+
+<h2>🧼 ¿Qué debemos hacer?</h2>
+
+<button onclick="higiene(1)">
+
+🧼 Lavarnos las manos
+
+</button>
+
+<br><br>
+
+<button onclick="higiene(2)">
+
+🗑️ Tirar basura al piso
+
+</button>
+
+<br><br>
+
+<button onclick="higiene(3)">
+
+🍭 Comer muchos dulces
+
+</button>
+
+<p id="mensajeHigiene"></p>
+
+</div>
+
+</section>
+
+<!-- ================================= -->
+<!-- MEMORIA -->
+<!-- ================================= -->
+
+<section class="tarjetas">
+
+<div class="tarjeta">
+
+<h2>🧠 Memoria</h2>
+
+<p>
+
+Memoriza estos animales.
+
+</p>
+
+<h1 id="memoria">
+
+🐶 🐱 🐦
+
+</h1>
+
+<button onclick="memoria()">
+
+Comenzar
+
+</button>
+
+<p id="mensajeMemoria"></p>
+
+</div>
+
+</section>
+
+<script>
+
+function vertebrado(opcion){
+
+if(opcion==1){
+
+mensajeVertebrado.innerHTML="🐶 ¡Correcto!";
+
+ganar();
+
+}else{
+
+mensajeVertebrado.innerHTML="❌ Intenta otra vez.";
+
+}
+
+}
+
+function invertebrado(opcion){
+
+if(opcion==2){
+
+mensajeInvertebrado.innerHTML="🐌 ¡Muy bien!";
+
+ganar();
+
+}else{
+
+mensajeInvertebrado.innerHTML="❌ Sigue intentando.";
+
+}
+
+}
+
+function alimento(opcion){
+
+if(opcion==1){
+
+mensajeAlimento.innerHTML="🍎 ¡Excelente elección!";
+
+ganar();
+
+}else{
+
+mensajeAlimento.innerHTML="❌ Ese alimento no es el más saludable.";
+
+}
+
+}
+
+function higiene(opcion){
+
+if(opcion==1){
+
+mensajeHigiene.innerHTML="🧼 ¡Muy bien!";
+
+ganar();
+
+}else{
+
+mensajeHigiene.innerHTML="❌ Esa acción no cuida tu salud.";
+
+}
+
+}
+
+function memoria(){
+
+document.getElementById("memoria").innerHTML="❓ ❓ ❓";
+
+mensajeMemoria.innerHTML="¿Recuerdas los animales que viste?";
+
+}
+
+</script> <!-- ================================= -->
+<!-- EL AGUA -->
+<!-- ================================= -->
+
+<section class="tarjetas">
+
+<div class="tarjeta">
+
+<h2>💧 El agua</h2>
+
+<p>
+
+El agua es indispensable para la vida. La usamos para beber, cocinar, bañarnos y regar las plantas.
+
+</p>
+
+<h1>
+
+💧🚰🌱
+
+</h1>
+
+</div>
+
+<div class="tarjeta">
+
+<h2>❓ Pregunta</h2>
+
+<p>
+
+¿Para qué usamos el agua?
+
+</p>
+
+<button onclick="agua(1)">
+💧 Beber y cocinar
+</button>
+
+<br><br>
+
+<button onclick="agua(2)">
+🔥 Hacer fuego
+</button>
+
+<br><br>
+
+<button onclick="agua(3)">
+📱 Cargar el celular
+</button>
+
+<p id="mensajeAgua"></p>
+
+</div>
+
+</section>
+
+<!-- ================================= -->
+<!-- ESTADOS DEL AGUA -->
+<!-- ================================= -->
+
+<section class="tarjetas">
+
+<div class="tarjeta">
+
+<h2>🧊 Estados del agua</h2>
+
+<p>
+
+El agua puede encontrarse en estado sólido, líquido y gaseoso.
+
+</p>
+
+<h1>
+
+🧊 💧 ☁️
+
+</h1>
+
+</div>
+
+<div class="tarjeta">
+
+<h2>🤔 ¿Cómo se llama el hielo?</h2>
+
+<button onclick="estado(1)">
+Sólido
+</button>
+
+<br><br>
+
+<button onclick="estado(2)">
+Líquido
+</button>
+
+<br><br>
+
+<button onclick="estado(3)">
+Gaseoso
+</button>
+
+<p id="mensajeEstado"></p>
+
+</div>
+
+</section>
+
+<!-- ================================= -->
+<!-- EL AIRE -->
+<!-- ================================= -->
+
+<section class="tarjetas">
+
+<div class="tarjeta">
+
+<h2>🌬️ El aire</h2>
+
+<p>
+
+El aire no se puede ver, pero todos los seres vivos lo necesitan para respirar.
+
+</p>
+
+<h1>
+
+🌬️🍃
+
+</h1>
+
+</div>
+
+<div class="tarjeta">
+
+<h2>❓ Pregunta</h2>
+
+<p>
+
+¿Qué necesitamos para respirar?
+
+</p>
+
+<button onclick="aire(1)">
+🌬️ Aire
+</button>
+
+<br><br>
+
+<button onclick="aire(2)">
+🪨 Piedra
+</button>
+
+<br><br>
+
+<button onclick="aire(3)">
+📚 Libro
+</button>
+
+<p id="mensajeAire"></p>
+
+</div>
+
+</section>
+
+<!-- ================================= -->
+<!-- EL SUELO -->
+<!-- ================================= -->
+
+<section class="tarjetas">
+
+<div class="tarjeta">
+
+<h2>🌍 El suelo</h2>
+
+<p>
+
+En el suelo crecen las plantas y viven muchos animales.
+
+</p>
+
+<h1>
+
+🌱🐜🪱
+
+</h1>
+
+</div>
+
+<div class="tarjeta">
+
+<h2>🌱 Pregunta</h2>
+
+<p>
+
+¿Qué crece en el suelo?
+
+</p>
+
+<button onclick="suelo(1)">
+🌳 Plantas
+</button>
+
+<br><br>
+
+<button onclick="suelo(2)">
+☁️ Nubes
+</button>
+
+<br><br>
+
+<button onclick="suelo(3)">
+⭐ Estrellas
+</button>
+
+<p id="mensajeSuelo"></p>
+
+</div>
+
+</section>
+
+<!-- ================================= -->
+<!-- EL SOL -->
+<!-- ================================= -->
+
+<section class="tarjetas">
+
+<div class="tarjeta">
+
+<h2>☀️ El Sol</h2>
+
+<p>
+
+El Sol nos brinda luz y calor durante el día.
+
+</p>
+
+<h1>
+
+☀️😎
+
+</h1>
+
+</div>
+
+<div class="tarjeta">
+
+<h2>🌞 ¿Qué nos da el Sol?</h2>
+
+<button onclick="sol(1)">
+Luz y calor
+</button>
+
+<br><br>
+
+<button onclick="sol(2)">
+Nieve
+</button>
+
+<br><br>
+
+<button onclick="sol(3)">
+Lluvia
+</button>
+
+<p id="mensajeSol"></p>
+
+</div>
+
+</section>
+
+<!-- ================================= -->
+<!-- MINI JUEGO -->
+<!-- ================================= -->
+
+<section class="tarjetas">
+
+<div class="tarjeta">
+
+<h2>🎮 Encuentra el recurso natural</h2>
+
+<p>
+
+Selecciona un recurso natural.
+
+</p>
+
+<button onclick="juego2(1)">💧</button>
+
+<button onclick="juego2(2)">🚗</button>
+
+<button onclick="juego2(3)">📺</button>
+
+<button onclick="juego2(4)">🪑</button>
+
+<p id="mensajeJuego2"></p>
+
+</div>
+
+</section>
+
+<script>
+
+function agua(opcion){
+
+if(opcion==1){
+
+mensajeAgua.innerHTML="💧 ¡Muy bien!";
+
+ganar();
+
+}else{
+
+mensajeAgua.innerHTML="❌ Intenta nuevamente.";
+
+}
+
+}
+
+function estado(opcion){
+
+if(opcion==1){
+
+mensajeEstado.innerHTML="🧊 ¡Correcto!";
+
+ganar();
+
+}else{
+
+mensajeEstado.innerHTML="❌ Sigue intentando.";
+
+}
+
+}
+
+function aire(opcion){
+
+if(opcion==1){
+
+mensajeAire.innerHTML="🌬️ ¡Excelente!";
+
+ganar();
+
+}else{
+
+mensajeAire.innerHTML="❌ Esa no es la respuesta.";
+
+}
+
+}
+
+function suelo(opcion){
+
+if(opcion==1){
+
+mensajeSuelo.innerHTML="🌱 ¡Muy bien!";
+
+ganar();
+
+}else{
+
+mensajeSuelo.innerHTML="❌ Observa nuevamente.";
+
+}
+
+}
+
+function sol(opcion){
+
+if(opcion==1){
+
+mensajeSol.innerHTML="☀️ ¡Correcto!";
+
+ganar();
+
+}else{
+
+mensajeSol.innerHTML="❌ Intenta otra vez.";
+
+}
+
+}
+
+function juego2(opcion){
+
+if(opcion==1){
+
+mensajeJuego2.innerHTML="🎉 ¡Encontraste un recurso natural!";
+
+ganar();
+
+}else{
+
+mensajeJuego2.innerHTML="❌ Ese no es un recurso natural.";
+
+}
+
+}
+
+</script> <!-- ================================= -->
+<!-- EL CLIMA -->
+<!-- ================================= -->
+
+<section class="tarjetas">
+
+<div class="tarjeta">
+
+<h2>🌦️ El clima</h2>
+
+<p>
+
+El clima cambia durante el año. Puede hacer sol, llover o hacer mucho viento.
+
+</p>
+
+<h1>
+
+☀️ 🌧️ ☁️ 💨
+
+</h1>
+
+</div>
+
+<div class="tarjeta">
+
+<h2>❓ Pregunta</h2>
+
+<p>
+
+¿Qué usamos cuando llueve?
+
+</p>
+
+<button onclick="clima(1)">
+☂️ Paraguas
+</button>
+
+<br><br>
+
+<button onclick="clima(2)">
+🕶️ Lentes de sol
+</button>
+
+<br><br>
+
+<button onclick="clima(3)">
+🏖️ Toalla de playa
+</button>
+
+<p id="mensajeClima"></p>
+
+</div>
+
+</section>
+
+<!-- ================================= -->
+<!-- FENÓMENOS NATURALES -->
+<!-- ================================= -->
+
+<section class="tarjetas">
+
+<div class="tarjeta">
+
+<h2>🌈 Fenómenos naturales</h2>
+
+<p>
+
+En la naturaleza ocurren lluvias, arcoíris, truenos y vientos.
+
+</p>
+
+<h1>
+
+🌈⚡🌧️🌪️
+
+</h1>
+
+</div>
+
+<div class="tarjeta">
+
+<h2>🤔 ¿Cuál es un fenómeno natural?</h2>
+
+<button onclick="fenomeno(1)">
+🌈 Arcoíris
+</button>
+
+<br><br>
+
+<button onclick="fenomeno(2)">
+🚗 Automóvil
+</button>
+
+<br><br>
+
+<button onclick="fenomeno(3)">
+📱 Celular
+</button>
+
+<p id="mensajeFenomeno"></p>
+
+</div>
+
+</section>
+
+<!-- ================================= -->
+<!-- LAS 3R -->
+<!-- ================================= -->
+
+<section class="tarjetas">
+
+<div class="tarjeta">
+
+<h2>♻️ Las 3R</h2>
+
+<p>
+
+Reducir, Reutilizar y Reciclar ayudan a cuidar el planeta.
+
+</p>
+
+<h1>
+
+♻️🌎
+
+</h1>
+
+</div>
+
+<div class="tarjeta">
+
+<h2>❓ ¿Qué significa reciclar?</h2>
+
+<button onclick="reciclar(1)">
+Volver a utilizar materiales
+</button>
+
+<br><br>
+
+<button onclick="reciclar(2)">
+Botar toda la basura
+</button>
+
+<br><br>
+
+<button onclick="reciclar(3)">
+Quemar los residuos
+</button>
+
+<p id="mensajeReciclar"></p>
+
+</div>
+
+</section>
+
+<!-- ================================= -->
+<!-- CONTAMINACIÓN -->
+<!-- ================================= -->
+
+<section class="tarjetas">
+
+<div class="tarjeta">
+
+<h2>🏭 Contaminación</h2>
+
+<p>
+
+La contaminación afecta el aire, el agua y el suelo.
+
+</p>
+
+<h1>
+
+🏭🌫️🗑️
+
+</h1>
+
+</div>
+
+<div class="tarjeta">
+
+<h2>🌎 ¿Qué acción ayuda al ambiente?</h2>
+
+<button onclick="contaminacion(1)">
+🌳 Sembrar árboles
+</button>
+
+<br><br>
+
+<button onclick="contaminacion(2)">
+🗑️ Tirar basura al río
+</button>
+
+<br><br>
+
+<button onclick="contaminacion(3)">
+🔥 Quemar basura
+</button>
+
+<p id="mensajeContaminacion"></p>
+
+</div>
+
+</section>
+
+<!-- ================================= -->
+<!-- EXPERIMENTO -->
+<!-- ================================= -->
+
+<section class="tarjetas">
+
+<div class="tarjeta">
+
+<h2>🧪 Experimento</h2>
+
+<p>
+
+Coloca una planta cerca de una ventana y otra en un lugar oscuro durante una semana.
+
+</p>
+
+<h1>
+
+🌱☀️
+
+</h1>
+
+</div>
+
+<div class="tarjeta">
+
+<h2>📝 Observación</h2>
+
+<input type="text"
+
+id="experimento"
+
+placeholder="¿Qué ocurrió?">
+
+<br><br>
+
+<button onclick="guardarExperimento()">
+
+Guardar
+
+</button>
+
+<p id="mensajeExperimento"></p>
+
+</div>
+
+</section>
+
+<!-- ================================= -->
+<!-- DESAFÍO -->
+<!-- ================================= -->
+
+<section class="tarjetas">
+
+<div class="tarjeta">
+
+<h2>🎮 Desafío</h2>
+
+<p>
+
+Selecciona únicamente una acción que cuide el ambiente.
+
+</p>
+
+<button onclick="desafio2(1)">♻️</button>
+
+<button onclick="desafio2(2)">🗑️</button>
+
+<button onclick="desafio2(3)">🔥</button>
+
+<button onclick="desafio2(4)">🚬</button>
+
+<p id="mensajeDesafio2"></p>
+
+</div>
+
+</section>
+
+<script>
+
+function clima(opcion){
+
+if(opcion==1){
+
+mensajeClima.innerHTML="☂️ ¡Muy bien!";
+
+ganar();
+
+}else{
+
+mensajeClima.innerHTML="❌ No es correcto.";
+
+}
+
+}
+
+function fenomeno(opcion){
+
+if(opcion==1){
+
+mensajeFenomeno.innerHTML="🌈 ¡Excelente!";
+
+ganar();
+
+}else{
+
+mensajeFenomeno.innerHTML="❌ Ese no es un fenómeno natural.";
+
+}
+
+}
+
+function reciclar(opcion){
+
+if(opcion==1){
+
+mensajeReciclar.innerHTML="♻️ ¡Correcto!";
+
+ganar();
+
+}else{
+
+mensajeReciclar.innerHTML="❌ Intenta nuevamente.";
+
+}
+
+}
+
+function contaminacion(opcion){
+
+if(opcion==1){
+
+mensajeContaminacion.innerHTML="🌳 ¡Muy bien!";
+
+ganar();
+
+}else{
+
+mensajeContaminacion.innerHTML="❌ Esa acción contamina.";
+
+}
+
+}
+
+function guardarExperimento(){
+
+let texto=document.getElementById("experimento").value;
+
+if(texto!=""){
+
+mensajeExperimento.innerHTML="🧪 ¡Muy buena observación!";
+
+ganar();
+
+}else{
+
+mensajeExperimento.innerHTML="✍️ Escribe tu observación.";
+
+}
+
+}
+
+function desafio2(opcion){
+
+if(opcion==1){
+
+mensajeDesafio2.innerHTML="🏆 ¡Superaste el desafío!";
+
+ganar();
+
+}else{
+
+mensajeDesafio2.innerHTML="❌ Esa acción no cuida el ambiente.";
+
+}
+
+}
+
+</script> <!-- ================================= -->
+<!-- JUEGO DE MEMORIA -->
+<!-- ================================= -->
+
+<section class="tarjetas">
+
+<div class="tarjeta">
+
+<h2>🧠 Memoria</h2>
+
+<p>
+
+Observa estas figuras durante 5 segundos.
+
+</p>
+
+<h1 id="figuras">
+
+🌳 🐶 💧 ☀️
+
+</h1>
+
+<button onclick="memoria()">
+
+Comenzar
+
+</button>
+
+<p id="mensajeMemoria"></p>
+
+</div>
+
+</section>
+
+<!-- ================================= -->
+<!-- COFRE -->
+<!-- ================================= -->
+
+<section class="tarjetas">
+
+<div class="tarjeta">
+
+<h2>🎁 Cofre Diario</h2>
+
+<p>
+
+Ábrelo para ganar monedas.
+
+</p>
+
+<button onclick="cofre()">
+
+🎁 Abrir Cofre
+
+</button>
+
+<p id="mensajeCofre"></p>
+
+</div>
+
+</section>
+
+<!-- ================================= -->
+<!-- LOGROS -->
+<!-- ================================= -->
+
+<section class="tarjetas">
+
+<div class="tarjeta">
+
+<h2>🏆 Logros</h2>
+
+<ul>
+
+<li>🌱 Completar la Unidad 1.</li>
+
+<li>🐶 Identificar animales.</li>
+
+<li>💧 Aprender los estados del agua.</li>
+
+<li>♻️ Resolver el desafío ambiental.</li>
+
+<li>🪙 Conseguir 200 monedas.</li>
+
+</ul>
+
+</div>
+
+</section>
+
+<!-- ================================= -->
+<!-- TIENDA -->
+<!-- ================================= -->
+
+<section class="tarjetas">
+
+<div class="tarjeta">
+
+<h2>🛒 Tienda</h2>
+
+<p>
+
+Compra una mascota con tus monedas.
+
+</p>
+
+<button onclick="comprar('🐸',80)">
+
+🐸 80 monedas
+</button>
+
+<br><br>
+
+<button onclick="comprar('🐼',150)">
+
+🐼 150 monedas
+</button>
+
+<br><br>
+
+<button onclick="comprar('🦁',250)">
+
+🦁 250 monedas
+</button>
+
+<p id="mensajeCompra"></p>
+
+</div>
+
+</section>
+
+<!-- ================================= -->
+<!-- CERTIFICADO -->
+<!-- ================================= -->
+
+<section class="tarjetas">
+
+<div class="tarjeta">
+
+<h2>📜 Certificado</h2>
+
+<p>
+
+Escribe tu nombre para generar tu diploma.
+
+</p>
+
+<input
+
+type="text"
+
+id="nombreAlumno"
+
+placeholder="Tu nombre">
+
+<br><br>
+
+<button onclick="certificado()">
+
+Generar certificado
+
+</button>
+
+</div>
+
+</section>
+
+<footer>
+
+<h2>🌿 LUMENIX</h2>
+
+<p>
+
+Ciencia y Ambiente | Segundo de Primaria
+
+</p>
+
+</footer>
+
+<script>
+
+/*================ VARIABLES ================*/
+
+let progreso=0;
+
+let monedas=0;
+
+/*================ BARRA ================*/
+
+function actualizar(){
+
+document.getElementById("barra").style.width=progreso+"%";
+
+document.getElementById("monedas").innerHTML=monedas;
+
+}
+
+/*================ GANAR ================*/
+
+function ganar(){
+
+progreso+=5;
+
+monedas+=10;
+
+if(progreso>100){
+
+progreso=100;
+
+}
+
+actualizar();
+
+}
+
+/*================ MEMORIA ================*/
+
+function memoria(){
+
+document.getElementById("figuras").innerHTML="❓ ❓ ❓ ❓";
+
+mensajeMemoria.innerHTML="¿Recuerdas las figuras?";
+
+ganar();
+
+}
+
+/*================ COFRE ================*/
+
+function cofre(){
+
+let premio=Math.floor(Math.random()*31)+20;
+
+monedas+=premio;
+
+actualizar();
+
+mensajeCofre.innerHTML="🎉 Ganaste "+premio+" monedas.";
+
+}
+
+/*================ TIENDA ================*/
+
+function comprar(personaje,costo){
+
+if(monedas>=costo){
+
+monedas-=costo;
+
+actualizar();
+
+mensajeCompra.innerHTML="✅ Compraste "+personaje;
+
+}else{
+
+mensajeCompra.innerHTML="❌ No tienes suficientes monedas.";
+
+}
+
+}
+
+/*================ CERTIFICADO ================*/
+
+function certificado(){
+
+let nombre=document.getElementById("nombreAlumno").value;
+
+if(nombre==""){
+
+alert("Escribe tu nombre.");
+
+return;
+
+}
+
+alert(
+
+"🎓 FELICIDADES "+nombre+
+
+"\n\nHas completado Ciencia y Ambiente de 2.º de Primaria."
+
+);
+
+}
+
+/*================ INICIAR ================*/
+
+actualizar();
+
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,89 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LUMENIX | Comunicación 1° Primaria</title>
+  <link rel="stylesheet" href="comunicacion1.css">
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <div class="logo">📖 LUMENIX</div>
+    <nav>
+      <a href="index.html">🏠 Inicio</a>
+      <a href="comunicacion.html">📚 Grados</a>
+      <a href="#">🏆 Logros</a>
+      <a href="#">🛒 Tienda</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="personaje">🦉</div>
+    <div class="dialogo">
+      <h2>¡Hola pequeño lector!</h2>
+      <p>
+        Soy <strong>Lumi</strong>, tu búho amigo. Hoy aprenderemos jugando con las vocales,
+        las sílabas, las palabras y cuentos muy divertidos.
+      </p>
+    </div>
+
+    <div class="barra">
+      <div class="progreso" id="barra"></div>
+    </div>
+
+    <div class="estado">
+      <div>❤️❤️❤️</div>
+      <div>🪙 <span id="monedas">0</span></div>
+      <div>⭐ Nivel 1</div>
+    </div>
+  </section>
+
+  <section class="tarjetas">
+    <div class="tarjeta">
+      <h2>🔤 Vocales</h2>
+      <p>Aprende las letras A E I O U con juegos divertidos.</p>
+      <button onclick="mostrarLeccion()">Comenzar</button>
+    </div>
+
+    <div class="tarjeta">
+      <h2>🧩 Sílabas</h2>
+      <p>MA ME MI MO MU y PA PE PI PO PU.</p>
+      <button onclick="accionBoton('🧩 ¡Practiquemos las sílabas!')">Aprender</button>
+    </div>
+
+    <div class="tarjeta">
+      <h2>📖 Lectura</h2>
+      <p>Lee cuentos cortitos con dibujos.</p>
+      <button onclick="accionBoton('📖 ¡Vamos a leer un cuento!')">Leer</button>
+    </div>
+
+    <div class="tarjeta">
+      <h2>🦋 Juegos</h2>
+      <p>Aprende jugando con muchos retos.</p>
+      <button onclick="accionBoton('🦋 ¡A jugar con las palabras!')">Jugar</button>
+    </div>
+
+    <div class="tarjeta">
+      <h2>🏅 Desafíos</h2>
+      <p>Gana monedas, estrellas y premios.</p>
+      <button onclick="accionBoton('🏅 ¡Desafío listo para empezar!')">Empezar</button>
+    </div>
+
+    <div class="tarjeta">
+      <h2>🎥 Video</h2>
+      <p>Aprendamos las vocales.</p>
+      <iframe src="https://www.youtube.com/embed/hUm6B2qkC5A" allowfullscreen></iframe>
+    </div>
+  </section>
+
+  <section class="decoracion">
+    <h1>🌸 🌼 🦋 🌈 ☁️ 🐝 🌸 🌼</h1>
+    <p>¡Aprender es una gran aventura!</p>
+  </section>
+
+  <footer>✨ LUMENIX | Comunicación 1° Primaria ✨</footer>
+
+  <script src="comunicacion1.js"></script>
+</body>
+</html>

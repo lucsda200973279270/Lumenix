@@ -1,0 +1,761 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LUMENIX | Matemática 4° Primaria</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Fredoka', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #64B5F6, #FFF176, #F8BBD0);
+      overflow-x: hidden;
+    }
+
+    header {
+      background: white;
+      padding: 18px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, .15);
+      position: sticky;
+      top: 0;
+      z-index: 999;
+    }
+
+    .logo {
+      font-size: 34px;
+      font-weight: bold;
+      color: #1976D2;
+    }
+
+    nav {
+      display: flex;
+      gap: 18px;
+    }
+
+    nav a {
+      text-decoration: none;
+      font-size: 18px;
+      font-weight: bold;
+      color: #1976D2;
+      transition: .3s;
+    }
+
+    nav a:hover {
+      color: #FF9800;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 60px;
+    }
+
+    .personaje {
+      font-size: 130px;
+      animation: flotar 2s infinite;
+    }
+
+    @keyframes flotar {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-15px); }
+      100% { transform: translateY(0); }
+    }
+
+    .dialogo {
+      background: white;
+      display: inline-block;
+      padding: 30px;
+      border-radius: 25px;
+      margin-top: 20px;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, .2);
+      max-width: 850px;
+    }
+
+    .dialogo h2 {
+      color: #1976D2;
+      font-size: 34px;
+      margin-bottom: 15px;
+    }
+
+    .dialogo p {
+      font-size: 22px;
+      line-height: 34px;
+    }
+
+    .barra {
+      width: 80%;
+      height: 30px;
+      background: #ddd;
+      margin: auto;
+      margin-top: 30px;
+      border-radius: 50px;
+      overflow: hidden;
+    }
+
+    .progreso {
+      width: 0%;
+      height: 100%;
+      background: linear-gradient(90deg, #4CAF50, #81C784);
+      transition: 1s;
+    }
+
+    .estado {
+      display: flex;
+      justify-content: center;
+      gap: 50px;
+      margin-top: 30px;
+      font-size: 24px;
+    }
+
+    .tarjetas {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 30px;
+      padding: 45px;
+    }
+
+    .tarjeta {
+      width: 290px;
+      background: white;
+      padding: 25px;
+      border-radius: 25px;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, .15);
+      text-align: center;
+      transition: .4s;
+      animation: aparecer .8s ease;
+    }
+
+    .tarjeta:hover {
+      transform: translateY(-10px);
+    }
+
+    .tarjeta h2 {
+      color: #1976D2;
+      margin-bottom: 15px;
+    }
+
+    .tarjeta h1 {
+      margin: 20px 0;
+      font-size: 34px;
+      color: #333;
+    }
+
+    .tarjeta p {
+      font-size: 18px;
+      line-height: 28px;
+    }
+
+    button {
+      padding: 14px 25px;
+      font-size: 18px;
+      border: none;
+      border-radius: 15px;
+      background: #FF9800;
+      color: white;
+      cursor: pointer;
+      margin-top: 15px;
+      transition: .3s;
+    }
+
+    button:hover {
+      background: #F57C00;
+      transform: scale(1.05);
+    }
+
+    input {
+      padding: 12px;
+      width: 160px;
+      border-radius: 12px;
+      border: 2px solid #ccc;
+      font-size: 20px;
+      text-align: center;
+      outline: none;
+      margin-top: 15px;
+      transition: .3s;
+    }
+
+    input:focus {
+      border-color: #2196F3;
+    }
+
+    iframe {
+      width: 230px;
+      height: 130px;
+      border: none;
+      border-radius: 20px;
+      margin-top: 15px;
+    }
+
+    #logros {
+      list-style: none;
+      padding: 0;
+      text-align: left;
+    }
+
+    #logros li {
+      padding: 10px;
+      margin: 8px 0;
+      background: #F5F5F5;
+      border-radius: 12px;
+    }
+
+    footer {
+      background: #1976D2;
+      color: white;
+      padding: 30px;
+      text-align: center;
+      font-size: 20px;
+      margin-top: 40px;
+    }
+
+    @keyframes aparecer {
+      from {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 900px) {
+      header {
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      nav {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .estado {
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      .hero {
+        padding: 30px;
+      }
+
+      .personaje {
+        font-size: 90px;
+      }
+
+      .dialogo h2 {
+        font-size: 28px;
+      }
+
+      .dialogo p {
+        font-size: 18px;
+      }
+
+      .tarjeta {
+        width: 95%;
+      }
+
+      .barra {
+        width: 95%;
+      }
+    }
+  </style>
+  <link rel="stylesheet" href="matematica4.css">
+</head>
+<body>
+  <header>
+    <div class="logo">🧮 LUMENIX</div>
+    <nav>
+      <a href="index.html">Inicio</a>
+      <a href="matematica.html">Grados</a>
+      <a href="#">Tienda</a>
+      <a href="#">Logros</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="personaje">🦉</div>
+    <div class="dialogo">
+      <h2>¡Bienvenido a Matemática 4° Primaria!</h2>
+      <p>
+        Hoy aprenderás operaciones con números grandes,
+        multiplicaciones,
+        divisiones,
+        fracciones,
+        geometría,
+        problemas matemáticos,
+        gráficos y juegos interactivos.
+      </p>
+    </div>
+
+    <div class="barra">
+      <div class="progreso" id="barra"></div>
+    </div>
+
+    <div class="estado">
+      <div>❤️❤️❤️</div>
+      <div>🪙 <span id="monedas">0</span></div>
+      <div>⭐ Nivel 4</div>
+    </div>
+  </section>
+
+  <section class="tarjetas">
+    <div class="tarjeta">
+      <h2>🔢 Números Grandes</h2>
+      <p>Lee, escribe y ordena números hasta 100 000.</p>
+      <button onclick="mostrarLeccion()">Comenzar</button>
+    </div>
+
+    <div class="tarjeta">
+      <h2>✖ Multiplicaciones</h2>
+      <p>Aprende multiplicaciones de varias cifras.</p>
+      <button>Practicar</button>
+    </div>
+
+    <div class="tarjeta">
+      <h2>➗ Divisiones</h2>
+      <p>Resuelve divisiones exactas e inexactas.</p>
+      <button>Practicar</button>
+    </div>
+
+    <div class="tarjeta">
+      <h2>📐 Geometría</h2>
+      <p>Perímetro, área y figuras geométricas.</p>
+      <button>Aprender</button>
+    </div>
+
+    <div class="tarjeta">
+      <h2>🍕 Fracciones</h2>
+      <p>Conoce las fracciones y sus equivalencias.</p>
+      <button>Explorar</button>
+    </div>
+
+    <div class="tarjeta">
+      <h2>🎥 Video Educativo</h2>
+      <iframe width="220" height="130"
+        src="https://www.youtube.com/embed/qmfXQh0qB9A"
+        allowfullscreen></iframe>
+    </div>
+  </section>
+
+  <section class="tarjetas">
+    <div class="tarjeta">
+      <h2>📚 Lección 1</h2>
+      <p>Conoceremos los números hasta 100 000.</p>
+      <button onclick="mostrarLeccion()">Empezar</button>
+    </div>
+
+    <div class="tarjeta">
+      <h2>🔢 Escribe el número</h2>
+      <h1>45 812</h1>
+      <p>Cuarenta y cinco mil ochocientos doce.</p>
+    </div>
+  </section>
+
+  <section class="tarjetas">
+    <div class="tarjeta">
+      <h2>➕ Suma</h2>
+      <h1>2458 + 3172</h1>
+      <input type="number" id="suma1">
+      <br><br>
+      <button onclick="suma1()">Comprobar</button>
+      <p id="mensajeSuma1"></p>
+    </div>
+
+    <div class="tarjeta">
+      <h2>➕ Suma</h2>
+      <h1>6589 + 2841</h1>
+      <input type="number" id="suma2">
+      <br><br>
+      <button onclick="suma2()">Comprobar</button>
+      <p id="mensajeSuma2"></p>
+    </div>
+  </section>
+
+  <section class="tarjetas">
+    <div class="tarjeta">
+      <h2>➖ Resta</h2>
+      <h1>8500 − 2365</h1>
+      <input type="number" id="resta1">
+      <br><br>
+      <button onclick="resta1()">Responder</button>
+      <p id="mensajeResta1"></p>
+    </div>
+
+    <div class="tarjeta">
+      <h2>➖ Resta</h2>
+      <h1>9200 − 1845</h1>
+      <input type="number" id="resta2">
+      <br><br>
+      <button onclick="resta2()">Responder</button>
+      <p id="mensajeResta2"></p>
+    </div>
+  </section>
+
+  <section class="tarjetas">
+    <div class="tarjeta">
+      <h2>✖ Multiplicación</h2>
+      <h1>245 × 12</h1>
+      <input type="number" id="multi1">
+      <br><br>
+      <button onclick="multi1()">Resolver</button>
+      <p id="mensajeMulti1"></p>
+    </div>
+
+    <div class="tarjeta">
+      <h2>✖ Multiplicación</h2>
+      <h1>326 × 15</h1>
+      <input type="number" id="multi2">
+      <br><br>
+      <button onclick="multi2()">Resolver</button>
+      <p id="mensajeMulti2"></p>
+    </div>
+  </section>
+
+  <section class="tarjetas">
+    <div class="tarjeta">
+      <h2>➗ División</h2>
+      <h1>864 ÷ 12</h1>
+      <input type="number" id="division1">
+      <br><br>
+      <button onclick="division1()">Resolver</button>
+      <p id="mensajeDivision1"></p>
+    </div>
+
+    <div class="tarjeta">
+      <h2>➗ División</h2>
+      <h1>945 ÷ 15</h1>
+      <input type="number" id="division2">
+      <br><br>
+      <button onclick="division2()">Resolver</button>
+      <p id="mensajeDivision2"></p>
+    </div>
+  </section>
+
+  <section class="tarjetas">
+    <div class="tarjeta">
+      <h2>🍕 Fracciones</h2>
+      <p>¿Cuál representa la mitad?</p>
+      <button onclick="fraccion(1)">1/4</button>
+      <button onclick="fraccion(2)">1/2</button>
+      <button onclick="fraccion(3)">3/4</button>
+      <p id="mensajeFraccion"></p>
+    </div>
+
+    <div class="tarjeta">
+      <h2>🍰 Completa</h2>
+      <h1>2/4 = ?</h1>
+      <button onclick="equivalente(1)">1/3</button>
+      <button onclick="equivalente(2)">1/2</button>
+      <button onclick="equivalente(3)">3/5</button>
+      <p id="mensajeEquivalente"></p>
+    </div>
+  </section>
+
+  <section class="tarjetas">
+    <div class="tarjeta">
+      <h2>📐 Perímetro</h2>
+      <p>Cuadrado de lado 8 cm.</p>
+      <input type="number" id="perimetro">
+      <br><br>
+      <button onclick="perimetro()">Responder</button>
+      <p id="mensajePerimetro"></p>
+    </div>
+
+    <div class="tarjeta">
+      <h2>📏 Área</h2>
+      <p>Rectángulo de 10 × 6.</p>
+      <input type="number" id="area">
+      <br><br>
+      <button onclick="area()">Responder</button>
+      <p id="mensajeArea"></p>
+    </div>
+  </section>
+
+  <section class="tarjetas">
+    <div class="tarjeta">
+      <h2>🧠 Problema</h2>
+      <p>Ana tenía 245 lápices. Compró 135 más. ¿Cuántos tiene ahora?</p>
+      <input type="number" id="problema1">
+      <br><br>
+      <button onclick="problema1()">Resolver</button>
+      <p id="mensajeProblema1"></p>
+    </div>
+  </section>
+
+  <section class="tarjetas">
+    <div class="tarjeta">
+      <h2>🎯 Atrapa la respuesta</h2>
+      <h1>345 + 125</h1>
+      <button onclick="juego(460)">460</button>
+      <button onclick="juego(470)">470</button>
+      <button onclick="juego(480)">480</button>
+      <button onclick="juego(490)">490</button>
+      <p id="mensajeJuego"></p>
+    </div>
+  </section>
+
+  <section class="tarjetas">
+    <div class="tarjeta">
+      <h2>🧠 Memoria Matemática</h2>
+      <h1 id="numeroMemoria">58342</h1>
+      <button onclick="memoria()">Comenzar</button>
+      <p id="mensajeMemoria"></p>
+    </div>
+  </section>
+
+  <section class="tarjetas">
+    <div class="tarjeta">
+      <h2>🏆 Logros</h2>
+      <ul id="logros">
+        <li>🔒 Resolver una suma.</li>
+        <li>🔒 Resolver una multiplicación.</li>
+        <li>🔒 Resolver una división.</li>
+        <li>🔒 Conseguir 100 monedas.</li>
+        <li>🔒 Completar Matemática 4°.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="tarjetas">
+    <div class="tarjeta">
+      <h2>🛒 Tienda</h2>
+      <button onclick="comprar('🐱',50)">🐱 50 monedas</button>
+      <br><br>
+      <button onclick="comprar('🐼',90)">🐼 90 monedas</button>
+      <br><br>
+      <button onclick="comprar('🤖',150)">🤖 150 monedas</button>
+    </div>
+  </section>
+
+  <section class="tarjetas">
+    <div class="tarjeta">
+      <h2>📜 Certificado</h2>
+      <p>Cuando completes todas las actividades podrás obtener tu certificado.</p>
+      <button onclick="certificado()">Obtener certificado</button>
+    </div>
+  </section>
+
+  <footer>✨ LUMENIX | Matemática 4° Primaria ✨</footer>
+
+  <script>
+    let progreso = 0;
+    let monedas = 0;
+    let ejercicios = 0;
+
+    actualizar();
+
+    function actualizar() {
+      document.getElementById("barra").style.width = progreso + "%";
+      document.getElementById("monedas").innerHTML = monedas;
+    }
+
+    function ganar() {
+      monedas += 10;
+      progreso += 5;
+      ejercicios++;
+
+      if (progreso > 100) {
+        progreso = 100;
+      }
+
+      actualizar();
+
+      if (ejercicios >= 10) {
+        document.getElementById("logros").innerHTML = `
+          <li>✅ Resolver una suma.</li>
+          <li>✅ Resolver una multiplicación.</li>
+          <li>✅ Resolver una división.</li>
+          <li>✅ Conseguir 100 monedas.</li>
+          <li>🏆 Unidad completada.</li>
+        `;
+      }
+    }
+
+    function mostrarLeccion() {
+      alert("📚 ¡Bienvenido a Matemática de 4° Primaria!");
+    }
+
+    function correcto(id, texto) {
+      document.getElementById(id).innerHTML = texto;
+      ganar();
+    }
+
+    function incorrecto(id) {
+      document.getElementById(id).innerHTML = "❌ Intenta nuevamente.";
+    }
+
+    function suma1() {
+      let r = document.getElementById("suma1").value;
+      if (r == 5630) {
+        correcto("mensajeSuma1", "🎉 ¡Correcto!");
+      } else {
+        incorrecto("mensajeSuma1");
+      }
+    }
+
+    function suma2() {
+      let r = document.getElementById("suma2").value;
+      if (r == 9430) {
+        correcto("mensajeSuma2", "🎉 Excelente.");
+      } else {
+        incorrecto("mensajeSuma2");
+      }
+    }
+
+    function resta1() {
+      let r = document.getElementById("resta1").value;
+      if (r == 6135) {
+        correcto("mensajeResta1", "⭐ Muy bien.");
+      } else {
+        incorrecto("mensajeResta1");
+      }
+    }
+
+    function resta2() {
+      let r = document.getElementById("resta2").value;
+      if (r == 7355) {
+        correcto("mensajeResta2", "🏆 Correcto.");
+      } else {
+        incorrecto("mensajeResta2");
+      }
+    }
+
+    function multi1() {
+      let r = document.getElementById("multi1").value;
+      if (r == 2940) {
+        correcto("mensajeMulti1", "🎉 Excelente.");
+      } else {
+        incorrecto("mensajeMulti1");
+      }
+    }
+
+    function multi2() {
+      let r = document.getElementById("multi2").value;
+      if (r == 4890) {
+        correcto("mensajeMulti2", "👏 Muy bien.");
+      } else {
+        incorrecto("mensajeMulti2");
+      }
+    }
+
+    function division1() {
+      let r = document.getElementById("division1").value;
+      if (r == 72) {
+        correcto("mensajeDivision1", "🎉 Correcto.");
+      } else {
+        incorrecto("mensajeDivision1");
+      }
+    }
+
+    function division2() {
+      let r = document.getElementById("division2").value;
+      if (r == 63) {
+        correcto("mensajeDivision2", "⭐ Excelente.");
+      } else {
+        incorrecto("mensajeDivision2");
+      }
+    }
+
+    function fraccion(op) {
+      if (op == 2) {
+        correcto("mensajeFraccion", "🍕 ¡Muy bien!");
+      } else {
+        incorrecto("mensajeFraccion");
+      }
+    }
+
+    function equivalente(op) {
+      if (op == 2) {
+        correcto("mensajeEquivalente", "🎉 Correcto.");
+      } else {
+        incorrecto("mensajeEquivalente");
+      }
+    }
+
+    function perimetro() {
+      let r = document.getElementById("perimetro").value;
+      if (r == 32) {
+        correcto("mensajePerimetro", "📐 Correcto.");
+      } else {
+        incorrecto("mensajePerimetro");
+      }
+    }
+
+    function area() {
+      let r = document.getElementById("area").value;
+      if (r == 60) {
+        correcto("mensajeArea", "📏 Muy bien.");
+      } else {
+        incorrecto("mensajeArea");
+      }
+    }
+
+    function problema1() {
+      let r = document.getElementById("problema1").value;
+      if (r == 380) {
+        correcto("mensajeProblema1", "🧠 Excelente.");
+      } else {
+        incorrecto("mensajeProblema1");
+      }
+    }
+
+    function juego(r) {
+      if (r == 470) {
+        correcto("mensajeJuego", "🎯 ¡Ganaste!");
+      } else {
+        incorrecto("mensajeJuego");
+      }
+    }
+
+    function memoria() {
+      let numero = document.getElementById("numeroMemoria").innerHTML;
+
+      setTimeout(function () {
+        document.getElementById("numeroMemoria").innerHTML = "?????";
+        let r = prompt("¿Cuál era el número?");
+
+        if (r == numero) {
+          correcto("mensajeMemoria", "🧠 ¡Memoria perfecta!");
+        } else {
+          document.getElementById("mensajeMemoria").innerHTML = "❌ Era " + numero;
+        }
+
+        document.getElementById("numeroMemoria").innerHTML = numero;
+      }, 3000);
+    }
+
+    function comprar(nombre, costo) {
+      if (monedas >= costo) {
+        monedas -= costo;
+        actualizar();
+        alert("🎉 Compraste el personaje " + nombre);
+      } else {
+        alert("❌ No tienes suficientes monedas.");
+      }
+    }
+
+    function certificado() {
+      if (progreso >= 100) {
+        let nombre = prompt("Escribe tu nombre");
+        alert("🏆 Felicidades " + nombre + "\nHas completado Matemática de 4° Primaria.");
+      } else {
+        alert("Debes completar toda la unidad para obtener el certificado.");
+      }
+    }
+
+    setInterval(function () {
+      document.querySelector(".personaje").style.transform = "rotate(" + Math.random() * 10 + "deg)";
+    }, 1500);
+  </script>
+</body>
+</html>

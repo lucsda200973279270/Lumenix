@@ -1,0 +1,1131 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>LUMENIX | Matemática 3° Primaria</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Fredoka',sans-serif;
+}
+
+body{
+background:linear-gradient(135deg,#81D4FA,#FFF176,#F8BBD0);
+overflow-x:hidden;
+}
+
+header{
+background:white;
+padding:18px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+box-shadow:0 8px 20px rgba(0,0,0,.15);
+position:sticky;
+top:0;
+z-index:999;
+}
+
+.logo{
+font-size:34px;
+font-weight:bold;
+color:#2196F3;
+}
+
+nav a{
+text-decoration:none;
+margin:15px;
+font-size:19px;
+font-weight:bold;
+color:#2196F3;
+}
+
+nav a:hover{
+color:#FF9800;
+}
+
+.hero{
+padding:50px;
+text-align:center;
+}
+
+.personaje{
+font-size:140px;
+animation:flotar 2s infinite;
+}
+
+@keyframes flotar{
+
+0%{transform:translateY(0);}
+50%{transform:translateY(-18px);}
+100%{transform:translateY(0);}
+
+}
+
+.dialogo{
+
+background:white;
+
+display:inline-block;
+
+padding:25px;
+
+border-radius:25px;
+
+margin-top:20px;
+
+box-shadow:0 10px 20px rgba(0,0,0,.2);
+
+font-size:22px;
+
+}
+
+.barra{
+
+width:80%;
+
+height:28px;
+
+background:#ddd;
+
+margin:auto;
+
+margin-top:30px;
+
+border-radius:30px;
+
+overflow:hidden;
+
+}
+
+.progreso{
+
+height:100%;
+
+width:0%;
+
+background:#4CAF50;
+
+transition:1s;
+
+}
+
+.estado{
+
+display:flex;
+
+justify-content:center;
+
+gap:40px;
+
+margin-top:30px;
+
+font-size:24px;
+
+}
+
+.tarjetas{
+
+display:flex;
+
+justify-content:center;
+
+gap:25px;
+
+flex-wrap:wrap;
+
+padding:40px;
+
+}
+
+.tarjeta{
+
+width:260px;
+
+background:white;
+
+padding:25px;
+
+border-radius:25px;
+
+text-align:center;
+
+box-shadow:0 10px 20px rgba(0,0,0,.15);
+
+transition:.4s;
+
+}
+
+.tarjeta:hover{
+
+transform:translateY(-10px);
+
+}
+
+button{
+
+padding:15px 25px;
+
+border:none;
+
+border-radius:15px;
+
+background:#FF9800;
+
+color:white;
+
+font-size:18px;
+
+cursor:pointer;
+
+transition:.3s;
+
+}
+
+button:hover{
+
+background:#F57C00;
+
+transform:scale(1.05);
+
+}
+
+footer{
+
+background:#2196F3;
+
+color:white;
+
+padding:25px;
+
+text-align:center;
+
+margin-top:40px;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">
+
+🧮 LUMENIX
+
+</div>
+
+<nav>
+
+<a href="index.html">Inicio</a>
+
+<a href="matematica.html">Grados</a>
+
+<a href="#">Logros</a>
+
+<a href="#">Tienda</a>
+
+</nav>
+
+</header>
+
+<section class="hero">
+
+<div class="personaje">
+
+🦊
+
+</div>
+
+<div class="dialogo">
+
+<h2>
+
+¡Bienvenido a Matemática 3°!
+
+</h2>
+
+<p>
+
+Hoy aprenderemos multiplicaciones,
+
+sumas grandes,
+
+restas,
+
+problemas
+
+y desafíos matemáticos.
+
+</p>
+
+</div>
+
+<div class="barra">
+
+<div class="progreso" id="barra"></div>
+
+</div>
+
+<div class="estado">
+
+<div>
+
+❤️❤️❤️
+
+</div>
+
+<div>
+
+🪙 <span id="monedas">0</span>
+
+</div>
+
+<div>
+
+⭐ Nivel 3
+
+</div>
+
+</div>
+
+</section>
+
+<section class="tarjetas">
+
+<div class="tarjeta">
+
+<h2>🔢 Números hasta 9 999</h2>
+
+<p>
+
+Aprende a leer y ordenar números grandes.
+
+</p>
+
+<button onclick="alert('Próximamente')">
+
+Comenzar
+
+</button>
+
+</div>
+
+<div class="tarjeta">
+
+<h2>➕ Sumas</h2>
+
+<p>
+
+Sumas de tres cifras.
+
+</p>
+
+<button>
+
+Comenzar
+
+</button>
+
+</div>
+
+<div class="tarjeta">
+
+<h2>✖ Multiplicación</h2>
+
+<p>
+
+Multiplicaciones por una cifra.
+
+</p>
+
+<button>
+
+Comenzar
+
+</button>
+
+</div>
+
+<div class="tarjeta">
+
+<h2>🎮 Juegos</h2>
+
+<p>
+
+Aprender jugando.
+
+</p>
+
+<button>
+
+Jugar
+
+</button>
+
+</div>
+
+</section>
+<!-- ======================================== -->
+<!-- LECCIÓN 1 -->
+<!-- ======================================== -->
+
+<section class="tarjetas">
+
+<div class="tarjeta">
+
+<h2>📚 Lección 1</h2>
+
+<p>
+
+Aprenderemos los números hasta el 9 999.
+
+</p>
+
+<button onclick="mostrarLeccion()">
+
+Comenzar
+
+</button>
+
+</div>
+
+<div class="tarjeta">
+
+<h2>🎥 Video</h2>
+
+<p>
+
+Observa el siguiente video educativo.
+
+</p>
+
+<iframe width="220"
+height="130"
+src="https://www.youtube.com/embed/LJ4Y0hR2T7Q"
+title="Video"
+frameborder="0"
+allowfullscreen>
+</iframe>
+
+</div>
+
+</section>
+
+<!-- ======================================== -->
+<!-- NÚMEROS -->
+<!-- ======================================== -->
+
+<section class="tarjetas">
+
+<div class="tarjeta">
+
+<h2>🔢 ¿Cómo se lee?</h2>
+
+<h1>
+
+4 582
+
+</h1>
+
+<p>
+
+Cuatro mil quinientos ochenta y dos
+
+</p>
+
+</div>
+
+<div class="tarjeta">
+
+<h2>🔢 Completa la secuencia</h2>
+
+<h1>
+
+398 - 399 - 400 - ___
+
+</h1>
+
+<input
+type="number"
+id="numero1">
+
+<br><br>
+
+<button onclick="numero1()">
+
+Responder
+
+</button>
+
+<p id="mensajeNumero1"></p>
+
+</div>
+
+</section>
+
+<!-- ======================================== -->
+<!-- SUMAS -->
+<!-- ======================================== -->
+
+<section class="tarjetas">
+
+<div class="tarjeta">
+
+<h2>➕ Suma</h2>
+
+<h1>
+
+235 + 164
+
+</h1>
+
+<input
+type="number"
+id="suma1">
+
+<br><br>
+
+<button onclick="suma1()">
+
+Comprobar
+
+</button>
+
+<p id="mensajeSuma1"></p>
+
+</div>
+
+<div class="tarjeta">
+
+<h2>➕ Suma</h2>
+
+<h1>
+
+427 + 318
+
+</h1>
+
+<input
+type="number"
+id="suma2">
+
+<br><br>
+
+<button onclick="suma2()">
+
+Comprobar
+
+</button>
+
+<p id="mensajeSuma2"></p>
+
+</div>
+
+</section>
+
+<!-- ======================================== -->
+<!-- RESTAS -->
+<!-- ======================================== -->
+
+<section class="tarjetas">
+
+<div class="tarjeta">
+
+<h2>➖ Resta</h2>
+
+<h1>
+
+700 - 258
+
+</h1>
+
+<input
+type="number"
+id="resta1">
+
+<br><br>
+
+<button onclick="resta1()">
+
+Comprobar
+
+</button>
+
+<p id="mensajeResta1"></p>
+
+</div>
+
+<div class="tarjeta">
+
+<h2>➖ Resta</h2>
+
+<h1>
+
+950 - 478
+
+</h1>
+
+<input
+type="number"
+id="resta2">
+
+<br><br>
+
+<button onclick="resta2()">
+
+Comprobar
+
+</button>
+
+<p id="mensajeResta2"></p>
+
+</div>
+
+</section>
+
+<!-- ======================================== -->
+<!-- MULTIPLICACIONES -->
+<!-- ======================================== -->
+
+<section class="tarjetas">
+
+<div class="tarjeta">
+
+<h2>✖ Multiplicación</h2>
+
+<h1>
+
+8 × 7
+
+</h1>
+
+<input
+type="number"
+id="multi1">
+
+<br><br>
+
+<button onclick="multi1()">
+
+Comprobar
+
+</button>
+
+<p id="mensajeMulti1"></p>
+
+</div>
+
+<div class="tarjeta">
+
+<h2>✖ Multiplicación</h2>
+
+<h1>
+
+9 × 6
+
+</h1>
+
+<input
+type="number"
+id="multi2">
+
+<br><br>
+
+<button onclick="multi2()">
+
+Comprobar
+
+</button>
+
+<p id="mensajeMulti2"></p>
+
+</div>
+
+</section>
+<!-- ======================================== -->
+<!-- JUEGO: ELIGE LA RESPUESTA CORRECTA -->
+<!-- ======================================== -->
+
+<section class="tarjetas">
+
+<div class="tarjeta">
+
+<h2>🎮 Desafío Matemático</h2>
+
+<p>¿Cuál es el resultado?</p>
+
+<h1>45 × 2</h1>
+
+<button onclick="respuestaJuego(80)">80</button>
+
+<button onclick="respuestaJuego(90)">90</button>
+
+<button onclick="respuestaJuego(95)">95</button>
+
+<button onclick="respuestaJuego(100)">100</button>
+
+<p id="mensajeJuego"></p>
+
+</div>
+
+</section>
+
+<!-- ======================================== -->
+<!-- MEMORIA -->
+<!-- ======================================== -->
+
+<section class="tarjetas">
+
+<div class="tarjeta">
+
+<h2>🧠 Memoria Matemática</h2>
+
+<p>Observa el número durante 4 segundos.</p>
+
+<h1 id="numeroMemoria">
+
+3816
+
+</h1>
+
+<button onclick="memoria()">
+
+Comenzar
+
+</button>
+
+<p id="mensajeMemoria"></p>
+
+</div>
+
+</section>
+
+<!-- ======================================== -->
+<!-- PROBLEMA MATEMÁTICO -->
+<!-- ======================================== -->
+
+<section class="tarjetas">
+
+<div class="tarjeta">
+
+<h2>📖 Problema</h2>
+
+<p>
+
+Ana tenía 325 caramelos.
+
+Regaló 118.
+
+¿Cuántos le quedaron?
+
+</p>
+
+<input type="number"
+
+id="problema1">
+
+<br><br>
+
+<button onclick="problema1()">
+
+Responder
+
+</button>
+
+<p id="mensajeProblema"></p>
+
+</div>
+
+</section>
+
+<!-- ======================================== -->
+<!-- LOGROS -->
+<!-- ======================================== -->
+
+<section class="tarjetas">
+
+<div class="tarjeta">
+
+<h2>🏆 Logros</h2>
+
+<ul id="listaLogros">
+
+<li>🔒 Resolver la primera multiplicación.</li>
+
+<li>🔒 Resolver cinco ejercicios.</li>
+
+<li>🔒 Conseguir 100 monedas.</li>
+
+<li>🔒 Completar la unidad.</li>
+
+</ul>
+
+</div>
+
+</section>
+
+<!-- ======================================== -->
+<!-- TIENDA -->
+<!-- ======================================== -->
+
+<section class="tarjetas">
+
+<div class="tarjeta">
+
+<h2>🛒 Tienda</h2>
+
+<p>
+
+Compra nuevos avatares.
+
+</p>
+
+<button onclick="comprar('🐼',50)">
+
+🐼 50 monedas
+
+</button>
+
+<br><br>
+
+<button onclick="comprar('🦁',90)">
+
+🦁 90 monedas
+
+</button>
+
+<br><br>
+
+<button onclick="comprar('🤖',150)">
+
+🤖 150 monedas
+
+</button>
+
+</div>
+
+</section>
+
+<!-- ======================================== -->
+<!-- CERTIFICADO -->
+<!-- ======================================== -->
+
+<section class="tarjetas">
+
+<div class="tarjeta">
+
+<h2>📜 Certificado</h2>
+
+<p>
+
+Cuando completes el 100% podrás descargar tu certificado.
+
+</p>
+
+<button onclick="certificado()">
+
+Obtener certificado
+
+</button>
+
+</div>
+
+</section>
+<footer>
+
+✨ LUMENIX | Matemática 3° Primaria ✨
+
+</footer>
+
+<script>
+
+let progreso=0;
+
+let monedas=0;
+function actualizar(){
+
+document.getElementById("barra").style.width=progreso+"%";
+
+document.getElementById("monedas").innerHTML=monedas;
+
+}
+
+function ganar(){
+
+monedas+=10;
+
+progreso+=10;
+
+if(progreso>100){
+
+progreso=100;
+
+}
+
+actualizar();
+
+}
+
+function mostrarLeccion(){
+
+alert("📚 ¡Comienza la lección de Matemática 3°!");
+
+}
+
+function numero1(){
+
+let r=document.getElementById("numero1").value;
+
+if(r==401){
+
+mensajeNumero1.innerHTML="🎉 ¡Correcto!";
+
+ganar();
+
+}else{
+
+mensajeNumero1.innerHTML="❌ Intenta otra vez.";
+
+}
+
+}
+
+function suma1(){
+
+let r=document.getElementById("suma1").value;
+
+if(r==399){
+
+mensajeSuma1.innerHTML="⭐ Muy bien.";
+
+ganar();
+
+}else{
+
+mensajeSuma1.innerHTML="❌ Incorrecto.";
+
+}
+
+}
+
+function suma2(){
+
+let r=document.getElementById("suma2").value;
+
+if(r==745){
+
+mensajeSuma2.innerHTML="🎉 Excelente.";
+
+ganar();
+
+}else{
+
+mensajeSuma2.innerHTML="❌ Sigue intentando.";
+
+}
+
+}
+
+function resta1(){
+
+let r=document.getElementById("resta1").value;
+
+if(r==442){
+
+mensajeResta1.innerHTML="🏆 Correcto.";
+
+ganar();
+
+}else{
+
+mensajeResta1.innerHTML="❌ Revisa tu respuesta.";
+
+}
+
+}
+
+function resta2(){
+
+let r=document.getElementById("resta2").value;
+
+if(r==472){
+
+mensajeResta2.innerHTML="🎉 Muy bien.";
+
+ganar();
+
+}else{
+
+mensajeResta2.innerHTML="❌ Intenta nuevamente.";
+
+}
+
+}
+
+function multi1(){
+
+let r=document.getElementById("multi1").value;
+
+if(r==56){
+
+mensajeMulti1.innerHTML="⭐ ¡Perfecto!";
+
+ganar();
+
+}else{
+
+mensajeMulti1.innerHTML="❌ Incorrecto.";
+
+}
+
+}
+
+function multi2(){
+
+let r=document.getElementById("multi2").value;
+
+if(r==54){
+
+mensajeMulti2.innerHTML="🏆 Excelente.";
+
+ganar();
+
+}else{
+
+mensajeMulti2.innerHTML="❌ Sigue practicando.";
+
+}
+//===================================
+
+function respuestaJuego(r){
+
+if(r==90){
+
+mensajeJuego.innerHTML="🎉 ¡Excelente!";
+
+ganar();
+
+}else{
+
+mensajeJuego.innerHTML="❌ Sigue intentando.";
+
+}
+
+}
+
+//===================================
+
+function memoria(){
+
+let numero=3816;
+
+numeroMemoria.innerHTML=numero;
+
+setTimeout(()=>{
+
+numeroMemoria.innerHTML="❓";
+
+let r=prompt("¿Qué número viste?");
+
+if(r==numero){
+
+mensajeMemoria.innerHTML="🧠 ¡Muy buena memoria!";
+
+ganar();
+
+}else{
+
+mensajeMemoria.innerHTML="😢 Casi lo logras.";
+
+}
+
+},4000);
+
+}
+
+//===================================
+
+function problema1(){
+
+let r=document.getElementById("problema1").value;
+
+if(r==207){
+
+mensajeProblema.innerHTML="🏆 ¡Respuesta correcta!";
+
+ganar();
+
+}else{
+
+mensajeProblema.innerHTML="❌ Revisa tu procedimiento.";
+
+}
+
+}
+
+//===================================
+
+function comprar(personaje,precio){
+
+if(monedas>=precio){
+
+monedas-=precio;
+
+actualizar();
+
+document.querySelector(".personaje").innerHTML=personaje;
+
+alert("🎉 ¡Nuevo avatar desbloqueado!");
+
+}else{
+
+alert("Necesitas más monedas.");
+
+}
+
+}
+
+//===================================
+
+function certificado(){
+
+if(progreso>=100){
+
+alert("🏆 ¡Felicitaciones! Has completado Matemática de 3° Primaria.");
+
+}else{
+
+alert("Aún no completas todas las actividades.");
+
+}
+
+}
+
+//===================================
+
+setInterval(()=>{
+
+localStorage.setItem("mate3Monedas",monedas);
+
+localStorage.setItem("mate3Progreso",progreso);
+
+},1000);
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,232 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LUMENIX | Comunicación 6° Primaria</title>
+  <link rel="stylesheet" href="comunicacion6.css">
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <div class="logo">📚 LUMENIX</div>
+    <nav>
+      <a href="index.html">🏠 Inicio</a>
+      <a href="comunicacion.html">📖 Grados</a>
+      <a href="#">🏆 Logros</a>
+      <a href="#">🛒 Tienda</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="personaje">🦅</div>
+    <div class="dialogo">
+      <h2>¡Bienvenido a Comunicación 6°!</h2>
+      <p>
+        Este curso te preparará para ingresar a 1.º de Secundaria mediante desafíos,
+        comprensión lectora, razonamiento verbal, ortografía y producción de textos.
+      </p>
+    </div>
+
+    <div class="barra">
+      <div class="progreso" id="barra"></div>
+    </div>
+
+    <div class="estado">
+      <div>❤️❤️❤️</div>
+      <div>🪙 <span id="monedas">0</span></div>
+      <div>🎓 Nivel 6</div>
+    </div>
+  </section>
+
+  <section class="tarjetas">
+    <div class="tarjeta">
+      <h2>📚 Lección 1 - Nivel Avanzado</h2>
+      <p>Fortalecerás tus habilidades de comprensión lectora, análisis crítico, vocabulario, ortografía y producción de textos para prepararte para 1.° de secundaria.</p>
+      <button onclick="mostrarLeccion()">Comenzar</button>
+    </div>
+
+    <div class="tarjeta">
+      <h2>🎥 Video Educativo</h2>
+      <p>Comprensión lectora y pensamiento crítico.</p>
+      <iframe src="https://www.youtube.com/embed/Ag8M7X0A4n4" allowfullscreen></iframe>
+    </div>
+  </section>
+
+  <section class="tarjetas">
+    <div class="tarjeta">
+      <h2>📖 Lectura</h2>
+      <p>
+        La contaminación ambiental es uno de los principales problemas del mundo actual.
+        El exceso de residuos, la tala de árboles y la contaminación del agua afectan la biodiversidad y ponen en riesgo la salud de las personas. Cuidar el ambiente es una responsabilidad compartida que requiere acciones diarias.
+      </p>
+    </div>
+
+    <div class="tarjeta">
+      <h2>❓ Comprensión</h2>
+      <p>¿Cuál es el propósito principal del texto?</p>
+      <button onclick="ideaPrincipal(1)">Informar sobre la importancia de cuidar el ambiente.</button>
+      <button onclick="ideaPrincipal(2)">Narrar una aventura en el bosque.</button>
+      <button onclick="ideaPrincipal(3)">Convencer para comprar árboles.</button>
+      <p id="mensajeIdea"></p>
+    </div>
+  </section>
+
+  <section class="tarjetas">
+    <div class="tarjeta">
+      <h2>💡 Inferencia</h2>
+      <p>¿Qué podría ocurrir si las personas continúan contaminando el ambiente?</p>
+      <button onclick="inferencia(1)">Se deteriorará la calidad de vida.</button>
+      <button onclick="inferencia(2)">Habrá más parques.</button>
+      <button onclick="inferencia(3)">No ocurrirá nada.</button>
+      <p id="mensajeInferencia"></p>
+    </div>
+
+    <div class="tarjeta">
+      <h2>📰 Tipo de texto</h2>
+      <p>“La Municipalidad inauguró una nueva planta de reciclaje para reducir la contaminación.”</p>
+      <button onclick="tipoTexto(1)">Noticia</button>
+      <button onclick="tipoTexto(2)">Cuento</button>
+      <button onclick="tipoTexto(3)">Fábula</button>
+      <p id="mensajeTexto"></p>
+    </div>
+  </section>
+
+  <section class="tarjetas">
+    <div class="tarjeta">
+      <h2>📖 Sinónimos</h2>
+      <p>Selecciona el sinónimo de “proteger”.</p>
+      <button onclick="sinonimo(1)">Cuidar</button>
+      <button onclick="sinonimo(2)">Romper</button>
+      <button onclick="sinonimo(3)">Olvidar</button>
+      <p id="mensajeSinonimo"></p>
+    </div>
+
+    <div class="tarjeta">
+      <h2>📚 Antónimos</h2>
+      <p>Selecciona el antónimo de “beneficio”.</p>
+      <button onclick="antonimo(1)">Perjuicio</button>
+      <button onclick="antonimo(2)">Ayuda</button>
+      <button onclick="antonimo(3)">Ventaja</button>
+      <p id="mensajeAntonimo"></p>
+    </div>
+  </section>
+
+  <section class="tarjetas">
+    <div class="tarjeta">
+      <h2>🔗 Conectores</h2>
+      <p>“Muchos reciclan; _______, aún falta crear conciencia.”</p>
+      <button onclick="conector(1)">sin embargo</button>
+      <button onclick="conector(2)">por eso</button>
+      <button onclick="conector(3)">además</button>
+      <p id="mensajeConector"></p>
+    </div>
+
+    <div class="tarjeta">
+      <h2>🧩 Analogía</h2>
+      <p>Libro es a biblioteca como medicamento es a...</p>
+      <button onclick="analogia(1)">Farmacia</button>
+      <button onclick="analogia(2)">Escuela</button>
+      <button onclick="analogia(3)">Mercado</button>
+      <p id="mensajeAnalogia"></p>
+    </div>
+  </section>
+
+  <section class="tarjetas">
+    <div class="tarjeta">
+      <h2>✍ Ortografía</h2>
+      <p>Selecciona la palabra correctamente escrita.</p>
+      <button onclick="ortografia(1)">Excepción</button>
+      <button onclick="ortografia(2)">Exepción</button>
+      <button onclick="ortografia(3)">Exsepción</button>
+      <p id="mensajeOrtografia"></p>
+    </div>
+
+    <div class="tarjeta">
+      <h2>📝 Completa</h2>
+      <p>Completa correctamente: “Ellos ________ la tarea ayer.”</p>
+      <input type="text" id="palabra" placeholder="Escribe la respuesta">
+      <button onclick="completar()">Comprobar</button>
+      <p id="mensajeCompletar"></p>
+    </div>
+  </section>
+
+  <section class="tarjetas">
+    <div class="tarjeta">
+      <h2>🎭 Figuras literarias</h2>
+      <p>“El viento cantaba entre los árboles.”</p>
+      <button onclick="figura(1)">Personificación</button>
+      <button onclick="figura(2)">Hipérbole</button>
+      <button onclick="figura(3)">Comparación</button>
+      <p id="mensajeFigura"></p>
+    </div>
+  </section>
+
+  <section class="tarjetas">
+    <div class="tarjeta">
+      <h2>📝 Producción escrita</h2>
+      <p>Escribe un texto de 8 a 10 líneas respondiendo: <b>¿Por qué es importante cuidar el medio ambiente y qué acciones podemos realizar desde casa y la escuela?</b></p>
+      <textarea id="texto" placeholder="Escribe tu texto aquí..."></textarea>
+      <button onclick="redaccion()">Guardar</button>
+      <p id="mensajeRedaccion"></p>
+    </div>
+  </section>
+
+  <section class="tarjetas">
+    <div class="tarjeta">
+      <h2>🎮 Desafío Final</h2>
+      <p>Selecciona el adverbio de modo.</p>
+      <button onclick="juego(1)">Cuidadosamente</button>
+      <button onclick="juego(2)">Árbol</button>
+      <button onclick="juego(3)">Cuaderno</button>
+      <button onclick="juego(4)">Profesor</button>
+      <p id="mensajeJuego"></p>
+    </div>
+  </section>
+
+  <section class="tarjetas">
+    <div class="tarjeta">
+      <h2>🧠 Memoria</h2>
+      <h1 id="palabraMemoria">RESPONSABILIDAD</h1>
+      <button onclick="memoria()">Comenzar</button>
+      <p id="mensajeMemoria"></p>
+    </div>
+  </section>
+
+  <section class="tarjetas">
+    <div class="tarjeta">
+      <h2>🏆 Logros</h2>
+      <ul>
+        <li>🔒 Analizar un texto informativo.</li>
+        <li>🔒 Resolver una inferencia compleja.</li>
+        <li>🔒 Identificar figuras literarias.</li>
+        <li>🔒 Escribir un texto argumentativo.</li>
+        <li>🔒 Obtener 500 monedas.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="tarjetas">
+    <div class="tarjeta">
+      <h2>🛒 Tienda</h2>
+      <button onclick="comprar('📖',250)">📖 Libro Especial - 250 monedas</button>
+      <button onclick="comprar('🎓',400)">🎓 Insignia de Excelencia - 400 monedas</button>
+      <button onclick="comprar('👑',600)">👑 Corona del Campeón - 600 monedas</button>
+      <p id="mensajeTienda"></p>
+    </div>
+  </section>
+
+  <section class="tarjetas">
+    <div class="tarjeta">
+      <h2>📜 Certificado</h2>
+      <p>¡Completa todos los retos y obtén tu Diploma de Preparación para 1.º de Secundaria en Comunicación!</p>
+      <button onclick="certificado()">Obtener certificado</button>
+      <p id="mensajeCertificado"></p>
+    </div>
+  </section>
+
+  <footer>✨ LUMENIX | Comunicación 6° Primaria ✨</footer>
+
+  <script src="comunicacion6.js"></script>
+</body>
+</html> 
